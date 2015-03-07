@@ -7,6 +7,7 @@ describe 'initialize' do
     expect(test.melody_length).to eq(8)
     expect(test.finished).to eq(false)
     expect(test.tonic).to eq(60)
+    expect(test.notes).to eq([60])
   end
   
   it 'defaults to melody length 8 and tonic 60 if not specified' do
@@ -16,11 +17,11 @@ describe 'initialize' do
     expect(test.tonic).to eq(60)
     
     test2 = CantusFirmus.new({:melody_length => 10})
-    expect(test.melody_length).to eq(10)
-    expect(test.tonic).to eq(60)
+    expect(test2.melody_length).to eq(10)
+    expect(test2.tonic).to eq(60)
     
     test3 = CantusFirmus.new({:tonic => 55})
-    expect(test.melody_length).to eq(8)
-    expect(test.tonic).to eq(55)
+    expect(test3.melody_length).to eq(8)
+    expect(test3.tonic).to eq(55)
   end
 end
