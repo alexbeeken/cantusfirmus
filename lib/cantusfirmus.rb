@@ -9,8 +9,6 @@ class CantusFirmus
       @scale = draw_major_scale
   end
 
-  def add_next_note
-
   def draw_major_scale
     output = []
     output.push(@tonic-15)
