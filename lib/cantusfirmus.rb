@@ -38,7 +38,7 @@ class CantusFirmus
 
   def find_next_note
     candidates = @scale
-    if @phrase.length == 1 || @phrase.lenth == 2
+    if @phrase.length == 1 || @phrase.length == 2
       candidates = remove_dissonances(candidates, @tonic)
       return candidates.sample()
     else
@@ -67,13 +67,15 @@ class CantusFirmus
               candidates = remove_intervals(candidates, @current, [-3, -4])
             end
           end
+        end
+      end
       return candidates.sample()
     end
   end
 
   def remove_dissonances(candidates, note)
     candidates.each do |candidate|
-      interval = distance(candidate, note)
+      interval = 0 - (note - candidate)
       consonant_intervals = [-16, -15,-14,-13,-12, -8, -7, -6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6, 7, 8, 12, 13, 14, 15, 16]
       if (!consonant_intervals.include?(interval))
         candidates.delete(candidate)
@@ -84,7 +86,7 @@ class CantusFirmus
 
   def remove_leaps(candidates, note)
     candidates.each do |candidate|
-      interval = distance(candidate, note)
+      interval = 0 - (note - candidate)
       leap_intervals = [-4, -3, -2, -1, 1, 2, 3, 4]
       if (!leap_intervals.include?(interval))
         candidates.delete(candidate)
@@ -95,7 +97,7 @@ class CantusFirmus
 
   def remove_leaps_in_direction(candidates, note, direction)
     candidates.each do |candidate|
-      interval = distance(candidate, note)
+      interval = 0 - (note - candidate)
       if direction == true
         leap_intervals = [1, 2, 3, 4]
       else
@@ -142,6 +144,6 @@ class CantusFirmus
   #   @phrase.push(random())
   # end
 
-  private :draw_major_scale, :find_next_note, :remove_dissonances, :distance_between
+  private :draw_major_scale, :find_next_note, :remove_dissonances, :leap?, :moved_up?
 
 end
