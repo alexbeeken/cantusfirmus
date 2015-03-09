@@ -49,16 +49,24 @@ class CantusFirmus
         if leap?(@second, @third)
           candidates = remove_leaps(candidates, @current)
         else
-          # NEEDS TO BE IN THE SAME DIRECTION
-          candidates = remove_steps(candidates, @current)
+          moved_up = moved_up?(@current, @second)
+          candidates = remove_leaps_in_direction(candidates, @current, moved_up)
         end
       else
-        # if same directions?
-          # M2?
-            # remove minor 2nds
-          # m3 or M3?
-            # remove m3s and M3s
-
+        if moved_up?(@current, @second) == moved_up?(@second, @third)
+          if (((@current - @second).abs == 2) && ((@second - @third).abs == 2))
+            if moved_up?(@current, @second)
+              candidates = remove_intervals(candidates, @current, [1, 2])
+            else
+              candidates = remove_intervals(candidates, @current, [-1, -2])
+            end
+          elsif (((@current - @second).abs == 3) || ((@current - @second).abs == 4)) && (((@second - @third).abs == 3) || ((@second - @third).abs == 4))
+            if moved_up?(@current, @second)
+              candidates = remove_intervals(candidates, @current, [3, 4])
+            else
+              candidates = remove_intervals(candidates, @current, [-3, -4])
+            end
+          end
       return candidates.sample()
     end
   end
@@ -85,7 +93,22 @@ class CantusFirmus
     return candidates
   end
 
-  def remove_steps(cndidates, note)
+  def remove_leaps_in_direction(candidates, note, direction)
+    candidates.each do |candidate|
+      interval = distance(candidate, note)
+      if direction == true
+        leap_intervals = [1, 2, 3, 4]
+      else
+        leap_intervals = [-1, -2, -3, -4]
+      end
+      if (!leap_intervals.include?(interval))
+        candidates.delete(candidate)
+      end
+    end
+    return candidates
+  end
+
+  def remove_steps(candidates, note)
     candidates.each do |candidate|
       interval = distance(candidate, note)
       leap_intervals = [-16, -15, -14, -13, -12, -8, -7, -6, -5, 5, 6, 7, 8, 12, 13, 14, 15, 16]
@@ -96,8 +119,22 @@ class CantusFirmus
     return candidates
   end
 
+  def remove_steps(candidates, note, intervals)
+    candidates.each do |candidate|
+      interval = distance(candidate, note)
+      if (!intervals.include?(interval))
+        candidates.delete(candidate)
+      end
+    end
+    return candidates
+  end
+
   def leap?(one, second)
     return (one - second).abs >= 5
+  end
+
+  def moved_up?(one, second)
+    return (one - second) > 0
   end
 
 
