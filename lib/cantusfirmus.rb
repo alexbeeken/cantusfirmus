@@ -10,6 +10,7 @@ class CantusFirmus
       (@melody_length - 1).times do
         @phrase.push(find_next_note())
       end
+    @leaps_left = (@melody_length / 4).floor
   end
 
   def draw_major_scale
