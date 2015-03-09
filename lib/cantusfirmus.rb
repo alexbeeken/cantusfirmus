@@ -1,12 +1,15 @@
 class CantusFirmus
-  attr_reader(:melody_length, :finished, :tonic, :notes, :scale)
+  attr_reader(:melody_length, :finished, :tonic, :phrase, :scale)
 
   def initialize(params ={})
       @melody_length = params.fetch(:melody_length, 8)
       @tonic = params.fetch(:tonic, 60)
       @finished = false
-      @notes = [@tonic]
+      @phrase = [@tonic]
       @scale = draw_major_scale
+      (@melody_length - 1).times do
+        @phrase.push(find_next_note())
+      end
   end
 
   def draw_major_scale
@@ -33,6 +36,15 @@ class CantusFirmus
     return output
   end
 
-  private :draw_major_scale
+  def find_next_note
+    candidates = @scale
+    return candidates.sample()
+  end
+
+  # def phrase_add_second_note
+  #   @phrase.push(random())
+  # end
+
+  private :draw_major_scale, :find_next_note
 
 end

@@ -7,7 +7,7 @@ describe 'initialize' do
     expect(test.melody_length).to eq(8)
     expect(test.finished).to eq(false)
     expect(test.tonic).to eq(60)
-    expect(test.notes).to eq([60])
+    expect(test.phrase.first).to eq(60)
     expect(test.scale).to eq([45, 47, 48, 50, 52, 53, 55, 57, 59, 60, 62, 64, 65, 67, 69, 71, 72, 74, 76])
   end
 
@@ -24,5 +24,12 @@ describe 'initialize' do
     test3 = CantusFirmus.new({:tonic => 55})
     expect(test3.melody_length).to eq(8)
     expect(test3.tonic).to eq(55)
+  end
+end
+
+describe 'find_next_note' do
+  it 'picks a random note from the scale and populates the array' do
+    test = CantusFirmus.new()
+    expect(test.phrase.length).to eq(8)
   end
 end
