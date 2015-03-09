@@ -53,7 +53,11 @@ class CantusFirmus
           candidates = remove_steps(candidates, @current)
         end
       else
-
+        # if same directions?
+          # M2?
+            # remove minor 2nds
+          # m3 or M3?
+            # remove m3s and M3s
 
       return candidates.sample()
     end
