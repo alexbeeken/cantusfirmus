@@ -32,4 +32,6 @@ describe 'find_next_note' do
     test = CantusFirmus.new()
     expect(test.phrase.length).to eq(8)
   end
+  
+
 end
