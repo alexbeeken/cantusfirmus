@@ -40,9 +40,11 @@ class CantusFirmus
   def find_next_note
     finished = false
     candidates = draw_major_scale
-    if @phrase.length == 1 || @phrase.length == 2
+    if @phrase.length == 1
       candidates = remove_dissonances(candidates, @tonic)
-      return candidates.sample()
+      candidates = remove_leaps(candidates, @tonic)
+    elsif @phrase.length == 2
+      candidates = remove_dissonances(candidates, @tonic)
     else
       @current = @phrase.last
       @second = @phrase[@phrase.length - 2]
