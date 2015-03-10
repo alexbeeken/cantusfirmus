@@ -1,11 +1,9 @@
 require_relative '../lib/phrase.rb'
 require 'pry'
 
-describe 'Candidates class' do
+describe 'Phrase class' do
 
   before :each do
-    @test_scale = [45, 47, 48, 50, 52, 53, 55, 57, 59, 60, 62, 64, 65, 67, 69, 71, 72, 74, 76]
-    @test_candidates = Candidates.new({:scale => @test_scale})
     @test_phrase = Phrase.new()
   end
 

@@ -29,4 +29,6 @@ class Scale
     output.push(@tonic+16)
     return output
   end
+
+  private :draw_major_scale
 end
