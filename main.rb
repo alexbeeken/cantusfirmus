@@ -31,10 +31,10 @@ length.times do
     candidates.remove_all_nonleading_tones
   elsif phrase.length == (length - 1)
     candidates.remove_all_except_tonic
+    binding.pry
   else
     second = phrase.second_to_last
     third = phrase.third_to_last
-
     if leap?(current, second)
       if leap?(second, third)
         candidates.remove_leaps(current)
@@ -42,7 +42,6 @@ length.times do
         up = moved_up?(current, second)
         candidates.remove_leaps_in_direction(current, up)
       end
-
     else
       if moved_up?(current, second) == moved_up?(second, third)
         if (((current - second).abs == 2) && ((second - third).abs == 2))
@@ -64,7 +63,10 @@ length.times do
 
   loop_candidates = candidates.notes.dup
   loop_candidates.each() do |candidate|
-    if ((current - candidate)).abs >= 12
+    if current == nil
+      binding.pry
+    end
+    if (current - candidate).abs >= 12
       candidates.delete(candidate)
     end
   end
