@@ -18,9 +18,10 @@ scale = Scale.new({:tonic => tonic})
 phrase = Phrase.new({:tonic => tonic})
 candidates = Candidates.new({:tonic => tonic, :scale => scale.notes})
 
-length.times do
+(length-1).times do |counter|
   candidates.reset
   current = phrase.last
+  last_two = false
   if phrase.length == 1
     candidates.remove_dissonances(tonic)
     candidates.remove_leaps(tonic)
@@ -28,10 +29,11 @@ length.times do
     second = tonic
     candidates.remove_dissonances(current)
   elsif phrase.length == (length - 2)
+    last_two = true
     candidates.remove_all_nonleading_tones
   elsif phrase.length == (length - 1)
+    last_two = true
     candidates.remove_all_except_tonic
-    binding.pry
   else
     second = phrase.second_to_last
     third = phrase.third_to_last
@@ -61,13 +63,12 @@ length.times do
     end
   end
 
-  loop_candidates = candidates.notes.dup
-  loop_candidates.each() do |candidate|
-    if current == nil
-      binding.pry
-    end
-    if (current - candidate).abs >= 12
-      candidates.delete(candidate)
+  if !last_two
+    loop_candidates = candidates.notes.dup
+    loop_candidates.each() do |candidate|
+      if (current - candidate).abs > 12
+        candidates.delete(candidate)
+      end
     end
   end
 
