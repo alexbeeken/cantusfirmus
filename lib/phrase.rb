@@ -2,7 +2,7 @@ class Phrase
   attr_reader(:notes)
 
   def initialize(params = {})
-    @notes = []
+    @notes = [params.fetch(:tonic, 60)]
   end
 
   def add_note(note)

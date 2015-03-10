@@ -8,7 +8,7 @@ class Candidates
   end
 
   def reset
-    @notes = @scale
+    @notes = @scale.dup
   end
 
   def remove_dissonances(note)
@@ -74,16 +74,25 @@ class Candidates
   end
 
   def pick_one(note)
-    roll = rand(6) + 1
-    if (roll <= 4)
-      @notes = remove_leaps(@notes, note)
-    elsif (roll >= 5) && (remove_leaps(@notes, note) != [])
-      @notes = remove_steps(@notes, note)
+    if @notes.length > 2
+      roll = rand(6) + 1
+      if (roll <= 4)
+        @notes = remove_leaps(note)
+      elsif (roll >= 5) && (remove_leaps(note) != [])
+        @notes = remove_steps(note)
+      end
+      return (@notes.sample())
+    else
+      return (@notes.sample())
     end
-    return (@notes.sample())
   end
 
   def remove_all_except_tonic
     @notes = [@tonic]
   end
+
+  def delete(candidate)
+    @notes.delete(candidate)
+  end
+
 end

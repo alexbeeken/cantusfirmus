@@ -15,16 +15,16 @@ tonic = 60
 length = 8
 
 scale = Scale.new({:tonic => tonic})
-phrase = Phrase.new()
+phrase = Phrase.new({:tonic => tonic})
 candidates = Candidates.new({:tonic => tonic, :scale => scale.notes})
 
 length.times do
   candidates.reset
+  current = phrase.last
   if phrase.length == 1
     candidates.remove_dissonances(tonic)
     candidates.remove_leaps(tonic)
   elsif phrase.length == 2
-    current = phrase.last
     second = tonic
     candidates.remove_dissonances(current)
   elsif phrase.length == (length - 2)
@@ -32,7 +32,6 @@ length.times do
   elsif phrase.length == (length - 1)
     candidates.remove_all_except_tonic
   else
-    current = phrase.last
     second = phrase.second_to_last
     third = phrase.third_to_last
 
@@ -44,7 +43,6 @@ length.times do
         candidates.remove_leaps_in_direction(current, up)
       end
 
-      # checks for conescutive major seconds
     else
       if moved_up?(current, second) == moved_up?(second, third)
         if (((current - second).abs == 2) && ((second - third).abs == 2))
@@ -64,7 +62,7 @@ length.times do
     end
   end
 
-  loop_candidates = candidates.dup
+  loop_candidates = candidates.notes.dup
   loop_candidates.each() do |candidate|
     if ((current - candidate)).abs >= 12
       candidates.delete(candidate)
