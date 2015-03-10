@@ -10,6 +10,8 @@ class CantusFirmus
       (@melody_length - 1).times do
         @phrase.push(find_next_note())
       end
+      @phrase.push(second_to_last_note)
+      @phrase.push(@tonic)
     @leaps_left = (@melody_length / 4).floor
   end
 
@@ -37,13 +39,20 @@ class CantusFirmus
     return output
   end
 
+  def second_to_last_note
+    return [(@tonic+2), (@tonic-1)].sample()
+  end
+
   def find_next_note
     finished = false
     candidates = draw_major_scale
     if @phrase.length == 1
+      @current = @phrase.last
       candidates = remove_dissonances(candidates, @tonic)
       candidates = remove_leaps(candidates, @tonic)
     elsif @phrase.length == 2
+      @current = @phrase.last
+      @second = @phrase[@phrase.length - 2]
       candidates = remove_dissonances(candidates, @tonic)
     else
       @current = @phrase.last
@@ -51,6 +60,7 @@ class CantusFirmus
       @third = @phrase[@phrase.length - 3]
 
       # checks for leaps
+
       if leap?(@current, @second)
         if leap?(@second, @third)
           candidates = remove_leaps(candidates, @current)
@@ -77,15 +87,16 @@ class CantusFirmus
           end
         end
       end
-
-      candidates.each() do |candidate|
-        if ((@current - @second) + (@current - candidate)).abs > 12
-          candidates.delete(candidate)
-        end
-      end
-
-      return pick_one(candidates, @current)
     end
+
+    loop_candidates = candidates.dup
+    loop_candidates.each() do |candidate|
+      if ((@current - candidate)).abs >= 12
+        candidates.delete(candidate)
+      end
+    end
+
+    return (pick_one(candidates, @current))
   end
 
   def remove_dissonances(candidates, note)
@@ -153,7 +164,7 @@ class CantusFirmus
     elsif (roll >= 5) && (remove_leaps(candidates, note) != [])
       candidates = remove_steps(candidates, note)
     end
-    return candidates.sample()
+    return (candidates.sample())
   end
 
   def leap?(one, second)
