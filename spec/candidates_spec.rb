@@ -70,7 +70,6 @@ describe 'Candidates class' do
   describe '#pick_one' do
     it 'picks a note randomly from the candidates, favoring steps over leaps' do
       picked_one = @test_candidates.pick_one(60)
-      puts("--------------THIS ONE WAS PICKED #{picked_one}------------------")
       expect([45, 47, 48, 50, 52, 53, 55, 57, 59, 60, 62, 64, 65, 67, 69, 71, 72, 74, 76].include?(picked_one)).to eq(true)
     end
   end
