@@ -1,10 +1,10 @@
 class Candidates
-  attr_reader(:tonic, :notes)
+  attr_reader(:tonic, :notes, :scale)
 
   def initialize(params = {})
     @tonic = params.fetch(:tonic, 60)
     @scale = params.fetch(:scale, [])
-    @notes = params.fetch(@scale, [])
+    @notes = @scale
   end
 
   def reset
@@ -14,7 +14,7 @@ class Candidates
   def remove_dissonances(note)
     @notes.each do |candidate|
       interval = 0 - (note - candidate)
-      consonant_intervals = [-16, -15,-14,-13,-12, -8, -7, -6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6, 7, 8, 12, 13, 14, 15, 16]
+      consonant_intervals = [ -15, -14, -13, -12, -9, -8, -7, -6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 13, 14, 15, 16]
       if (!consonant_intervals.include?(interval))
         @notes.delete(candidate)
       end
@@ -23,7 +23,8 @@ class Candidates
   end
 
   def remove_leaps(note)
-    @notes.each do |candidate|
+    loop_notes = @notes.dup
+    loop_notes.each do |candidate|
       interval = 0 - (note - candidate)
       leap_intervals = [-4, -3, -2, -1, 1, 2, 3, 4]
       if (!leap_intervals.include?(interval))
@@ -33,10 +34,11 @@ class Candidates
     return @notes
   end
 
-  def remove_leaps_in_direction(note, direction)
-    @notes.each do |candidate|
+  def remove_leaps_in_direction(note, is_up)
+    loop_notes = @notes.dup
+    loop_notes.each do |candidate|
       interval = 0 - (note - candidate)
-      if direction == true
+      if is_up == true
         leap_intervals = [1, 2, 3, 4]
       else
         leap_intervals = [-1, -2, -3, -4]
@@ -53,10 +55,10 @@ class Candidates
   end
 
   def remove_steps(note)
-    @notes.each do |candidate|
+    loop_notes = @notes.dup
+    loop_notes.each do |candidate|
       interval = (note - candidate)
-      leap_intervals = [-16, -15, -14, -13, -12, -8, -7, -6, -5, 5, 6, 7, 8, 12, 13, 14, 15, 16]
-      if (!leap_intervals.include?(interval))
+      if (interval.abs < 5)
         @notes.delete(candidate)
       end
     end
@@ -64,9 +66,10 @@ class Candidates
   end
 
   def remove_intervals(note, intervals)
-    @notes.each do |candidate|
+    loop_intervals = @notes.dup
+    loop_intervals.each do |candidate|
       interval = (note - candidate)
-      if (!intervals.include?(interval))
+      if (intervals.include?(interval))
         @notes.delete(candidate)
       end
     end
@@ -81,9 +84,11 @@ class Candidates
       elsif (roll >= 5) && (remove_leaps(note) != [])
         @notes = remove_steps(note)
       end
-      return (@notes.sample())
+      chosen_one = (@notes.sample())
+      return chosen_one
     else
-      return (@notes.sample())
+      chosen_one = (@notes.sample())
+      return chosen_one
     end
   end
 
