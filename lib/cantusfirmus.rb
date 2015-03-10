@@ -38,7 +38,8 @@ class CantusFirmus
   end
 
   def find_next_note
-    candidates = @scale
+    finished = false
+    candidates = draw_major_scale
     if @phrase.length == 1 || @phrase.length == 2
       candidates = remove_dissonances(candidates, @tonic)
       return candidates.sample()
@@ -46,6 +47,8 @@ class CantusFirmus
       @current = @phrase.last
       @second = @phrase[@phrase.length - 2]
       @third = @phrase[@phrase.length - 3]
+
+      # checks for leaps
       if leap?(@current, @second)
         if leap?(@second, @third)
           candidates = remove_leaps(candidates, @current)
@@ -53,6 +56,8 @@ class CantusFirmus
           moved_up = moved_up?(@current, @second)
           candidates = remove_leaps_in_direction(candidates, @current, moved_up)
         end
+
+      # checks for conescutive major seconds
       else
         if moved_up?(@current, @second) == moved_up?(@second, @third)
           if (((@current - @second).abs == 2) && ((@second - @third).abs == 2))
@@ -70,7 +75,14 @@ class CantusFirmus
           end
         end
       end
-      return candidates.sample()
+
+      candidates.each() do |candidate|
+        if ((@current - @second) + (@current - candidate)).abs > 12
+          candidates.delete(candidate)
+        end
+      end
+
+      return pick_one(candidates, @current)
     end
   end
 
@@ -113,7 +125,7 @@ class CantusFirmus
 
   def remove_steps(candidates, note)
     candidates.each do |candidate|
-      interval = distance(candidate, note)
+      interval = (note - candidate)
       leap_intervals = [-16, -15, -14, -13, -12, -8, -7, -6, -5, 5, 6, 7, 8, 12, 13, 14, 15, 16]
       if (!leap_intervals.include?(interval))
         candidates.delete(candidate)
@@ -122,14 +134,24 @@ class CantusFirmus
     return candidates
   end
 
-  def remove_steps(candidates, note, intervals)
+  def remove_intervals(candidates, note, intervals)
     candidates.each do |candidate|
-      interval = distance(candidate, note)
+      interval = (note - candidate)
       if (!intervals.include?(interval))
         candidates.delete(candidate)
       end
     end
     return candidates
+  end
+
+  def pick_one(candidates, note)
+    roll = rand(6) + 1
+    if (roll <= 4)
+      candidates = remove_leaps(candidates, note)
+    elsif (roll >= 5) && (remove_leaps(candidates, note) != [])
+      candidates = remove_steps(candidates, note)
+    end
+    return candidates.sample()
   end
 
   def leap?(one, second)
