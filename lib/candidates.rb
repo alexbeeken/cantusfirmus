@@ -25,9 +25,8 @@ class Candidates
   def remove_leaps(note)
     loop_notes = @notes.dup
     loop_notes.each do |candidate|
-      interval = 0 - (note - candidate)
-      leap_intervals = [-4, -3, -2, -1, 1, 2, 3, 4]
-      if (!leap_intervals.include?(interval)) && (@notes.length > 2)
+      interval = (note - candidate).abs
+      if (interval > 4)
           @notes.delete(candidate)
       end
     end
@@ -55,14 +54,40 @@ class Candidates
   end
 
   def remove_steps(note)
+    puts(" ")
+    puts("STARTING REMOVE STEPS------------")
+    puts(" ")
     loop_notes = @notes.dup
+    puts("NOTES = #{@notes}, LOOP_NOTES = #{loop_notes}")
+    puts("NOTE = #{note}")
     loop_notes.each do |candidate|
-      interval = (note - candidate)
-      if (interval.abs < 5) && (@notes.length > 2)
+      puts(" ")
+      puts("--------------beginning of loop")
+      puts("CURRENT CANDIDATE = #{candidate}")
+      interval = (note - candidate).abs
+      puts("INTERVAL = #{interval}")
+      if (interval < 5)
+          puts("INTERVAL IS LESS THAN 5, DELETE IT FROM #{@notes}")
           @notes.delete(candidate)
+          puts("NOW NOTES LOOKS LIKE #{@notes}")
+      else
+        puts("INTERVAL IS NOT LESS THAN 5, KEEP IT!!")
       end
+      puts("-------------end of loop")
+      puts(" ")
     end
-    return @notes
+    puts("END OF LOOPS")
+    puts(" ")
+    if @notes == []
+      puts("NOTHING LEFT IN NOTES, RETURNING ORIGINAL")
+      @notes = loop_notes
+      return @notes
+    else
+      puts("RETURNING ALTERED VERSION OF NOTES")
+      return @notes
+      puts("THE END")
+    end
+
   end
 
   def remove_intervals(note, intervals)
@@ -77,18 +102,7 @@ class Candidates
   end
 
   def pick_one(note)
-    if @notes.length > 2
-      roll = rand(6) + 1
-      if (roll <= 4) && (@notes.length > 2)
-        @notes = remove_leaps(note)
-      elsif (roll >= 5) && (remove_leaps(note) != []) && (@notes.length > 2)
-        @notes = remove_steps(note)
-      end
-
-      return (@notes.sample())
-    else
-      return (@notes.sample())
-    end
+    @notes.sample()
   end
 
   def remove_all_except(note)

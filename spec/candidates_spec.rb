@@ -58,6 +58,11 @@ describe 'Candidates class' do
       @test_candidates.remove_steps(60)
       expect(@test_candidates.notes).to eq([45, 47, 48, 50, 52, 53, 55, 65, 67, 69, 71, 72, 74, 76])
     end
+
+    it 'removes all intervals less than a fourth' do
+      @test_candidates.remove_steps(57)
+      expect(@test_candidates.notes).to eq([45, 47, 48, 50, 52, 62, 64, 65, 67, 69, 71, 72, 74, 76])
+    end
   end
 
   describe '#remove_intervals' do
