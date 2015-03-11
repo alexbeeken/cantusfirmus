@@ -58,7 +58,7 @@ class Phrase
   end
 
   def last_two_intervals_M2s?
-    ((M2?(self.last, self.second_to_last) && (M2?(self.second_to_last, self.third_to_last))
+    (M2?(self.last, self.second_to_last)) && (M2?(self.second_to_last, self.third_to_last))
   end
 
   def last_two_intervals_3s?
@@ -94,14 +94,15 @@ class Phrase
   end
 
   def within_octave?(one, second)
-    return distance(self.last, candidate) <= 12
+    return distance(self.last, second) <= 12
   end
 
   def return_if_within_octave(candidates)
   loop_candidates = candidates.dup
-  loop_candidates.each() do |candidate|
-    if !(within_octave?(self.last - candidate))
-      candidates.delete(candidate)
+    loop_candidates.each() do |candidate|
+      if !(within_octave?(self.last, candidate))
+        candidates.delete(candidate)
+      end
     end
   end
 
