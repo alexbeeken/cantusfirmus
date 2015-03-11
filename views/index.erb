@@ -3,7 +3,11 @@
 <canvas width=700 height=100></canvas>
 
 <p>
-<%= @cantusfirmus %>
+Here are your notes:
+<% @cantusfirmus.each do |note| %>
+<%= note %>
+  &nbsp;
+<% end %>
 </p>
 
 <div class="vex-tabdiv"

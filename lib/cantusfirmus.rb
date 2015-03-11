@@ -3,10 +3,7 @@ require_relative('phrase.rb')
 require_relative('scale.rb')
 require_relative('NoteConverter.rb')
 
-def build_cantusfirmus
-
-tonic = 60
-length = 8
+def build_cantusfirmus(tonic, length)
 
 def leap?(one, second)
   return (one - second).abs >= 5
