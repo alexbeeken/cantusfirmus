@@ -89,5 +89,5 @@ end
 
 def get_key(tonic = 60)
   noteconv = NoteConverter.new({:tonic => tonic})
-  return noteconv(get_letter_name(tonic))
+  return noteconv.get_letter_name(tonic)
 end
