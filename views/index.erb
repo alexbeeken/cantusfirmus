@@ -12,9 +12,9 @@ width=1000 scale=1.0 editor="false"
 tabstave
 notation=true
 tablature=false
-key=A time=4/4
+key=<%= @key %> time=4/4
 
-notes :w | C/4 | D/4 | E/4 | F/4
+notes :w <%= @cantusfirmus.join(" | ") %>
 
 options space=25
 </div>

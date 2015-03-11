@@ -1,6 +1,7 @@
 require_relative('candidates.rb')
 require_relative('phrase.rb')
 require_relative('scale.rb')
+require_relative('NoteConverter.rb')
 
 def build_cantusfirmus
 
@@ -18,6 +19,7 @@ end
 scale = Scale.new({:tonic => tonic})
 phrase = Phrase.new({:tonic => tonic})
 candidates = Candidates.new({:tonic => tonic, :scale => scale.notes})
+noteconv = NoteConverter.new({:tonic => tonic})
 
 (length-1).times do |counter|
   candidates.reset
@@ -76,5 +78,16 @@ candidates = Candidates.new({:tonic => tonic, :scale => scale.notes})
   phrase.add_note(candidates.pick_one(current))
 end
 
-return phrase.notes
+output = []
+
+phrase.notes.each do |note|
+  output.push(noteconv.convert(note))
+end
+
+return output
+end
+
+def get_key(tonic = 60)
+  noteconv = NoteConverter.new({:tonic => tonic})
+  return noteconv(get_letter_name(tonic))
 end
