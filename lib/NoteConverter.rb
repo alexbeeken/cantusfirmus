@@ -10,10 +10,21 @@ class NoteConverter
 
   def convert(note_number)
     output = []
-    output.push(get_letter_name(note_number))
-    output.push("/")
-    output.push(get_octave_number(note_number))
-    output = output.join("")
+    if note_number.class == [].class
+      note_number.each do |note|
+        temp = []
+        temp.push(get_one_letter_name(note))
+        temp.push("/")
+        temp.push(get_octave_number(note))
+        temp = temp.join("")
+        output.push(temp)
+      end
+    else
+      output.push(get_one_letter_name(note_number))
+      output.push("/")
+      output.push(get_octave_number(note_number))
+      output = output.join("")
+    end
     return output
   end
 
@@ -38,9 +49,13 @@ class NoteConverter
     end
   end
 
-  def get_letter_name(note_number)
+  def get_one_letter_name(note_number)
     scale_number = ((note_number % 12) + (12 - (@tonic % 12))) % 12
     reference = ["C","C#","D","D#","E","F","F#","G","G#","A","A#","B","C","C#","D","D#","E","F","F#","G","G#","A","A#","B"]
     return reference[scale_number + (@tonic % 12)]
+  end
+
+  def get_key
+    return get_one_letter_name(@tonic)
   end
 end

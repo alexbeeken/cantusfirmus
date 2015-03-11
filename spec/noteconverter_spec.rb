@@ -22,4 +22,15 @@ describe 'NoteConverter class' do
       expect(@noteconv.convert(62)).to eq("D/4")
     end
   end
+
+  describe '#get_key' do
+    it 'returns the letter name of the key for C' do
+      expect(@noteconv.get_key).to eq("C")
+    end
+
+    it 'returns the letter name of the key for D' do
+      @noteconv2 = NoteConverter.new({:tonic => 62})
+      expect(@noteconv2.get_key).to eq("D")
+    end
+  end
 end
