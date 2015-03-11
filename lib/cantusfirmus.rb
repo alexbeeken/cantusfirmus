@@ -1,7 +1,11 @@
-require('pry')
-require('candidates.rb')
-require('phrase.rb')
-require('scale.rb')
+require_relative('candidates.rb')
+require_relative('phrase.rb')
+require_relative('scale.rb')
+
+def build_cantusfirmus
+
+tonic = 60
+length = 8
 
 def leap?(one, second)
   return (one - second).abs >= 5
@@ -10,8 +14,6 @@ end
 def moved_up?(one, second)
   return (one - second) > 0
 end
-
-def cantusfirmus(tonic = 60, length = 8)
 
 scale = Scale.new({:tonic => tonic})
 phrase = Phrase.new({:tonic => tonic})
@@ -72,4 +74,7 @@ candidates = Candidates.new({:tonic => tonic, :scale => scale.notes})
   end
 
   phrase.add_note(candidates.pick_one(current))
+end
+
+return phrase.notes
 end
