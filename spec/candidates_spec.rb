@@ -19,7 +19,7 @@ describe 'Candidates class' do
   describe '#reset' do
     it 'resets the scale within the phrase to be the initialized scale' do
       @test_candidates.remove_leaps(60)
-      expect(@test_candidates.notes).to eq([57, 59, 62, 64])
+      expect(@test_candidates.notes).to eq([57, 59, 60, 62, 64])
       @test_candidates.reset
       expect(@test_candidates.notes).to eq(@test_scale)
     end
@@ -35,7 +35,7 @@ describe 'Candidates class' do
   describe '#remove_leaps' do
     it 'removes all intervals greater than a third' do
       @test_candidates.remove_leaps(60)
-      expect(@test_candidates.notes).to eq([57, 59, 62, 64])
+      expect(@test_candidates.notes).to eq([57, 59, 60, 62, 64])
     end
   end
 

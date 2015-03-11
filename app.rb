@@ -1,5 +1,8 @@
 require("bundler/setup")
 require('pry')
+require('sinatra')
+require('sinatra/reloader')
+
 Bundler.require(:default)
 Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
 

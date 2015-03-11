@@ -67,6 +67,10 @@ noteconv = NoteConverter.new({:tonic => tonic})
     end
   end
 
+  if current == nil
+    binding.pry
+  end
+
   if !last_two
     loop_candidates = candidates.notes.dup
     loop_candidates.each() do |candidate|
@@ -89,16 +93,19 @@ end
   phrase.add_note(candidates.pick_one(current))
 end
 
-output = []
-
-phrase.notes.each do |note|
-  output.push(noteconv.convert(note))
-end
-
-return output
+return convert_to_names(phrase.notes, tonic)
 end
 
 def get_key(tonic)
   noteconv = NoteConverter.new({:tonic => tonic})
   return noteconv.get_letter_name(tonic)
+end
+
+def convert_to_names(numbers, tonic)
+  noteconv = NoteConverter.new({:tonic => tonic})
+  output = []
+  numbers.each do |note|
+    output.push(noteconv.convert(note))
+  end
+  return output
 end
