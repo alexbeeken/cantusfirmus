@@ -75,12 +75,13 @@ noteconv = NoteConverter.new({:tonic => tonic})
       end
     end
   else
-    closest = 100
+    closest = 60
+    closest_compare = 25
     loop_candidates = candidates.notes.dup
     loop_candidates.each() do |candidate|
-      if (current - candidate).abs < closest
+      if (current - candidate).abs < closest_compare
         closest = candidate
-        binding.pry
+        closest_compare = (current - candidate).abs
       end
     candidates.remove_all_except(closest)
   end
