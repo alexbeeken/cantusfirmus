@@ -2,12 +2,16 @@
 
 <canvas width=700 height=100></canvas>
 
-<script>
-var canvas = $("div.one div.a canvas")[0];
-var renderer = new Vex.Flow.Renderer(canvas,
-  Vex.Flow.Renderer.Backends.CANVAS);
+<div class="vex-tabdiv"
+width=680 scale=1.0 editor="false"
+editor_width=680 editor_height=330>options space=20
+tabstave
+notation=true
+tablature=false
+key=A time=4/4
 
-  var ctx = renderer.getContext();
-  var stave = new Vex.Flow.Stave(10, 0, 500);
-  stave.addClef("treble").setContext(ctx).draw();
-  </script>
+notes :w 4-5-6/3 10/4
+
+
+options space=25
+</div>
