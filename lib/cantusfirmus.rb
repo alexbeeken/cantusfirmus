@@ -13,6 +13,10 @@ def moved_up?(one, second)
   return (one - second) > 0
 end
 
+def distance(one, second)
+  return (one - second).abs
+end
+
 scale = Scale.new({:tonic => tonic})
 phrase = Phrase.new({:tonic => tonic})
 candidates = Candidates.new({:tonic => tonic, :scale => scale.notes})
@@ -70,8 +74,17 @@ noteconv = NoteConverter.new({:tonic => tonic})
         candidates.delete(candidate)
       end
     end
+  else
+    closest = 100
+    loop_candidates = candidates.notes.dup
+    loop_candidates.each() do |candidate|
+      if (current - candidate).abs < closest
+        closest = candidate
+        binding.pry
+      end
+    candidates.remove_all_except(closest)
   end
-
+end
   phrase.add_note(candidates.pick_one(current))
 end
 

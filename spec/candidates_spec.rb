@@ -49,7 +49,7 @@ describe 'Candidates class' do
   describe '#remove_all_nonleading_tones' do
     it 'removes all notes that are not leading tones' do
       @test_candidates.remove_all_nonleading_tones
-      expect(@test_candidates.notes).to eq([62, 59])
+      expect(@test_candidates.notes).to eq([47, 50, 62, 59, 71, 74])
     end
   end
 
@@ -77,7 +77,7 @@ describe 'Candidates class' do
   describe '#remove_all_except_tonic' do
     it 'removes all notes except the tonic' do
       @test_candidates.remove_all_except_tonic
-      expect(@test_candidates.notes).to eq([60])
+      expect(@test_candidates.notes).to eq([48, 60, 72])
     end
   end
 

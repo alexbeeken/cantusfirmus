@@ -51,7 +51,7 @@ class Candidates
   end
 
   def remove_all_nonleading_tones
-    @notes = [@tonic+2, @tonic-1]
+    @notes = [@tonic-13, @tonic-10, @tonic+2, @tonic-1, @tonic+11, @tonic+14]
   end
 
   def remove_steps(note)
@@ -91,8 +91,12 @@ class Candidates
     end
   end
 
+  def remove_all_except(note)
+    @notes = [note]
+  end
+
   def remove_all_except_tonic
-    @notes = [@tonic]
+    @notes = [@tonic-12, @tonic, @tonic+12]
   end
 
   def delete(candidate)
