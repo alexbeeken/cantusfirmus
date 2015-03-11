@@ -13,4 +13,13 @@ describe 'NoteConverter class' do
   before :each do
     @noteconv = NoteConverter.new({:tonic => 60})
   end
+
+  describe '#convert' do
+    it 'converts 60 into C/4' do
+      output = @noteconv.convert(60)
+      expect(output).to eq("C/4")
+      expect(@noteconv.convert(61)).to eq("C#/4")
+      expect(@noteconv.convert(62)).to eq("D/4")
+    end
+  end
 end
