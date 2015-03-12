@@ -12,4 +12,7 @@ describe 'Scale class' do
       expect(@test_scale.notes).to eq([45, 47, 48, 50, 52, 53, 55, 57, 59, 60, 62, 64, 65, 67, 69, 71, 72, 74, 76])
     end
   end
+
+  describe '#dissonances' do
+    it 'returns'
 end

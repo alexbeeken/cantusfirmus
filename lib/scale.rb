@@ -1,47 +1,20 @@
 class Scale
-  attr_reader(:notes, :tonic, :diatonic)
 
-  def initialize(params = {})
-    @tonic = params.fetch(:tonic, 60)
-    @notes = draw_major_scale
-    @diatonic = draw_diatonic_major_scale
+  def intialize
+    @mode = "major"
+    @diatonic = [-15, -13, -12, -10, -8, -7, -5, -3, -1, 2, 4, 5, 7, 9, 12, 14, 16]
+    @consonant_intervals = [ -15, -14, -13, -12, -9, -8, -7, -6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 13, 14, 15, 16]
   end
 
-  def draw_major_scale
+  def consonances(note)
     output = []
-    output.push(@tonic-15)
-    output.push(@tonic-13)
-    output.push(@tonic-12)
-    output.push(@tonic-10)
-    output.push(@tonic-8)
-    output.push(@tonic-7)
-    output.push(@tonic-5)
-    output.push(@tonic-3)
-    output.push(@tonic-1)
-    output.push(@tonic)
-    output.push(@tonic+2)
-    output.push(@tonic+4)
-    output.push(@tonic+5)
-    output.push(@tonic+7)
-    output.push(@tonic+9)
-    output.push(@tonic+11)
-    output.push(@tonic+12)
-    output.push(@tonic+14)
-    output.push(@tonic+16)
+    @diatonic.each do |diatonic_note|
+      interval = note - diatonic_note
+      if (consonant_intervals.include?(interval))
+        output.push(diatonic_note)
+      end
+    end
     return output
   end
 
-  def draw_diatonic_major_scale
-    output = []
-    output.push(@tonic)
-    output.push(@tonic+2)
-    output.push(@tonic+4)
-    output.push(@tonic+5)
-    output.push(@tonic+7)
-    output.push(@tonic+9)
-    output.push(@tonic+11)
-    return output
-  end
-
-  private :draw_major_scale
 end

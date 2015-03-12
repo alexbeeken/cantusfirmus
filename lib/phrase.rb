@@ -2,7 +2,7 @@ class Phrase
   attr_reader(:notes, :length)
 
   def initialize(params = {})
-    @notes = [params.fetch(:tonic, 60)]
+    @notes = [0]
     @length = [params.fetch(:length, 8)]
   end
 
