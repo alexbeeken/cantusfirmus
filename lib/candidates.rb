@@ -7,23 +7,93 @@ class Candidates
     @notes = @scale
   end
 
-  def reset
-    @notes = @scale.dup
-  end
-
-  def remove_exceptions(phrase)
-     exceptions_checks(phrase)
-     normal_checks(phrase)
-  end
-
-  def remove_normal(phrase)
-
+  def get_next_note(phrase)
+    exceptions_checks(phrase)
+    normal_checks(phrase)
+    end_of_phrase_checks(phrase)
+    phrase.add_note(self.pick_one)
+    self.reset
   end
 
   private
 
-  def normal_checks
-    
+  def end_of_phrase_checks(phrase)
+    if ([1, 2].include?(phrase.length - phrase.notes.length))
+      self.just_closest_note(phrase.last)
+    else
+      self.octave_check(phrase.last)
+    end
+  end
+
+  def just_closest_note(note)
+    closest = 600
+    closest_compare = 2500000
+    @notes.each() do |candidate|
+      if (note - candidate).abs < closest_compare
+        closest = candidate
+        closest_compare = (note - candidate).abs
+      end
+    end
+    return closest
+  end
+
+  def octave_check(note)
+    loop_notes = @notes.dup
+      loop_notes.each() do |note|
+        if !((note - candidate).abs <= 12)
+          @notes.delete(note)
+        end
+      end
+  end
+
+  def reset
+    @notes = @scale.dup
+  end
+
+  def normal_checks(phrase)
+    last_interval_leap_check(phrase)
+    last_interval_step_check(phrase)
+  end
+
+  def last_interval_leap_check(phrase)
+    if (phrase.notes.last - phrase.notes[phrase.notes.length - 1]).abs >= 5
+      second_to_last_interval_leap_check(phrase)
+    else
+      second_to_last_interval_up_check(phrase)
+  end
+
+  def last_interval_step_check(phrase)
+    if ((self.last - self.second_to_last) > 0) && ((self.second_to_last - self.third_to_last) > 0)
+      double_major_second_check(phrase)
+    end
+  end
+
+  def last_interval_thirds_check(phrase)
+    if [3, 4].include?(phrase.last - phrase.notes[phrase.notes.length - 2]).abs && [3, 4].include?(phrase.notes[phrase.notes.length - 2], phrase.notes[phrase.notes.lenth - 3]).abs
+      if (phrase.last - phrase.notes[phrase.notes.length - 2] < 0)
+        self.remove_intervals(phrase.last, [3, 4])
+      else
+        self.remove_intervals(phrase.last, [-3, -4])
+      end
+    end
+  end
+
+  def second_to_last_interval_leap_check(phrase)
+    if (phrase.notes[phrase.notes.length - 1] - phrase.notes[phrase.notes.length - 2]).abs >= 5
+      self.remove_leaps(phrase.last)
+    end
+  end
+
+  def last_interval_after_leap_check(phrase)
+    if (self.last - self.second_to_last) > 0
+      self.remove_leaps_in_direction(phrase.last, ((phrase.last - phrase.second_to_last) > 0))
+    end
+  end
+
+  def double_major_second_check(phrase)
+    if ((self.last - self.second_to_last).abs == 2) && ((self.second_to_last - self.third_to_last).abs == 2)
+      remove_M2s_in_direction(phrase, ((phrase.last - phrase.second_to_last) > 0))
+    end
   end
 
   def exceptions_checks
@@ -31,6 +101,14 @@ class Candidates
     second_note_check_and_remove(phrase)
     last_note_check_and_remove(phrase)
     second_to_last_note_check_and_remove(phrase)
+  end
+
+  def remove_M2s_in_direction(phrase, is_up)
+    if is_up
+      remove_intervals(phrase, [1,2])
+    else
+      remove_intervals(phrase, [-1, -2])
+    end
   end
 
   def second_to_last_note_check_and_remove(phrase)
@@ -89,6 +167,22 @@ class Candidates
         leap_intervals = [-1, -2, -3, -4]
       end
       if (!leap_intervals.include?(interval)) && (@notes.length > 2)
+          @notes.delete(candidate)
+      end
+    end
+    return @notes
+  end
+
+  def remove_steps_in_direction(note, is_up)
+    loop_notes = @notes.dup
+    loop_notes.each do |candidate|
+      interval = 0 - (note - candidate)
+      if is_up == true
+        leap_intervals = [1, 2, 3, 4]
+      else
+        leap_intervals = [-1, -2, -3, -4]
+      end
+      if (leap_intervals.include?(interval)) && (@notes.length > 2)
           @notes.delete(candidate)
       end
     end
