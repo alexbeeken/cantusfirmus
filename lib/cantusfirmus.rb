@@ -14,7 +14,5 @@ def build_cantusfirmus(tonic, length)
     candidates.give_next_note_to(phrase)
   end
 
-    return {:cantusfirmus => noteconv.convert(phrase.notes), :key => noteconv.get_key}
-  end
-
+  return {:cantusfirmus => noteconv.convert(phrase.notes), :key => noteconv.get_key}
 end
