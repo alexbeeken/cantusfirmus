@@ -11,6 +11,52 @@ class Candidates
     @notes = @scale.dup
   end
 
+  def remove_exceptions(phrase)
+     exceptions_checks(phrase)
+     normal_checks(phrase)
+  end
+
+  def remove_normal(phrase)
+
+  end
+
+  private
+
+  def normal_checks
+    
+  end
+
+  def exceptions_checks
+    first_note_check_and_remove(phrase)
+    second_note_check_and_remove(phrase)
+    last_note_check_and_remove(phrase)
+    second_to_last_note_check_and_remove(phrase)
+  end
+
+  def second_to_last_note_check_and_remove(phrase)
+    if phrase.length == (phrase.notes.length - 2)
+      self.remove_all_nonleading_tones
+    end
+  end
+
+  def last_note_check_and_remove
+    if (phrase.length - 1) == (phrase.notes.length)
+      self.remove_all_except_tonic
+  end
+
+  def second_note_check_and_remove
+    if phrase.notes.length == 2
+      self.remove_dissonances(phrase.notes.last)
+    end
+  end
+
+  def first_note_check_and_remove
+    if phrase.notes.length == 1
+      self.remove_dissonances(tonic)
+      self.remove_leaps(tonic)
+    end
+  end
+
   def remove_dissonances(note)
     @notes.each do |candidate|
       interval = 0 - (note - candidate)
