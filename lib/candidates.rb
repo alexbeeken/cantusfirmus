@@ -6,36 +6,42 @@ class Candidates
   end
 
   def next_note(phrase)
-    exception_checks
-    picked_note = pick_one
+    # exception_checks
+    picked_note = [0]
     self.reset
     return picked_note
   end
 
-  def exceptions_checks(phrase)
-    first_note_check_and_remove(phrase)
-    second_note_check_and_remove(phrase)
-    last_note_check_and_remove(phrase)
-    second_to_last_note_check_and_remove(phrase)
-  end
-
-  def first_note_check_and_remove(phrase)
-    if phrase.notes.length == 1
-        self.remove(dissonances(note))
-        self.remove_leaps
-      end
+    def reset
+      @notes = [-16, -15, -14, -13, -12, -11, -10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
     end
+end
 
-    def remove_dissonances(note)
-      @notes.each do |candidate|
-      interval = (note - candidate)
-      consonant_intervals = [ -15, -14, -13, -12, -9, -8, -7, -6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 13, 14, 15, 16]
-       if (!consonant_intervals.include?(interval)) && (@notes.length > 2)
-           @notes.delete(candidate)
-       end
-     end
-   return @notes
-   end
+#   def exceptions_checks(phrase)
+#     first_note_check_and_remove(phrase)
+#     second_note_check_and_remove(phrase)
+#     last_note_check_and_remove(phrase)
+#     second_to_last_note_check_and_remove(phrase)
+#   end
+#
+#   def first_note_check_and_remove(phrase)
+#     if phrase.notes.length == 1
+#         self.remove(dissonances(note))
+#         self.remove_leaps
+#       end
+#     end
+#
+#     def remove_dissonances(note)
+#       @notes.each do |candidate|
+#       interval = (note - candidate)
+#       consonant_intervals = [ -15, -14, -13, -12, -9, -8, -7, -6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 13, 14, 15, 16]
+#        if (!consonant_intervals.include?(interval)) && (@notes.length > 2)
+#            @notes.delete(candidate)
+#        end
+#      end
+#    return @notes
+#    end
+# end
 
 
 #   protected
@@ -69,9 +75,6 @@ class Candidates
 #         end
 #     end
 #
-#     def reset
-#       @notes = [-16, -15, -14, -13, -12, -11, -10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
-#     end
 #
 #     def normal_checks(phrase)
 #       if last_three_not_nil?(phrase)

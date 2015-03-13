@@ -7,12 +7,9 @@ describe 'Scale class' do
     @test_scale = Scale.new()
   end
 
-  describe '#initialize' do
-    it 'Initializes a new scale given a tonic with the private method draw_major_scale' do
-      expect(@test_scale.notes).to eq([45, 47, 48, 50, 52, 53, 55, 57, 59, 60, 62, 64, 65, 67, 69, 71, 72, 74, 76])
+  describe '#dissonances' do
+    it 'returns only the dissonant intervals for a given note' do
+      expect(@test_scale.dissonances(0)).to eq(-10, 0, 11)
     end
   end
-
-  describe '#dissonances' do
-    it 'returns'
 end

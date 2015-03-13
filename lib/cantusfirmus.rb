@@ -6,12 +6,12 @@ require_relative('NoteConverter.rb')
 def build_cantusfirmus(tonic, length)
 
   phrase = Phrase.new({:length => length})
-  candidates = Candidates.new({:tonic => tonic, :scale => scale.notes})
-  scale = Scale.new({:tonic => tonic})
-  noteconv = NoteConverter.new({:tonic => tonic})
+  candidates = Candidates.new()
+  scale = Scale.new()
+  noteconv = NoteConverter.new()
 
   (length-1).times do |counter|
-    candidates.give_next_note_to(phrase)
+    phrase.add_note(candidates.next_note(phrase))
   end
 
   return {:cantusfirmus => noteconv.convert(phrase.notes), :key => noteconv.get_key}
