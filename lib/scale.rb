@@ -19,19 +19,21 @@ class Scale
   def parse_input(params)
     @note = params.fetch(:note, 0)
     input = params.fetch(:relationship, 'dissonant').split(" ")
-    @relationship = input[0]
-    if input[1] != nil
-      @direction = input[1]
+    puts("input[0] = #{input[0]} input[1] = #{input[1]}")
+    if ((input[0] != 'up') && (input[0] != 'down') && (input[0] != 'any'))
+      @relationship = input[0]
+      @direction = params.fetch(:direction, input[1])
     else
-      @direction = params.fetch(:direction, nil)
+      @direction = params.fetch(:direction, input[0])
     end
+    puts("relationship = #{@relationship}, direction = #{@direction}")
   end
 
 
   def check_notes(note)
     output = []
     @diatonic.each do |diatonic_note|
-      if relationship?(note, diatonic_note) &&  direction?(note, diatonic_note)
+      if relationship?(note, diatonic_note) && correct_direction?(note, diatonic_note)
         output.push(diatonic_note)
       end
     end
@@ -61,11 +63,12 @@ class Scale
     return true
   end
 
-  def direction?(note1, note2)
+  def correct_direction?(note1, note2)
     return (note1 - note2) < 0 if @direction == 'up'
     return (note1 - note2) > 0 if @direction == 'down'
-    return false if @direction == nil
-    return false
+    return true if @direction == nil
+    return true if @direction == 'any'
+    return true
   end
 
   def tonic?(note2)

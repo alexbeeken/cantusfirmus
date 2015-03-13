@@ -31,5 +31,10 @@ describe 'Scale class' do
     it 'returns notes below the given note' do
       expect(@test_scale.get_notes_for_relationship({:relationship => 'down', :note => -10})).to eq([-15, -13, -12])
     end
+
+    it 'returns notes with two parameters given' do
+      expect(@test_scale.get_notes_for_relationship({:relationship => 'step down', :note => 2})).to eq([-1, 0])
+      expect(@test_scale.get_notes_for_relationship({:relationship => 'leap up', :note => 9})).to eq([14, 16])
+    end
   end
 end
