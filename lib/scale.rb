@@ -48,7 +48,12 @@ class Scale
     return !(leap?(note1, note2)) if relationship == 'step'
     return up?(note1, note2) if relationship == 'up'
     return down?(note1, note2) if relationship == 'down'
+    return tonic?(note2) if relationship == 'tonic'
     return false
+  end
+
+  def tonic?(note2)
+    return note1 == 0
   end
 
   def up?(note1, note2)
