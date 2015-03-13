@@ -12,11 +12,9 @@ class Rules
 
   def exception_checks
     first_note_check_and_remove
-    if @phrase.second_to_last != nil
-      second_note_check_and_remove
-      last_note_check_and_remove
-      second_to_last_note_check_and_remove
-    end
+    second_note_check_and_remove
+    last_note_check_and_remove
+    second_to_last_note_check_and_remove
   end
 
   def first_note_check_and_remove
@@ -47,7 +45,7 @@ class Rules
   end
 
   def second_note_check_and_remove
-    if @phrase.notes.length == 2
+    if (@phrase.notes.length == 2) && (@phrase.second_to_last != nil)
       @return.push('dissonant')
     end
   end

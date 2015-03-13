@@ -58,7 +58,8 @@ class Scale
     return dissonance?(note1, note2) if @relationship == 'dissonant'
     return leap?(note1, note2) if @relationship == 'leap'
     return !(leap?(note1, note2)) if @relationship == 'step'
-    return tonic?(note2) if @relationship == 'tonic'
+    return !(tonic?(note2)) if @relationship == 'all_except_tonic'
+    return !(leading_tone?(note2)) if @relationship == 'all_nonleading_tones'
     return true if @relationship == nil
     return true
   end
@@ -69,6 +70,10 @@ class Scale
     return true if @direction == nil
     return true if @direction == 'any'
     return true
+  end
+
+  def leading_tone?(note)
+    ([-13, -10, -1, 2, 11, 14 ].include?(note))
   end
 
   def tonic?(note2)
