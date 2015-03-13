@@ -7,20 +7,31 @@ class Scale
   end
 
   def get_notes_for_relationship(params = {})
+    @pool = [-15, -13, -12, -10, -8, -7, -5, -3, -1, 0, 2, 4, 5, 7, 9, 11, 12, 14, 16]
     output = []
-    note = params.fetch(:note, 0)
-    relationship = params.fetch(:relationship, 'dissonant')
-    direction = params.fetch(:direction, nil)
-    output = check_notes(note, relationship)
+    parse_input(params)
+    output = check_notes(@note, @relationship)
+    output = check_notes(@note, @direction)
     return output
   end
 
   private
 
+  def parse_input(params)
+    @note = params.fetch(:note, 0)
+    input = params.fetch(:relationship, 'dissonant').split(" ")
+    @relationship = input[0]
+    if input[1] != nil
+      @direction = input[1]
+    else
+      @direction = params.fetch(:direction, nil)
+    end
+  end
+
+
   def check_notes(note, relationship)
     output = []
-    diatonic = [-15, -13, -12, -10, -8, -7, -5, -3, -1, 0, 2, 4, 5, 7, 9, 11, 12, 14, 16]
-    diatonic.each do |diatonic_note|
+    @diatonic.each do |diatonic_note|
       if relationship?(note, diatonic_note, relationship)
         output.push(diatonic_note)
       end
@@ -49,6 +60,7 @@ class Scale
     return up?(note1, note2) if relationship == 'up'
     return down?(note1, note2) if relationship == 'down'
     return tonic?(note2) if relationship == 'tonic'
+    return false if relationship == nil
     return false
   end
 
