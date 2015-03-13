@@ -22,7 +22,7 @@ class Rules
   def first_note_check_and_remove
     if @phrase.notes.length == 1
       @return.push('dissonant')
-      @return.push('leaps')
+      @return.push('leap')
     end
   end
 
