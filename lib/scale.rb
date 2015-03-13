@@ -10,8 +10,7 @@ class Scale
     @pool = [-15, -13, -12, -10, -8, -7, -5, -3, -1, 0, 2, 4, 5, 7, 9, 11, 12, 14, 16]
     output = []
     parse_input(params)
-    output = check_notes(@note, @relationship)
-    output = check_notes(@note, @direction)
+    output = check_notes(@note)
     return output
   end
 
@@ -29,10 +28,10 @@ class Scale
   end
 
 
-  def check_notes(note, relationship)
+  def check_notes(note)
     output = []
     @diatonic.each do |diatonic_note|
-      if relationship?(note, diatonic_note, relationship)
+      if relationship?(note, diatonic_note) &&  direction?(note, diatonic_note)
         output.push(diatonic_note)
       end
     end
@@ -53,14 +52,19 @@ class Scale
     return (get_interval(note1, note2).abs > 4)
   end
 
-  def relationship?(note1, note2, relationship)
-    return dissonance?(note1, note2) if relationship == 'dissonant'
-    return leap?(note1, note2) if relationship == 'leap'
-    return !(leap?(note1, note2)) if relationship == 'step'
-    return up?(note1, note2) if relationship == 'up'
-    return down?(note1, note2) if relationship == 'down'
-    return tonic?(note2) if relationship == 'tonic'
-    return false if relationship == nil
+  def relationship?(note1, note2)
+    return dissonance?(note1, note2) if @relationship == 'dissonant'
+    return leap?(note1, note2) if @relationship == 'leap'
+    return !(leap?(note1, note2)) if @relationship == 'step'
+    return tonic?(note2) if @relationship == 'tonic'
+    return true if @relationship == nil
+    return true
+  end
+
+  def direction?(note1, note2)
+    return (note1 - note2) < 0 if @direction == 'up'
+    return (note1 - note2) > 0 if @direction == 'down'
+    return false if @direction == nil
     return false
   end
 
