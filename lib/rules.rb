@@ -1,23 +1,22 @@
 class Rules
 
-  def initialize
-
-  end
-
-  def get_rule_breakers(phrase)
+  def find_rule_breaking_relationships(phrase)
     @phrase = phrase
     @return = []
     exception_checks
     middle_checks
+    return @return
   end
 
   private
 
   def exception_checks
     first_note_check_and_remove
-    second_note_check_and_remove
-    last_note_check_and_remove
-    second_to_last_note_check_and_remove
+    if @phrase.second_to_last != nil
+      second_note_check_and_remove
+      last_note_check_and_remove
+      second_to_last_note_check_and_remove
+    end
   end
 
   def first_note_check_and_remove
@@ -42,7 +41,9 @@ class Rules
   end
 
   def middle_checks
-    last_interval_leap_check
+    if (@phrase.notes.length > 2) && (@phrase.notes.length < (@phrase.length - 2))
+      last_interval_leap_check
+    end
   end
 
   def second_note_check_and_remove
@@ -51,14 +52,14 @@ class Rules
     end
   end
 
-  def second_to_last_interval_leap_check(phrase)
-    if (phrase.notes[phrase.notes.length - 1] - phrase.notes[phrase.notes.length - 2]).abs >= 5
+  def second_to_last_interval_leap_check
+    if (@phrase.notes[@phrase.notes.length - 1] - @phrase.notes[@phrase.notes.length - 2]).abs >= 5
       @return.push('leap')
     end
   end
 
-  def second_to_last_interval_up_check(phrase)
-    if (phrase.second_to_last - phrase.third_to_last) > 0
+  def second_to_last_interval_up_check
+    if (@phrase.second_to_last - @phrase.third_to_last) > 0
       @return.push(['leap up'])
     else
       @return.push(['leap down'])
