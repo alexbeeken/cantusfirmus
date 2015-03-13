@@ -15,7 +15,7 @@ describe 'Rules class' do
       expect(@rules.find_rule_breaking_relationships(@phrase).include?('leap')).to eq(true)
     end
 
-    it 'returns the string "dissonant" in an array when given a @phrase of two notes'
+    it 'returns the string "dissonant" in an array when given a @phrase of two notes' do
       @phrase.add_note(2)
       expect(@rules.find_rule_breaking_relationships(@phrase).include?('dissonant')).to eq(true)
     end
