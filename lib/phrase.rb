@@ -3,15 +3,11 @@ class Phrase
 
   def initialize(params = {})
     @notes = [0]
-    @length = [params.fetch(:length, 8)]
+    @length = params.fetch(:length, 8)
   end
 
   def add_note(note)
     @notes.push(note)
-  end
-
-  def length
-    @notes.length
   end
 
   def last

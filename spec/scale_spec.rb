@@ -8,6 +8,7 @@ describe 'Scale class' do
   end
 
   describe '#get_notes_for_relationship' do
+
     it 'returns notes based on the given relationship to given note with defaults 0 and dissonant' do
       expect(@test_scale.get_notes_for_relationship()).to eq([-10, 11])
     end
@@ -36,5 +37,7 @@ describe 'Scale class' do
       expect(@test_scale.get_notes_for_relationship({:relationship => 'step down', :note => 2})).to eq([-1, 0])
       expect(@test_scale.get_notes_for_relationship({:relationship => 'leap up', :note => 9})).to eq([14, 16])
     end
+
+    
   end
 end

@@ -1,4 +1,5 @@
 require_relative '../lib/rules.rb'
+require_relative '../lib/phrase.rb'
 require 'pry'
 
 describe 'Rules class' do
@@ -9,7 +10,7 @@ describe 'Rules class' do
   end
 
   describe '#find_rule_breaking_relationships' do
-
+    
     it '#returns the string "dissonant" in an array when when given a @phrase of one note' do
       expect(@rules.find_rule_breaking_relationships(@phrase).include?('dissonant')).to eq(true)
       expect(@rules.find_rule_breaking_relationships(@phrase).include?('leap')).to eq(true)
@@ -53,11 +54,22 @@ describe 'Rules class' do
       expect(@rules.find_rule_breaking_relationships(@phrase).include?('leap up'))
     end
 
-    it 'returns "major_second up" when the last two intervals are major seconds down' do
+    it 'returns "major_second down" when the last two intervals are major seconds down' do
       @phrase.add_note(-3)
       @phrase.add_note(-5)
       @phrase.add_note(-7)
-      expect(@rules.find_rule_breaking_relationships(@phrase).include?('major_second up'))
+      expect(@rules.find_rule_breaking_relationships(@phrase)).to eq(['major_second down'])
+    end
+
+    it 'returns "major_second up" when the last two intervals are major seconds up' do
+      @phrase.add_note(2)
+      @phrase.add_note(4)
+      expect(@rules.find_rule_breaking_relationships(@phrase)).to eq(['major_second up'])
+    end
+
+    it 'fails this test' do
+      @phrase.add_note(2)
+      expect(@rules.find_rule_breaking_relationships(@phrase)).to eq('pancakes')
     end
   end
 end
