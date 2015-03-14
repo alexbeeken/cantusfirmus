@@ -3,15 +3,13 @@ require 'pry'
 
 describe 'Candidates class' do
 
-  before :each do
-    @test_candidates = Candidates.new({})
-    @test_phrase = Phrase.new({})
-  end
-
   describe '#next_note' do
-    it 'returns a second note and puts it into the given phrase' do
-      @test_phrase.add_note(@test_candidates.next_note(@test_phrase))
-      expect(@test_phrase.notes.length).to eq(2)
+    it 'chooses a note based on the rules class' do
+      @phrase = Phrase.new({})
+      @scale = Scale.new({})
+      @rules = Rules.new({})
+      @test_candidates = Candidates.new({:phrase => @phrase, :scale => @scale, :rules => @rules})
+      expect([[-15], [-12], [-10],[-8],[-7],[-5],[-3],[-1],[0],[2],[4],[5],[7],[9],[12],[14],[16]].include?(@test_candidates.next_note)).to eq(true)
     end
   end
 end

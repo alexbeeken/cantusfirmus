@@ -2,9 +2,39 @@ class Candidates
   attr_reader(:phrase, :notes, :scale)
 
   def initialize(params = {})
-    @notes = [-16, -15, -14, -13, -12, -11, -10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+    @notes = [-15, -13, -12, -10, -8, -7, -5, -3, -1, 0, 2, 4, 5, 7, 9, 11, 12, 14, 16]
     @phrase = params.fetch(:phrase, Phrase.new())
     @scale = params.fetch(:scale, Scale.new())
+    @rules = params.fetch(:rules, Rules.new())
+  end
+
+  def next_note
+    @to_remove = []
+    picked_note = [0]
+    return picked_note
+  end
+
+  private
+
+  def find_and_remove_rule_breakers
+    remove_rule_breakers(find_rule_breakers)
+  end
+
+  def find_rule_breakers
+    relationships = []
+    @rules.find_rule_breaking_relationships(@phrase).each do |relationship|
+      rule_breakers.push(@scale.get_notes_for_relationship(@phrase.last, relationship))
+    end
+    return rule_breakers.uniq
+  end
+
+  def remove_rule_breakers(rule_breakers)
+    loop_notes = @notes.dup
+    loop_notes.each() do |note|
+      if rule_breakers.include?(note)
+        @notes.delete(note)
+      end
+    end
   end
 
 end
