@@ -39,11 +39,18 @@ describe 'Rules class' do
       expect(@rules.find_rule_breaking_relationships(@phrase).include?('all_nonleading_tones'))
     end
 
-    it 'returns "leap down" when the second to last interval of an unfinished phrase is a leap and the last interval is in the up direction' do
+    it 'returns "leap down" when the second to last interval of an unfinished phrase is a leap and the last interval is in the down direction' do
       @phrase.add_note(2)
       @phrase.add_note(10)
       @phrase.add_note(12)
       expect(@rules.find_rule_breaking_relationships(@phrase).include?('leap down'))
+    end
+
+    it 'returns "leap up" when the second to last interval of an unfinished phrase is a leap and the last interval is in the up direction' do
+      @phrase.add_note(-2)
+      @phrase.add_note(-10)
+      @phrase.add_note(-12)
+      expect(@rules.find_rule_breaking_relationships(@phrase).include?('leap up'))
     end
   end
 end
