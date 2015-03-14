@@ -21,8 +21,8 @@ describe 'Phrase class' do
   end
 
   describe('#length') do
-    it 'returns the number of notes in the phrase' do
-      expect(@test_phrase.length).to eq(1)
+    it 'returns the expected length of the phrase when it is done' do
+      expect(@test_phrase.length).to eq(8)
     end
   end
 

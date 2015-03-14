@@ -35,10 +35,8 @@ class Rules
   end
 
   def last_interval_leap_check
-    if (@first - @second).abs >= 5
+    if leap?(@first, @second)
       second_to_last_interval_leap_check
-    else
-      second_to_last_interval_up_check
     end
   end
 
@@ -65,6 +63,8 @@ class Rules
   def second_to_last_interval_leap_check
     if leap?(@second, @third)
       @return.push('leap')
+    else
+      second_to_last_interval_up_check
     end
   end
 
@@ -90,7 +90,7 @@ class Rules
 
   def double_major_second_check
     if double_major_second_in_same_direction?(@first, @second, @third)
-      if up?(@first, @second)
+      if up?(@second, @first)
         @return.push('major_second up')
       else
         @return.push('major_second down')

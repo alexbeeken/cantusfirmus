@@ -14,6 +14,10 @@ class Phrase
     @notes.last
   end
 
+  def current_length
+    @notes.length
+  end
+
   def second_to_last
     @notes[@notes.length - 2]
   end
