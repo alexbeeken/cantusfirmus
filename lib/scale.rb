@@ -7,7 +7,6 @@ class Scale
   end
 
   def get_notes_for_relationship(params = {})
-    @pool = [-15, -13, -12, -10, -8, -7, -5, -3, -1, 0, 2, 4, 5, 7, 9, 11, 12, 14, 16]
     output = []
     parse_input(params)
     output = check_notes(@note)
@@ -19,14 +18,12 @@ class Scale
   def parse_input(params)
     @note = params.fetch(:note, 0)
     input = params.fetch(:relationship, 'dissonant').split(" ")
-    puts("input[0] = #{input[0]} input[1] = #{input[1]}")
     if ((input[0] != 'up') && (input[0] != 'down') && (input[0] != 'any'))
       @relationship = input[0]
       @direction = params.fetch(:direction, input[1])
     else
       @direction = params.fetch(:direction, input[0])
     end
-    puts("relationship = #{@relationship}, direction = #{@direction}")
   end
 
 
@@ -60,6 +57,8 @@ class Scale
     return !(leap?(note1, note2)) if @relationship == 'step'
     return !(tonic?(note2)) if @relationship == 'all_except_tonic'
     return !(leading_tone?(note2)) if @relationship == 'all_nonleading_tones'
+    return major_second?(note1, note2) if @relationship == 'major_second'
+    return m_or_M_third?(note1, note2) if @relationship == 'm_or_M_third'
     return true if @relationship == nil
     return true
   end
@@ -74,6 +73,14 @@ class Scale
 
   def leading_tone?(note)
     ([-13, -10, -1, 2, 11, 14 ].include?(note))
+  end
+
+  def major_second?(note1, note2)
+    (get_interval(note1, note2).abs == 2)
+  end
+
+  def m_or_M_third?(note1, note2)
+    ([3, 4].include?(get_interval(note1, note2).abs))
   end
 
   def tonic?(note2)

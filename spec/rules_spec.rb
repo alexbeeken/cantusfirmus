@@ -52,5 +52,12 @@ describe 'Rules class' do
       @phrase.add_note(-12)
       expect(@rules.find_rule_breaking_relationships(@phrase).include?('leap up'))
     end
+
+    it 'returns "major_second up" when the last two intervals are major seconds down' do
+      @phrase.add_note(-3)
+      @phrase.add_note(-5)
+      @phrase.add_note(-7)
+      expect(@rules.find_rule_breaking_relationships(@phrase).include?('major_second up'))
+    end
   end
 end
