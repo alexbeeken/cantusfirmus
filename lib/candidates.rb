@@ -2,7 +2,7 @@ class Candidates
   attr_reader(:phrase, :notes, :scale)
 
   def initialize(params = {})
-    @notes = [-15, -13, -12, -10, -8, -7, -5, -3, -1, 0, 2, 4, 5, 7, 9, 11, 12, 14, 16]
+    @notes = [-15, -13, -12, -10, -8, -7, -5, -3, -1, 2, 4, 5, 7, 9, 11, 12, 14, 16]
     @phrase = params.fetch(:phrase, Phrase.new())
     @scale = params.fetch(:scale, Scale.new())
     @rules = params.fetch(:rules, Rules.new())
@@ -23,11 +23,22 @@ class Candidates
 
   def find_rule_breakers
     rule_breakers = []
-    binding.pry
     @rules.find_rule_breaking_relationships(@phrase).each do |relationship|
       rule_breakers.push(@scale.get_notes_for_relationship({:note => @phrase.last, :relationship => relationship}))
     end
+    rule_breakers = munge_rule_breakers(rule_breakers)
     return rule_breakers.uniq
+  end
+
+  def munge_rule_breakers(rule_breakers)
+    rule_breakers = rule_breakers.join(" ")
+    rule_breakers = rule_breakers.split(" ")
+    rule_breakers.uniq
+    output = []
+    rule_breakers.each do |note|
+      output.push(note.to_i)
+    end
+    return output
   end
 
   def remove_rule_breakers(rule_breakers)

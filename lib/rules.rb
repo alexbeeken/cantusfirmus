@@ -84,7 +84,11 @@ class Rules
 
   def thirds_check
     if double_third_in_same_direction?(@first, @second, @third)
-      @return.push('m_or_M_third')
+      if up?(@second, @first)
+        @return.push('m_or_M_third up')
+      else
+        @return.push('m_or_M_third down')
+      end
     end
   end
 
