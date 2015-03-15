@@ -2,7 +2,7 @@ class Candidates
   attr_reader(:phrase, :notes, :scale)
 
   def initialize(params = {})
-    @notes = [-15, -13, -12, -10, -8, -7, -5, -3, -1, 2, 4, 5, 7, 9, 11, 12, 14, 16]
+    @notes = [-15, -13, -12, -10, -8, -7, -5, -3, -1, 0, 2, 4, 5, 7, 9, 11, 12, 14, 16]
     @phrase = params.fetch(:phrase, Phrase.new())
     @scale = params.fetch(:scale, Scale.new())
     @rules = params.fetch(:rules, Rules.new())
@@ -11,11 +11,16 @@ class Candidates
   def next_note
     @to_remove = []
     find_and_remove_rule_breakers
+    remove_starting_note
     picked_note = @notes.sample()
     return picked_note
   end
 
   private
+
+  def remove_starting_note
+    @notes.delete(@phrase.last)
+  end
 
   def find_and_remove_rule_breakers
     remove_rule_breakers(find_rule_breakers)

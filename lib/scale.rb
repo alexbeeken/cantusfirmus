@@ -44,7 +44,7 @@ class Scale
   end
 
   def get_interval(note1, note2)
-    return (note1 - note2)
+    (note1 - note2)
   end
 
   def leap?(note1, note2)
