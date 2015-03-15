@@ -16,20 +16,18 @@ class Rules
     @third = @phrase.third_to_last
     @current_length = @phrase.notes.length
     @length = @phrase.length
-    @return = []
+    @return = ['dissonant']
     @notes = @phrase.notes
   end
 
   def exception_checks
     first_note_check_and_remove
-    second_note_check_and_remove
     last_note_check_and_remove
     second_to_last_note_check_and_remove
   end
 
   def first_note_check_and_remove
     if @phrase.notes.length == 1
-      @return.push('dissonant')
       @return.push('leap')
     end
   end
@@ -51,12 +49,6 @@ class Rules
       last_interval_leap_check
       double_major_second_check
       thirds_check
-    end
-  end
-
-  def second_note_check_and_remove
-    if (@current_length == 2) && (@second != nil)
-      @return.push('dissonant')
     end
   end
 
