@@ -16,7 +16,7 @@ class Rules
     @third = @phrase.third_to_last
     @current_length = @phrase.notes.length
     @length = @phrase.length
-    @return = ['dissonant']
+    @return = ['dissonant', 'not_in_octave']
     @notes = @phrase.notes
   end
 
