@@ -10,7 +10,8 @@ class Candidates
 
   def next_note
     @to_remove = []
-    picked_note = [0]
+    find_and_remove_rule_breakers
+    picked_note = @notes.sample()
     return picked_note
   end
 
@@ -21,9 +22,10 @@ class Candidates
   end
 
   def find_rule_breakers
-    relationships = []
+    rule_breakers = []
+    binding.pry
     @rules.find_rule_breaking_relationships(@phrase).each do |relationship|
-      rule_breakers.push(@scale.get_notes_for_relationship(@phrase.last, relationship))
+      rule_breakers.push(@scale.get_notes_for_relationship({:note => @phrase.last, :relationship => relationship}))
     end
     return rule_breakers.uniq
   end
@@ -38,6 +40,12 @@ class Candidates
   end
 
 end
+
+# class NotAtAllRandom
+#   def self.rand x=55
+#
+#   end
+# end
 #
 #   def next_note
 #     @to_remove = []

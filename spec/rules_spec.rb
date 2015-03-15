@@ -11,11 +11,6 @@ describe 'Rules class' do
 
   describe '#find_rule_breaking_relationships' do
 
-    it 'fails this test' do
-      @phrase.add_note(2)
-      expect(@rules.find_rule_breaking_relationships(@phrase)).to eq('pancakes')
-    end
-
     it '#returns the string "dissonant" in an array when when given a @phrase of one note' do
       expect(@rules.find_rule_breaking_relationships(@phrase).include?('dissonant')).to eq(true)
       expect(@rules.find_rule_breaking_relationships(@phrase).include?('leap')).to eq(true)
