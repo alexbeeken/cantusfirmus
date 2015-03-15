@@ -40,7 +40,7 @@ class Rules
 
   def last_note_check_and_remove
     if (@length - 1) == (@current_length)
-      @return.push('all_but_tonic')
+      @return.push('all_except_tonic')
     end
   end
 
@@ -61,7 +61,7 @@ class Rules
   end
 
   def second_to_last_interval_up_check
-    if up?(@second, @third)
+    if up?(@third, @second)
       @return.push('leap up')
     else
       @return.push('leap down')
@@ -70,7 +70,8 @@ class Rules
 
   def second_to_last_note_check_and_remove
     if @current_length == (@length - 2)
-      @return.push('nonleading')
+      @return.push('all_nonleading_tones')
+      @return.push('all_but_closest_to_tonic')
     end
   end
 

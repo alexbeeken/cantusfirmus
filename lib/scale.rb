@@ -60,8 +60,17 @@ class Scale
     return major_second?(note1, note2) if @relationship == 'major_second'
     return m_or_M_third?(note1, note2) if @relationship == 'm_or_M_third'
     return octave_range?(note1, note2) if @relationship == 'not_in_octave'
+    return find_closest
     return true if @relationship == nil
     return true
+  end
+
+  def closest_to_note1(note1, note2)
+    if (note - candidate).abs < closest_compare
+      closest = candidate
+      closest_compare = (note - candidate).abs
+      return true
+    end
   end
 
   def correct_direction?(note1, note2)
@@ -73,7 +82,7 @@ class Scale
   end
 
   def octave_range?(note1, note2)
-    (note1 - note2) > 12
+    (note1 - note2).abs > 12
   end
 
   def leading_tone?(note)
