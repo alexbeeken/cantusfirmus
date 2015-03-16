@@ -11,7 +11,9 @@ get '/' do
 end
 
 get '/form_submit' do
-  @cantusfirmus = build_cantusfirmus(params.fetch('length').to_i)
+  @hash = build_cantusfirmus(params.fetch('key', "60").to_i, params.fetch('length').to_i)
+  @cantusfirmus = @hash[:cantusfirmus]
   @length = params.fetch('length').to_i
+  @key = @hash[:key]
   erb(:index)
 end

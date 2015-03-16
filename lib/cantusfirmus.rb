@@ -3,12 +3,12 @@ require_relative('phrase.rb')
 require_relative('scale.rb')
 require_relative('NoteConverter.rb')
 
-def build_cantusfirmus(length)
+def build_cantusfirmus(tonic, length)
 
   phrase = Phrase.new({:length => length})
   scale = Scale.new()
   rules = Rules.new()
-  noteconv = NoteConverter.new()
+  noteconv = NoteConverter.new({:tonic => tonic})
 
   (length-1).times do |counter|
     candidates = Candidates.new({:phrase => phrase, :scale => scale, :rules => rules})
@@ -19,5 +19,5 @@ def build_cantusfirmus(length)
 
   output.push(noteconv.convert(phrase.notes))
 
-  return output
+  return {:cantusfirmus => output, :key => noteconv.get_one_letter_name(tonic)}
 end
