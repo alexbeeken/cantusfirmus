@@ -74,7 +74,7 @@ class NoteConverter
 
   def get_one_letter_name(note_number)
     scale_number = ((note_number % 12) + (12 - (@tonic % 12))) % 12
-    reference = ["C","","D","","E","F","","G","","A","","B","C","","D","","E","F","","G","G#","A","A#","B"]
+    reference = ["C","C#","D","D#","E","F","F#","G","G#","A","A#","B","C","C#","D","D#","E","F","F#","G","G#","A","A#","B"]
     return reference[scale_number + (@tonic % 12)]
   end
 
