@@ -90,8 +90,12 @@ class Scale
 
   def tonic?(note1)
     if [-12, 0, 12].include?(note1)
-      get_interval(@note, note1).abs <= 5
+      within_fourth?(@note, note1)
     end
+  end
+
+  def within_fourth?(note1, note2)
+    get_interval(note1, note2).abs <= 5
   end
 
   def up?(note1, note2)
