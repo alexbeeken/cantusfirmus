@@ -40,6 +40,7 @@ class Rules
 
   def last_note_check_and_remove
     if (@length - 1) == (@current_length)
+      @return.delete('dissonant')
       @return.push('all_except_tonic')
     end
   end
@@ -71,7 +72,6 @@ class Rules
   def second_to_last_note_check_and_remove
     if @current_length == (@length - 2)
       @return.push('all_nonleading_tones')
-      @return.push('all_but_closest_to_tonic')
     end
   end
 

@@ -100,7 +100,7 @@ describe 'Candidates class' do
       puts("Number of candidates #{@test_candidates.last_selection.length}")
       puts("Rule breakers: #{@test_candidates.last_rules}")
       puts("-------------------------------------")
-      expect(@test_candidates.last_selection).to eq([-10])
+      expect(@test_candidates.last_selection).to eq([-10, -1])
     end
 
     it 'correctly finds the next possible notes for [0, -3, -15, -13, -15, -13, -10] (8)' do
