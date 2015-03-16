@@ -35,6 +35,8 @@ class Candidates
       @last_rules.push(relationship)
       rule_breakers.push(@scale.get_notes_for_relationship({:note => @phrase.last, :relationship => relationship}))
     end
+    #checks for rule that 'no two intervals should exceed an octave in any direction'
+    rule_breakers.push(@scale.get_notes_for_relationship({:note => @phrase.second_to_last, :relationship => 'not_in_octave'}))
     rule_breakers = munge_rule_breakers(rule_breakers)
     return rule_breakers.uniq
   end
