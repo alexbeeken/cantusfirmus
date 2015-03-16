@@ -38,6 +38,5 @@ describe 'Scale class' do
       expect(@test_scale.get_notes_for_relationship({:relationship => 'leap up', :note => 9})).to eq([14, 16])
     end
 
-    
   end
 end

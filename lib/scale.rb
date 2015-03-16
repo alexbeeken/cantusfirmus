@@ -59,7 +59,8 @@ class Scale
     return !(leading_tone?(note2)) if @relationship == 'all_nonleading_tones'
     return major_second?(note1, note2) if @relationship == 'major_second'
     return m_or_M_third?(note1, note2) if @relationship == 'm_or_M_third'
-    return octave_range?(note1, note2) if @relationship == 'not_in_octave'
+    return range?(note1, note2, 12) if @relationship == 'not_in_octave'
+    return range?(note1, note2, 16) if @relationship == 'not_in_tenth'
     return true if @relationship == nil
     return true
   end
@@ -72,8 +73,8 @@ class Scale
     return true
   end
 
-  def octave_range?(note1, note2)
-    (note1 - note2).abs > 12
+  def range?(note1, note2, range)
+    (note1 - note2).abs > range
   end
 
   def leading_tone?(note)
