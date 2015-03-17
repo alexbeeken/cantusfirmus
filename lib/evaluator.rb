@@ -5,11 +5,27 @@ class Evaluator
     @length = phrase.notes.length
     @steps = 0
     @leaps = 0
+    @range = 0
     find_number_of_steps
-    return {:steps => @steps, :leaps => @leaps }
+    find_range
+    return {:steps => @steps, :leaps => @leaps, :range => @range }
   end
 
   private
+  
+  def self.find_range
+    highest = -100
+    lowest = 100
+    @phrase.each do |note|
+      if note < lowest
+        lowest = note
+      end
+      if note > highest
+         highest = note
+      end
+      @range = (lowest - highest).abs
+    end
+  end
 
   def self.find_number_of_steps
     last_note = nil

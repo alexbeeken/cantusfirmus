@@ -19,4 +19,10 @@ describe 'Evaluator class' do
     expect(Evaluator.get_statistics(@phrase)[:leaps]).to eq(2)
   end
   
+  it 'returns the range, as an integer, of the phrase in its current state' do
+    @phrase.add_note(5)
+    @phrase.add_note(12)
+    expect(Evaluator.get_statistics(@phrase)[:range]).to eq(12)
+  end
+  
 end
