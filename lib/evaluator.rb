@@ -13,8 +13,8 @@ class Evaluator
     last_note = nil
     count = 0
     for index in 0..(@length - 1)
-      if !(@phrase[index].nil?) && !(@phrase[index - 1].nil?)
-        if (@phrase[index] - @phrase[index -1]).abs == 2
+      if self.these_two_not_nil?(@phrase[index], @phrase[index - 1])
+        if M2?(@phrase[index], @phrase[index -1])
           count += 1
         end
       end
@@ -22,4 +22,11 @@ class Evaluator
     return count
   end
 
+  def self.these_two_not_nil?(note1, note2)
+    return (!(note1.nil?) && !(note2.nil?))
+  end
+
+  def self.M2?(note1, note2)
+    (note1 - note2).abs == 2
+  end
 end
