@@ -3,8 +3,10 @@ class Evaluator
   def self.get_statistics(phrase)
     @phrase = phrase.notes
     @length = phrase.notes.length
-    number_of_steps = find_number_of_steps()
-    return {:steps => number_of_steps}
+    @steps = 0
+    @leaps = 0
+    find_number_of_steps
+    return {:steps => @steps, :leaps => @leaps }
   end
 
   private
@@ -15,11 +17,13 @@ class Evaluator
     for index in 0..(@length - 1)
       if self.these_two_not_nil?(@phrase[index], @phrase[index - 1])
         if M2?(@phrase[index], @phrase[index -1])
-          count += 1
+          @steps += 1
+        else
+          @leaps += 1
         end
       end
     end
-    return count
+    @leaps -= 1
   end
 
   def self.these_two_not_nil?(note1, note2)
