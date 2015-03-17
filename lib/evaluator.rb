@@ -7,13 +7,29 @@ class Evaluator
     @leaps = 0
     @range = 0
     @repeated_notes = 0
+    @intervals = []
     find_number_of_steps
     find_range
     find_number_of_repeated_notes
-    return {:steps => @steps, :leaps => @leaps, :range => @range, :repeated_notes => @repeated_notes }
+    find_intervals
+    return {:steps => @steps, 
+            :leaps => @leaps, 
+            :range => @range, 
+            :repeated_notes => @repeated_notes,
+            :intervals => @intervals}
   end
 
   private
+  
+  def self.find_intervals
+    for index in 1..(@length - 1)
+      if self.these_two_not_nil?(@phrase[index], @phrase[index - 1])
+        @intervals.push(get_interval(@phrase[index], @phrase[index -1]))
+      end
+    end
+    @intervals = @intervals.uniq
+  end
+      
   
   def self.find_number_of_repeated_notes
     notes = []
@@ -60,5 +76,9 @@ class Evaluator
 
   def self.M2?(note1, note2)
     (note1 - note2).abs == 2
+  end
+  
+  def self.get_interval(note1, note2)
+    (note1 - note2).abs
   end
 end
