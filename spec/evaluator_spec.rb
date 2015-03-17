@@ -48,6 +48,12 @@ describe 'Evaluator class' do
     @phrase.add_note(12)
     expect(Evaluator.get_statistics(@phrase)[:intervals]).to eq([1])
   end
-    
   
+  it 'returns the number of consecutive steps of the phrase in its current state' do
+    @phrase.add_note(2)
+    @phrase.add_note(4)
+    expect(Evaluator.get_statistics(@phrase)[:consecutive_steps]).to eq(1)
+    expect(Evaluator.get_statistics(@phrase)[:consecutive_steps_up]).to eq(1)
+    expect(Evaluator.get_statistics(@phrase)[:consecutive_steps_down]).to eq(0)
+  end
 end
