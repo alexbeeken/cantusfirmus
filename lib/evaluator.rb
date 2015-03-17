@@ -6,12 +6,24 @@ class Evaluator
     @steps = 0
     @leaps = 0
     @range = 0
+    @repeated_notes = 0
     find_number_of_steps
     find_range
-    return {:steps => @steps, :leaps => @leaps, :range => @range }
+    find_number_of_repeated_notes
+    return {:steps => @steps, :leaps => @leaps, :range => @range, :repeated_notes => @repeated_notes }
   end
 
   private
+  
+  def self.find_number_of_repeated_notes
+    notes = []
+    @phrase.each do |note|
+      notes.push(note)
+      if notes.include?(note)
+        @repeated_notes += 1
+      end
+    end
+  end
   
   def self.find_range
     highest = -100
