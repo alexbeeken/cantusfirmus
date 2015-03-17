@@ -78,7 +78,7 @@ class Scale
   end
 
   def leading_tone?(note)
-    ([-13, -10, -1, 2, 11, 14 ].include?(note))
+    ([-1, 2].include?(note))
   end
 
   def major_second?(note1, note2)
@@ -90,7 +90,7 @@ class Scale
   end
 
   def tonic?(note1)
-    if [-12, 0, 12].include?(note1)
+    if [0].include?(note1)
       within_fourth?(@note, note1)
     end
   end
