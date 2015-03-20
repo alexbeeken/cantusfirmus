@@ -1,29 +1,26 @@
 class Phrase
   attr_reader(:notes, :length)
 
-  def initialize(params = {})
-    @notes = [0]
-    @length = params.fetch(:length, 8)
+  def initialize
+    @candidates = [-3, -1, 0, 2, 4]
+    @state = [0]
+    @score = 0
   end
 
   def add_note(note)
-    @notes.push(note)
+    @state.push(note)
+    update_candidates(@state)
+    update_score(@state)
   end
 
-  def last
-    @notes.last
+  private
+
+  def update_candidates(candidates)
+
   end
 
-  def current_length
-    @notes.length
-  end
+  def update_score(notes)
 
-  def second_to_last
-    @notes[@notes.length - 2]
-  end
-
-  def third_to_last
-    @notes[@notes.length - 3]
   end
 
 end
