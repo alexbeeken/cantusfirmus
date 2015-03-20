@@ -1,46 +1,23 @@
-class Rules
+class Triplet
 
-  def find_rule_breaking_relationships(phrase)
-    @phrase = phrase
-    parse_input
-    exception_checks
-    middle_checks
-    return @return
+  def initialize(note1, note2, note3)
+    @note1 = note1
+    @note2 = note2
+    @note3 = note3
+    @valid = validate()
+    return validate
   end
 
   private
 
-  def parse_input
-    @first = @phrase.last
-    @second = @phrase.second_to_last
-    @third = @phrase.third_to_last
-    @current_length = @phrase.notes.length
-    @length = @phrase.length
-    @return = ['dissonant', 'not_in_octave']
-    @notes = @phrase.notes
-  end
-
-  def exception_checks
-    first_note_check_and_remove
-    last_note_check_and_remove
-    second_to_last_note_check_and_remove
-  end
-
-  def first_note_check_and_remove
-    if @phrase.notes.length == 1
-      @return.push('leap')
-    end
+  def validate
+    last_interval_leap_check
+    
   end
 
   def last_interval_leap_check
     if leap?(@first, @second)
       second_to_last_interval_leap_check
-    end
-  end
-
-  def last_note_check_and_remove
-    if (@length - 1) == (@current_length)
-      @return.push('all_except_tonic')
     end
   end
 
@@ -54,7 +31,7 @@ class Rules
 
   def second_to_last_interval_leap_check
     if leap?(@second, @third)
-      @return.push('leap')
+      return false if leap?(@note1, @note2)
     else
       second_to_last_interval_up_check
     end
@@ -96,6 +73,12 @@ class Rules
 
   def major_second?(note1, note2)
     (note1 - note2).abs == 2
+  end
+    
+   def tonic?(note1)
+    if [0].include?(note1)
+      within_fourth?(@note, note1)
+    end
   end
 
   def third?(note1, note2)
