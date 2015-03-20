@@ -1,14 +1,16 @@
 class Phrase
-  attr_reader(:notes, :length)
+  attr_reader(:state, :length, :candidates, :score)
 
-  def initialize
+  def initialize(params = {})
     @candidates = [-3, -1, 0, 2, 4]
     @state = [0]
     @score = 0
+    @length = params.fetch(:length, 8)
   end
 
   def add_note(note)
-    @state.push(note)
+    (@length - 1).times do
+    @state.push(@candidates.sample())
     update_candidates(@state)
     update_score(@state)
   end
@@ -16,11 +18,30 @@ class Phrase
   private
 
   def update_candidates(candidates)
-
+    candidates = @state.last.get_diatonics_within_octave
+    check_for_validity
+    get_top_two
   end
 
   def update_score(notes)
-
+    #evaluate
   end
 
+  def check_for_validity
+    output = []
+    @candidates.each do |candidate|
+      if candidate.valid?(@state[-1], @state[-2])
+        output.push(candidate)
+      end
+    end
+    @candidates = output
+  end
+
+  def get_top_two
+    test_state = @state
+    @candidates.each do |candidate|
+      candidate.score = test_state.push(candidates)
+      #get evaluation score for test_state
+    end
+  end
 end
