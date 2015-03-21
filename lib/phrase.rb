@@ -1,13 +1,18 @@
 class Phrase
-  attr_reader(:notes, :length)
+  attr_reader(:notes, :length, :score)
 
   def initialize(params = {})
     @notes = [0]
     @length = params.fetch(:length, 8)
+    @score = 0
   end
 
   def add_note(note)
     @notes.push(note)
+  end
+
+  def set_score(score)
+    @score = score
   end
 
   def last

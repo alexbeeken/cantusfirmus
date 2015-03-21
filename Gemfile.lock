@@ -4,6 +4,7 @@ GEM
     backports (3.6.4)
     coderay (1.1.0)
     diff-lcs (1.2.5)
+    json (1.8.2)
     method_source (0.8.2)
     multi_json (1.11.0)
     pry (0.10.1)
@@ -46,6 +47,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  json
   pry
   rspec
   sinatra
