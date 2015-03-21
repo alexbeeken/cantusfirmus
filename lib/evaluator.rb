@@ -31,6 +31,11 @@ class Evaluator
             :percentage_of_steps => @percentage_of_steps}
   end
 
+  def self.get_score(phrase)
+    statistics = get_statistics(phrase)
+    return statistics[:steps]
+  end
+
   private
 
   def self.find_percentage_of_leaps_steps

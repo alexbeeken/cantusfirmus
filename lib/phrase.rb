@@ -6,6 +6,7 @@ class Phrase
     @state = [0]
     @score = 0
     @length = params.fetch(:length, 8)
+    @score = 0
   end
 
   def add_note(note)
@@ -15,7 +16,13 @@ class Phrase
     update_score(@state)
   end
 
-  private
+  def set_score(score)
+    @score = score
+  end
+
+  def last
+    @notes.last
+  end
 
   def update_candidates(candidates)
     candidates = @state.last.get_diatonics_within_octave
