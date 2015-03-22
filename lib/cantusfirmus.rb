@@ -14,6 +14,7 @@ def build_cantusfirmus(tonic, length, examples)
   (length-1).times do |counter|
     candidates = Candidates.new({:phrase => phrase, :scale => scale, :rules => rules})
     phrase.add_note(candidates.next_note)
+    puts("ADDING A NOTE TO PHRASE : #{phrase.notes}")
   end
 
   output = []

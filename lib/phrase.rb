@@ -2,7 +2,7 @@ class Phrase
   attr_reader(:notes, :length, :score)
 
   def initialize(params = {})
-    @notes = [0]
+    @notes = params.fetch(:notes, [0])
     @length = params.fetch(:length, 8)
     @score = 0
   end

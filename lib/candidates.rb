@@ -16,6 +16,7 @@ class Candidates
     remove_starting_note
     picked_note = (Note_Picker.new({:phrase => @phrase, :candidates => @notes})).pick_note
     @last_selection = @notes
+    puts("DEBUGGING #{picked_note}")
     return picked_note
   end
 
