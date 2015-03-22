@@ -48,7 +48,7 @@ class Evaluator
   end
 
   def self.score_dev(number)
-    score_mod = number
+    score_mod = number.abs
     return score_mod
   end
 
