@@ -1,18 +1,27 @@
 Cantus Firmus Generator
 ===============
 
-This is the refactored version of an app that outputs an array that is intended to play a cantus firmus inside of Sonic Pi. A cantus firmus is a series of whole notes used in strict counterpoint writing. The ultimate goal of this project is to randomly generate a complete composition and play it in sonic pi directly.
+This is an app that allows you to generate a [Cantus Firmus](www.openmusictheory.com/cantusFirmus.html) using real world examples to guide it's creation.
+
+It works by generating a phrase and adding one note at a time. Before it can add a note, the program checks for "hard rules", with the rules and scale classes. Next it checks for compliance with "soft rules" from given examples, with the note_picker and evaluator classes.
+
+You can read more about my thought process on [my blog](www.alexbeeken.com).
 
 ## Installation
 
-1. Navigate to a local directory of your choice and clone the project with `git clone http://github.com/alexbeeken/cantusfirmus2`
+You can see the latest working version on [this heroku link](cantusfirmusgenerator.herokuapp.com).
 
-2. Run with `ruby main.rb`.
+1. You can also clone this repository with `git clone http://github.com/alexbeeken/cantusfirmus2`.
+
+2. Navigate to it's directory on your local machine and run `bundle`.
+
+3. Run `ruby app.rb`.
+
+4. Open a browser and go to `localhost:4567`.
 
 ## Testing
 
 Run `rspec` in the home directory.
-
 
 ## Contributing
 
