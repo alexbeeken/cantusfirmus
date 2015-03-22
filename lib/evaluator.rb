@@ -24,7 +24,6 @@ class Evaluator
             :leaps => @leaps,
             :range => @range,
             :repeated_notes => @repeated_notes,
-            :intervals => @intervals,
             :consecutive_steps => @consecutive_steps,
             :consecutive_steps_up => @consecutive_steps_up,
             :consecutive_steps_down => @consecutive_steps_down,
@@ -48,23 +47,8 @@ class Evaluator
     return score
   end
 
-  def self.score_dev(st_dev)
-    score_mod = 0
-    if (st_dev) < 1
-      score_mod += 1
-      if (st_dev) < 0.5
-        score_mod += 1
-        if (st_dev) < 0.25
-          score_mod += 1
-          if (st_dev) < 0.10
-            score_mod += 1
-            if (st_dev) < 0.01
-              score_mod += 2
-            end
-          end
-        end
-      end
-    end
+  def self.score_dev(number)
+    score_mod = number
     return score_mod
   end
 
@@ -73,7 +57,6 @@ class Evaluator
       :leaps => 0,
       :range => 0,
       :repeated_notes => 0,
-      :intervals => [],
       :consecutive_steps => 0,
       :consecutive_steps_up => 0,
       :consecutive_steps_down => 0,
@@ -96,13 +79,6 @@ class Evaluator
     totals[:leaps] = totals[:leaps].to_f / stats_array.length.to_f
     totals[:range] = totals[:range].to_f / stats_array.length.to_f
     totals[:repeated_notes] = totals[:repeated_notes].to_f / stats_array.length.to_f
-
-    output = []
-    totals[:intervals].each do |array|
-      output += array
-    end
-    totals[:intervals] = output.uniq
-
     totals[:consecutive_steps] = totals[:consecutive_steps].to_f / stats_array.length.to_f
     totals[:consecutive_steps_up] = totals[:consecutive_steps_up].to_f / stats_array.length.to_f
     totals[:consecutive_steps_down] = totals[:consecutive_steps_down].to_f / stats_array.length.to_f
@@ -120,7 +96,6 @@ class Evaluator
       :leaps => 0,
       :range => 0,
       :repeated_notes => 0,
-      :intervals => [],
       :consecutive_steps => 0,
       :consecutive_steps_up => 0,
       :consecutive_steps_down => 0,

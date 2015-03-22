@@ -14,9 +14,8 @@ class Candidates
     @to_remove = []
     find_and_remove_rule_breakers
     remove_starting_note
-    picked_note = (Note_Picker.new({:phrase => @phrase, :candidates => @notes})).pick_note
+    picked_note = (Note_Picker.new({:phrase => @phrase, :candidates => @notes.dup})).pick_note
     @last_selection = @notes
-    puts("DEBUGGING #{picked_note}")
     return picked_note
   end
 

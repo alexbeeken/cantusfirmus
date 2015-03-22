@@ -4,7 +4,7 @@ class Phrase
   def initialize(params = {})
     @notes = params.fetch(:notes, [0])
     @length = params.fetch(:length, 8)
-    @score = 0
+    @score = params.fetch(:score, 0)
   end
 
   def add_note(note)
