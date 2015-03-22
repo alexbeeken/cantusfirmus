@@ -18,10 +18,13 @@ class Note_Picker
     top = Phrase.new({:score => -1})
     runner_up = Phrase.new({:score => -2})
     phrases.each do |phrase|
+      puts("LOOKING AT #{phrase.notes} WHICH SCORED #{phrase.score}")
       if phrase.score > top.score
         top = phrase
+        puts("^ IS THE TOP NOW")
       elsif phrase.score > runner_up.score
         runner_up = phrase
+        puts("^ IS THE RUNNER UP NOW")
       end
     end
 

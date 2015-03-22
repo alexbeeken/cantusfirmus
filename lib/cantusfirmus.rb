@@ -3,8 +3,9 @@ require_relative('phrase.rb')
 require_relative('scale.rb')
 require_relative('NoteConverter.rb')
 
-def build_cantusfirmus(tonic, length)
+def build_cantusfirmus(tonic, length, examples)
 
+  Evaluator.get_average(examples)
   phrase = Phrase.new({:length => length})
   scale = Scale.new()
   rules = Rules.new()

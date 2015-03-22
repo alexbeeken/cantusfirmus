@@ -1,4 +1,5 @@
 class Evaluator
+  @@averages = {}
 
   def self.get_statistics(phrase)
     @phrase = phrase.notes
@@ -32,8 +33,39 @@ class Evaluator
   end
 
   def self.get_score(phrase)
-    statistics = get_statistics(phrase)
-    return statistics[:steps]
+    score = 0
+    stats = get_statistics(phrase)
+    std_dev = get_standard_deviation(stats)
+    score += score_dev(std_dev[:steps])
+    score += score_dev(std_dev[:leaps])
+    score += score_dev(std_dev[:range])
+    score += score_dev(std_dev[:repeated_notes])
+    score += score_dev(std_dev[:consecutive_steps])
+    score += score_dev(std_dev[:consecutive_steps_up])
+    score += score_dev(std_dev[:consecutive_steps_down])
+    score += score_dev(std_dev[:percentage_of_leaps])
+    score += score_dev(std_dev[:percentage_of_steps])
+    return score
+  end
+
+  def self.score_dev(st_dev)
+    score_mod = 0
+    if (st_dev) < 1
+      score_mod += 1
+      if (st_dev) < 0.5
+        score_mod += 1
+        if (st_dev) < 0.25
+          score_mod += 1
+          if (st_dev) < 0.10
+            score_mod += 1
+            if (st_dev) < 0.01
+              score_mod += 2
+            end
+          end
+        end
+      end
+    end
+    return score_mod
   end
 
   def self.get_average(stats_array)
@@ -53,7 +85,6 @@ class Evaluator
       totals[:leaps] += stats[:leaps]
       totals[:range] += stats[:range]
       totals[:repeated_notes] += stats[:repeated_notes]
-      totals[:intervals].push(stats[:intervals])
       totals[:consecutive_steps] += stats[:consecutive_steps]
       totals[:consecutive_steps_up] += stats[:consecutive_steps_up]
       totals[:consecutive_steps_down] += stats[:consecutive_steps_down]
@@ -78,7 +109,35 @@ class Evaluator
     totals[:percentage_of_leaps] = totals[:percentage_of_leaps].to_f / stats_array.length.to_f
     totals[:percentage_of_steps] = totals[:percentage_of_steps].to_f / stats_array.length.to_f
 
+    @@averages = totals
+
     return totals
+  end
+
+  def self.get_standard_deviation(stats)
+    totals = @@averages
+    standard_deviation = {:steps => 0,
+      :leaps => 0,
+      :range => 0,
+      :repeated_notes => 0,
+      :intervals => [],
+      :consecutive_steps => 0,
+      :consecutive_steps_up => 0,
+      :consecutive_steps_down => 0,
+      :percentage_of_leaps => 0,
+      :percentage_of_steps => 0}
+
+      standard_deviation[:steps] = (stats[:steps] - totals[:steps])**2
+      standard_deviation[:leaps] = (stats[:leaps] - totals[:leaps])**2
+      standard_deviation[:range] = (stats[:range] - totals[:range])**2
+      standard_deviation[:repeated_notes] = (stats[:repeated_notes] - totals[:repeated_notes])**2
+      standard_deviation[:consecutive_steps] = (stats[:consecutive_steps] - totals[:consecutive_steps])**2
+      standard_deviation[:consecutive_steps_up] = (stats[:consecutive_steps_up] - totals[:consecutive_steps_up])**2
+      standard_deviation[:consecutive_steps_down] = (stats[:consecutive_steps_down] - totals[:consecutive_steps_down])**2
+      standard_deviation[:percentage_of_leaps] = (stats[:percentage_of_leaps] - totals[:percentage_of_leaps])**2
+      standard_deviation[:percentage_of_steps] = (stats[:percentage_of_steps] - totals[:percentage_of_steps])**2
+
+    return standard_deviation
   end
 
 
