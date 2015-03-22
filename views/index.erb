@@ -1,18 +1,16 @@
 
 
-<canvas width=700 height=100></canvas>
 
 <p>
+Raw Notes <%= @raw_notes %>
+<br>
+In the key of <%= @key %>
+<br>
 Here are your notes:
 <% @cantusfirmus.each do |note| %>
 <%= note %>
   &nbsp;
 <% end %>
-<br>
-<br>
-In the key of <%= @key %>
-<br>
-Raw Notes <%= @raw_notes %>
 <br>
 Score for this phrase <%= @raw_score %>
 </p>
