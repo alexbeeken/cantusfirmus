@@ -11,6 +11,10 @@ Here are your notes:
 <br>
 <br>
 In the key of <%= @key %>
+<br>
+Raw Notes <%= @raw_notes %>
+<br>
+Score for this phrase <%= @raw_score %>
 </p>
 
 <div class="vex-tabdiv"
@@ -25,3 +29,15 @@ notes :w <%= @cantusfirmus.join(" | ") %>
 
 options space=25
 </div>
+
+<p>
+Example Scores:
+
+<br>
+
+<% @example_scores.each do |score| %>
+
+<%= score %>
+<br>
+
+<% end %>

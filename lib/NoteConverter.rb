@@ -40,7 +40,10 @@ class NoteConverter
         end
       phrases.push(out_phrase)
       end
+    return phrases
+  end
 
+  def self.get_array_stats(phrases)
     stats_array = []
 
     phrases.each do |phrase|
@@ -48,6 +51,14 @@ class NoteConverter
     end
 
     return stats_array
+  end
+
+  def self.format_notes(array)
+    output = ""
+    array.each do |note|
+      output.concat("#{note} ")
+    end
+    return output
   end
 
   def draw_major_scale

@@ -22,5 +22,5 @@ def build_cantusfirmus(tonic, length, examples)
 
   output.push(noteconv.convert(phrase.notes))
 
-  return {:cantusfirmus => output, :key => noteconv.get_one_letter_name(tonic)}
+  return {:cantusfirmus => output, :key => noteconv.get_one_letter_name(tonic), :phrase => phrase}
 end
