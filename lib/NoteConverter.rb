@@ -29,6 +29,27 @@ class NoteConverter
     return output
   end
 
+  def self.parse_strings(string)
+    string = string.split('|')
+    phrases = []
+    string.each do |partial|
+      partial = partial.split(" ")
+      out_phrase = Phrase.new({:length => partial.length})
+        partial.each do |st_num|
+          out_phrase.add_note(st_num.to_i)
+        end
+      phrases.push(out_phrase)
+      end
+
+    stats_array = []
+
+    phrases.each do |phrase|
+      stats_array.push(Evaluator.get_statistics(phrase))
+    end
+
+    return stats_array
+  end
+
   def draw_major_scale
     @scale.push(@tonic - 15)
     @scale.push(@tonic - 13)

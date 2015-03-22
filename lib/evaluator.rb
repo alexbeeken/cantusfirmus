@@ -36,6 +36,47 @@ class Evaluator
     return statistics[:steps]
   end
 
+  def self.get_average(stats_array)
+    totals = {:steps => 0,
+      :leaps => 0,
+      :range => 0,
+      :repeated_notes => 0,
+      :intervals => [],
+      :consecutive_steps => 0,
+      :consecutive_steps_up => 0,
+      :consecutive_steps_down => 0,
+      :percentage_of_leaps => 0,
+      :percentage_of_steps => 0}
+
+    stats_array.each do |stats|
+      totals[:steps] += stats[:steps]
+      totals[:leaps] += stats[:leaps]
+      totals[:range] += stats[:range]
+      totals[:repeated_notes] += stats[:repeated_notes]
+      totals[:intervals].push(stats[:intervals])
+      totals[:consecutive_steps] += stats[:consecutive_steps]
+      totals[:consecutive_steps_up] += stats[:consecutive_steps_up]
+      totals[:consecutive_steps_down] += stats[:consecutive_steps_down]
+      totals[:percentage_of_leaps] += stats[:percentage_of_leaps]
+      totals[:percentage_of_steps] += stats[:percentage_of_steps]
+    end
+
+    totals[:steps] = totals[:steps].to_f / stats_array.length.to_f
+    totals[:leaps] = totals[:leaps].to_f / stats_array.length.to_f
+    totals[:range] = totals[:range].to_f / stats_array.length.to_f
+    totals[:repeated_notes] = totals[:repeated_notes].to_f / stats_array.length.to_f
+    totals[:intervals].uniq
+    totals[:consecutive_steps] = totals[:consecutive_steps].to_f / stats_array.length.to_f
+    totals[:consecutive_steps_up] = totals[:consecutive_steps_up].to_f / stats_array.length.to_f
+    totals[:consecutive_steps_down] = totals[:consecutive_steps_down].to_f / stats_array.length.to_f
+    totals[:percentage_of_leaps] = totals[:percentage_of_leaps].to_f / stats_array.length.to_f
+    totals[:percentage_of_steps] = totals[:percentage_of_steps].to_f / stats_array.length.to_f
+
+    return totals
+  end
+
+
+
   private
 
   def self.find_percentage_of_leaps_steps

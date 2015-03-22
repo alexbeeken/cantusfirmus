@@ -17,3 +17,10 @@ get '/form_submit' do
   @key = @hash[:key]
   erb(:index)
 end
+
+get '/evaluator_submit' do
+  input_array = params.fetch('input', '[0,0,0,0,0]')
+  stats_array = NoteConverter.parse_strings(input_array)
+  @averages = Evaluator.get_average(stats_array)
+  erb(:evaluator)
+end
