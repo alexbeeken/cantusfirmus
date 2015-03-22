@@ -65,7 +65,13 @@ class Evaluator
     totals[:leaps] = totals[:leaps].to_f / stats_array.length.to_f
     totals[:range] = totals[:range].to_f / stats_array.length.to_f
     totals[:repeated_notes] = totals[:repeated_notes].to_f / stats_array.length.to_f
-    totals[:intervals].uniq
+
+    output = []
+    totals[:intervals].each do |array|
+      output += array
+    end
+    totals[:intervals] = output.uniq
+
     totals[:consecutive_steps] = totals[:consecutive_steps].to_f / stats_array.length.to_f
     totals[:consecutive_steps_up] = totals[:consecutive_steps_up].to_f / stats_array.length.to_f
     totals[:consecutive_steps_down] = totals[:consecutive_steps_down].to_f / stats_array.length.to_f
