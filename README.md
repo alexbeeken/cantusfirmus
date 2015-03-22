@@ -1,15 +1,15 @@
 Cantus Firmus Generator
 ===============
 
-This is an app that allows you to generate a [Cantus Firmus](www.openmusictheory.com/cantusFirmus.html) using real world examples to guide it's creation.
+This is an app that allows you to generate a [Cantus Firmus](http://www.openmusictheory.com/cantusFirmus.html) using real world examples to guide it's creation.
 
 It works by generating a phrase and adding one note at a time. Before it can add a note, the program checks for "hard rules", with the rules and scale classes. Next it checks for compliance with "soft rules" from given examples, with the note_picker and evaluator classes.
 
-You can read more about my thought process on [my blog](www.alexbeeken.com).
+You can read more about my thought process on [my blog](http://www.alexbeeken.com).
 
 ## Installation
 
-You can see the latest working version on [this heroku link](cantusfirmusgenerator.herokuapp.com).
+You can see the latest working version on [this heroku link](http://cantusfirmusgenerator.herokuapp.com).
 
 1. You can also clone this repository with `git clone http://github.com/alexbeeken/cantusfirmus2`.
 
