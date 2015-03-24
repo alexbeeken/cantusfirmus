@@ -17,7 +17,6 @@ class Evaluator
     find_number_of_steps
     find_range
     find_number_of_repeated_notes
-    find_intervals
     find_consecutive_steps
     find_percentage_of_leaps_steps
     return {:steps => @steps,
@@ -115,8 +114,6 @@ class Evaluator
     return standard_deviation
   end
 
-
-
   private
 
   def self.find_percentage_of_leaps_steps
@@ -141,16 +138,6 @@ class Evaluator
       end
     end
   end
-
-  def self.find_intervals
-    for index in 1..(@length - 1)
-      if self.these_two_not_nil?(@phrase[index], @phrase[index - 1])
-        @intervals.push(get_interval(@phrase[index], @phrase[index -1]))
-      end
-    end
-    @intervals = @intervals.uniq
-  end
-
 
   def self.find_number_of_repeated_notes
     notes = []
