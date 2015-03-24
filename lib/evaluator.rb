@@ -89,6 +89,16 @@ class Evaluator
     return totals
   end
 
+  def self.get_array_stats(phrases)
+    stats_array = []
+
+    phrases.each do |phrase|
+      stats_array.push(get_statistics(phrase.notes))
+    end
+
+    return stats_array
+  end
+
   def self.get_standard_deviation(stats)
     totals = @@averages
     standard_deviation = {:steps => 0,

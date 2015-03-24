@@ -1,21 +1,3 @@
-require_relative('candidates.rb')
-require_relative('phrase.rb')
-require_relative('scale.rb')
-require_relative('NoteConverter.rb')
-
-def build_cantusfirmus(tonic, length, examples)
-
-  Evaluator.get_average(examples)
-  cantusfirmus = CantusFirmus.new({:length => length})
-  noteconv = NoteConverter.new({:tonic => tonic})
-
-  output = []
-
-  output.push(noteconv.convert(cantusfirmus.notes))
-
-  return {:cantusfirmus => output, :key => noteconv.get_one_letter_name(tonic), :phrase => cantusfirmus.notes}
-end
-
 class CantusFirmus
   attr_reader(:notes)
 
