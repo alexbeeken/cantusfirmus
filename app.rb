@@ -18,12 +18,12 @@ get '/form_submit' do
   @cantusfirmus = @hash[:cantusfirmus]
   @length = params.fetch('length').to_i
   @key = @hash[:key]
-  @raw_notes = NoteConverter.format_notes(@hash[:phrase].notes)
+  @raw_notes = NoteConverter.format_notes(@hash[:phrase])
   @raw_score = Evaluator.get_score(@hash[:phrase])
   @example_scores = []
   puts("PHRASE_ARRAY IS #{phrase_array}")
   phrase_array.each do |phrase|
-    @example_scores.push(Evaluator.get_score(phrase))
+    @example_scores.push(Evaluator.get_score(phrase.notes))
   end
   erb(:index)
 end

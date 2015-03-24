@@ -11,7 +11,7 @@ class Note_Picker
     @candidates.each do |candidate|
       test_phrase = Phrase.new({:notes => @phrase.notes.dup, :length => @phrase.length})
       test_phrase.add_note(candidate)
-      test_phrase.set_score(Evaluator.get_score(test_phrase))
+      test_phrase.set_score(Evaluator.get_score(test_phrase.notes))
       phrases.push(test_phrase)
     end
 

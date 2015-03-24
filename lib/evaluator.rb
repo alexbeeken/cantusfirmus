@@ -2,8 +2,8 @@ class Evaluator
   @@averages = {}
 
   def self.get_statistics(phrase)
-    @phrase = phrase.notes
-    @length = phrase.notes.length
+    @phrase = phrase
+    @length = phrase.length
     @steps = 0
     @leaps = 0
     @range = 0

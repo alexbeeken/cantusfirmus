@@ -47,7 +47,7 @@ class NoteConverter
     stats_array = []
 
     phrases.each do |phrase|
-      stats_array.push(Evaluator.get_statistics(phrase))
+      stats_array.push(Evaluator.get_statistics(phrase.notes))
     end
 
     return stats_array
