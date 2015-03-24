@@ -1,38 +1,16 @@
 class Evaluator
-  @@averages = {}
 
-  def self.get_statistics(phrase)
-    @phrase = phrase
-    @length = phrase.length
-    @steps = 0
-    @leaps = 0
-    @range = 0
-    @repeated_notes = 0
-    @intervals = []
-    @consecutive_steps = 0
-    @consecutive_steps_up = 0
-    @consecutive_steps_down = 0
-    @percentage_of_leaps = 0.0
-    @percentage_of_steps = 0.0
-    find_number_of_steps
-    find_range
-    find_number_of_repeated_notes
-    find_consecutive_steps
-    find_percentage_of_leaps_steps
-    return {:steps => @steps,
-            :leaps => @leaps,
-            :range => @range,
-            :repeated_notes => @repeated_notes,
-            :consecutive_steps => @consecutive_steps,
-            :consecutive_steps_up => @consecutive_steps_up,
-            :consecutive_steps_down => @consecutive_steps_down,
-            :percentage_of_leaps => @percentage_of_leaps,
-            :percentage_of_steps => @percentage_of_steps}
+  def initialize
+    @averages = nil
   end
 
-  def self.get_score(phrase)
+  def set_averages(params = {})
+    @averages = get_average(get_array_stats(params.fetch(:examples, [[0]])))
+  end
+
+  def get_score(phrase)
     score = 0
-    stats = get_statistics(phrase)
+    stats = phrase.stats
     std_dev = get_standard_deviation(stats)
     score += score_dev(std_dev[:steps])
     score += score_dev(std_dev[:leaps])
@@ -46,12 +24,12 @@ class Evaluator
     return score
   end
 
-  def self.score_dev(number)
+  def score_dev(number)
     score_mod = number.abs
     return score_mod
   end
 
-  def self.get_average(stats_array)
+  def get_average(stats_array)
     totals = {:steps => 0,
       :leaps => 0,
       :range => 0,
@@ -84,23 +62,21 @@ class Evaluator
     totals[:percentage_of_leaps] = totals[:percentage_of_leaps].to_f / stats_array.length.to_f
     totals[:percentage_of_steps] = totals[:percentage_of_steps].to_f / stats_array.length.to_f
 
-    @@averages = totals
-
     return totals
   end
 
-  def self.get_array_stats(phrases)
+  def get_array_stats(phrases)
     stats_array = []
 
     phrases.each do |phrase|
-      stats_array.push(get_statistics(phrase.notes))
+      stats_array.push(phrase.stats)
     end
 
     return stats_array
   end
 
-  def self.get_standard_deviation(stats)
-    totals = @@averages
+  def get_standard_deviation(stats)
+    totals = @averages
     standard_deviation = {:steps => 0,
       :leaps => 0,
       :range => 0,
@@ -126,71 +102,7 @@ class Evaluator
 
   private
 
-  def self.find_percentage_of_leaps_steps
-    @percentage_of_leaps = @leaps.to_f/(@length - 1).to_f
-    @percentage_of_steps = @steps.to_f/(@length - 1).to_f
-  end
 
-
-  def self.find_consecutive_steps
-    for index in 2..(@length - 1)
-      if self.these_two_not_nil?(@phrase[index], @phrase[index - 1])
-        if M2?(@phrase[index], @phrase[index -1])
-          if M2?(@phrase[index - 1], @phrase[index - 2])
-            @consecutive_steps += 1
-            if up?(@phrase[index], @phrase[index -1]) && up?(@phrase[index - 1], @phrase[index - 2])
-              @consecutive_steps_up += 1
-            elsif (!(up?(@phrase[index], @phrase[index -1])) && !(up?(@phrase[index - 1], @phrase[index - 2])))
-              @consecutive_steps_down += 1
-            end
-          end
-        end
-      end
-    end
-  end
-
-  def self.find_number_of_repeated_notes
-    notes = []
-    @phrase.each do |note|
-      notes.push(note)
-      if notes.include?(note)
-        @repeated_notes += 1
-      end
-    end
-  end
-
-  def self.find_range
-    highest = -100
-    lowest = 100
-    @phrase.each do |note|
-      if note < lowest
-        lowest = note
-      end
-      if note > highest
-         highest = note
-      end
-      @range = (lowest - highest).abs
-    end
-  end
-
-  def self.find_number_of_steps
-    last_note = nil
-    count = 0
-    for index in 0..(@length - 1)
-      if self.these_two_not_nil?(@phrase[index], @phrase[index - 1])
-        if M2?(@phrase[index], @phrase[index -1])
-          @steps += 1
-        else
-          @leaps += 1
-        end
-      end
-    end
-    @leaps -= 1
-  end
-
-  def self.these_two_not_nil?(note1, note2)
-    return (!(note1.nil?) && !(note2.nil?))
-  end
 
   def self.up?(note1, note2)
     return (note1 - note2) > 0

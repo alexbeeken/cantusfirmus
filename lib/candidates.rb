@@ -3,7 +3,8 @@ class Candidates
 
   def initialize(params = {})
     @notes = [-15, -13, -12, -10, -8, -7, -5, -3, -1, 0, 2, 4, 5, 7, 9, 11, 12, 14, 16]
-    @phrase = params.fetch(:phrase, Phrase.new())
+    @evaluator = params.fetch(:evaluator)
+    @phrase = params.fetch(:phrase, Phrase.new(:evaluator => @evaluator))
     @scale = params.fetch(:scale, Scale.new())
     @rules = params.fetch(:rules, Rules.new())
     @last_selection = []
@@ -14,7 +15,7 @@ class Candidates
     @to_remove = []
     find_and_remove_rule_breakers
     remove_starting_note
-    picked_note = (Note_Picker.new({:phrase => @phrase, :candidates => @notes.dup})).pick_note
+    picked_note = (Note_Picker.new({:phrase => @phrase, :candidates => @notes.dup, :evaluator => @evaluator})).pick_note
     @last_selection = @notes
     return picked_note
   end

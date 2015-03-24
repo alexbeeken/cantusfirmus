@@ -29,13 +29,7 @@ class NoteConverter
     return output
   end
 
-  def self.format_notes(array)
-    output = ""
-    array.each do |note|
-      output.concat("#{note} ")
-    end
-    return output
-  end
+
 
   def draw_major_scale
     @scale.push(@tonic - 15)

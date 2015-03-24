@@ -1,15 +1,15 @@
 class Formatter
 
-  def self.parse_strings(string)
+  def self.parse_strings(string, evaluator)
     string = string.split('|')
     phrases = []
     string.each do |partial|
+    out_notes = []
       partial = partial.split(" ")
-      out_phrase = Phrase.new({:length => partial.length})
         partial.each do |st_num|
-          out_phrase.add_note(st_num.to_i)
+          out_notes.push(st_num.to_i)
         end
-      phrases.push(out_phrase)
+      phrases.push(Phrase.new(:notes => out_notes, :evaluator => evaluator))
       end
     return phrases
   end
