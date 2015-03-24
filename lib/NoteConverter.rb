@@ -29,30 +29,6 @@ class NoteConverter
     return output
   end
 
-  def self.parse_strings(string)
-    string = string.split('|')
-    phrases = []
-    string.each do |partial|
-      partial = partial.split(" ")
-      out_phrase = Phrase.new({:length => partial.length})
-        partial.each do |st_num|
-          out_phrase.add_note(st_num.to_i)
-        end
-      phrases.push(out_phrase)
-      end
-    return phrases
-  end
-
-  def self.get_array_stats(phrases)
-    stats_array = []
-
-    phrases.each do |phrase|
-      stats_array.push(Evaluator.get_statistics(phrase.notes))
-    end
-
-    return stats_array
-  end
-
   def self.format_notes(array)
     output = ""
     array.each do |note|

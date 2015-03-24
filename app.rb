@@ -12,13 +12,13 @@ end
 
 get '/form_submit' do
   input_array = params.fetch('input', '[0,0,0,0,0]')
-  phrase_array = NoteConverter.parse_strings(input_array)
+  phrase_array = Formatter.parse_strings(input_array)
   stats_array = Evaluator.get_array_stats(phrase_array)
   @hash = build_cantusfirmus(params.fetch('key', "60").to_i, params.fetch('length').to_i, stats_array)
   @cantusfirmus = @hash[:cantusfirmus]
   @length = params.fetch('length').to_i
   @key = @hash[:key]
-  @raw_notes = NoteConverter.format_notes(@hash[:phrase])
+  @raw_notes = Formatter.format_output_phrase_for_reuse(@hash[:phrase])
   @raw_score = Evaluator.get_score(@hash[:phrase])
   @example_scores = []
   puts("PHRASE_ARRAY IS #{phrase_array}")
