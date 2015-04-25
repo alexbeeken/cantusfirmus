@@ -1,0 +1,11 @@
+<h1> Examples </h1>
+
+<div class="container">
+  <ul>
+    <% @list.each do |example| %>
+      <li>
+        <%= link_to example.notes, example_path(example.id), :method =>"Get" %>
+      </li>
+    <% end %>
+  </ul>
+</div>
