@@ -11,4 +11,9 @@ describe 'creating examples' do
     expect(page).to have_content "Examples"
   end
 
+  it 'allows you to save a generated example' do
+    visit '/examples/new'
+    click_on 'Generate'
+    expect(page).to have_content "Examples"
+  end
 end
