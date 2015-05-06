@@ -5,12 +5,11 @@ class ExamplesController < ApplicationController
   end
 
   def show
-    example_params
     evaluator = Evaluator.new
     @key = params.fetch('key', '60').to_i
     noteconverter = NoteConverter.new({tonic: @key, evaluator: evaluator})
-    example = Example.new(params)
-    @cantusfirmus = noteconverter.convert(example.to_array)
+    @example = Example.find(params['id'])
+    @cantusfirmus = noteconverter.convert(@example.to_array)
   end
 
   def new

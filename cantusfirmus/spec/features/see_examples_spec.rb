@@ -11,11 +11,9 @@ describe "viewing examples" do
     expect(page).to have_content "#{@example.notes}"
   end
 
-  # it 'shows an individual example' do
-  #   example = FactoryGirl.create(:example)
-  #   visit "/examples", example
-  #   click_on example.notes
-  #   expect(page).to have_content "Showing #{example.notes}"
-  # end
+  it 'shows an individual example' do
+    visit "/examples/#{@example.id}"
+    expect(page).to have_content "Showing #{@example.notes}"
+  end
 
 end
