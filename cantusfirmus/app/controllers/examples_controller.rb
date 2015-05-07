@@ -6,8 +6,9 @@ class ExamplesController < ApplicationController
 
   def show
     evaluator = Evaluator.new
-    @key = params.fetch('key', '60').to_i
-    noteconverter = NoteConverter.new({tonic: @key, evaluator: evaluator})
+    tmp_key = params.fetch('key', '60').to_i
+    noteconverter = NoteConverter.new({tonic: tmp_key, evaluator: evaluator})
+    @key = noteconverter.get_one_letter_name(params.fetch('key', '60').to_i)
     @example = Example.find(params['id'])
     @cantusfirmus = noteconverter.convert(@example.to_array)
   end
@@ -20,10 +21,11 @@ class ExamplesController < ApplicationController
     # creates an example for the user to save, if desired
     evaluator = Evaluator.new
     cantusfirmus = Builder.build(params)
-    example = Example.new(notes: cantusfirmus.notes.to_s)
+    @example = Example.new(notes: cantusfirmus.notes.to_s)
+    @example.save
     @key = params.fetch('key', '60').to_i
     noteconverter = NoteConverter.new({tonic: @key, evaluator: evaluator})
-    @cantusfirmus = noteconverter.convert(example.to_array)
+    @cantusfirmus = noteconverter.convert(@example.to_array)
   end
 
   def update

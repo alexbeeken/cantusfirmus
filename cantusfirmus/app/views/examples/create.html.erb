@@ -1,7 +1,7 @@
 <h1> Showing <%= @example.notes %> </h1>
 
-<div class="vex-tabdiv" width=1000 scale=1.0 editor="false">o
-ptions space=20
+<div class="vex-tabdiv" width=1000 scale=1.0 editor="false">
+options space=20
 tabstave
 notation=true
 tablature=false
@@ -12,4 +12,4 @@ notes :w <%= @cantusfirmus.join(" | ") %>
 options space=25
 </div>
 
-<%= link_to "Save", example_path(example: @cantusfirmus), :method =>"Post" %>
+<%= link_to "Delete", example_path(example: @cantusfirmus, id: @example.id), :method =>"Delete" %>
