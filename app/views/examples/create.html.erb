@@ -1,15 +1,15 @@
 <h1> Showing <%= @example.notes %> </h1>
 
 <div class="vex-tabdiv" width=1000 scale=1.0 editor="false">
-options space=20
-tabstave
-notation=true
-tablature=false
-key=<%= @key %> time=4/4
+  options space=20
+  tabstave
+  notation=true
+  tablature=false
+  key=<%= @key %> time=4/4
 
-notes :w <%= @cantusfirmus.join(" | ") %>
+  notes :w <%= @cantusfirmus.join(" | ") %>
 
-options space=25
+  options space=25
 </div>
-
+<br>
 <%= link_to "Delete", example_path(example: @cantusfirmus, id: @example.id), :method =>"Delete" %>

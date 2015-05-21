@@ -14,6 +14,7 @@ class ExamplesController < ApplicationController
   end
 
   def new
+    @example_notes = Example.pluck(:notes)
     # displays a form for creating a new example
   end
 
@@ -23,8 +24,9 @@ class ExamplesController < ApplicationController
     cantusfirmus = Builder.build(params)
     @example = Example.new(notes: cantusfirmus.notes.to_s)
     @example.save
-    @key = params.fetch('key', '60').to_i
-    noteconverter = NoteConverter.new({tonic: @key, evaluator: evaluator})
+    tmp_key = 60
+    noteconverter = NoteConverter.new({tonic: tmp_key, evaluator: evaluator})
+    @key = noteconverter.get_one_letter_name(params.fetch('key', '60').to_i)
     @cantusfirmus = noteconverter.convert(@example.to_array)
   end
 
@@ -32,6 +34,12 @@ class ExamplesController < ApplicationController
     # saves an existing example
     Example.new(notes: params.fetch('example')).save
     redirect_to self.index
+  end
+
+  def destroy
+    id = params.fetch(:id).to_i
+    Example.find(id).destroy
+    redirect_to examples_path
   end
 
   private

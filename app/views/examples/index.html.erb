@@ -4,7 +4,7 @@
   <ul>
     <% @list.each do |example| %>
       <li>
-        <%= link_to example.notes, example_path(example.id), :method =>"Get" %>
+        <%= link_to "Notes: #{example.notes} id: #{example.id}", example_path(example.id), :method =>"Get" %>
       </li>
     <% end %>
   </ul>

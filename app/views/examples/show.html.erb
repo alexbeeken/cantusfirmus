@@ -11,3 +11,4 @@ notes :w <%= @cantusfirmus.join(" | ") %>
 
 options space=25
 </div>
+<%= link_to "Delete", example_path(example: @cantusfirmus, id: @example.id), :method =>"Delete" %>
