@@ -15,6 +15,7 @@ class Phrase
     notes = [0]
     (@length - 2).times do
       valid_notes = get_valid_notes(notes)
+      pick_best(valid_notes, notes)
       notes.push(pick_best(valid_notes, notes))
     end
     notes.push(0)
@@ -25,7 +26,7 @@ class Phrase
   def get_valid_notes(notes)
     output = []
     DIATONIC_NOTES.each do |note|
-      temp_array = notes
+      temp_array = notes.dup
       temp_array.push(note)
       if Validator.valid?(temp_array, @length)
         output.push(note)
@@ -35,6 +36,7 @@ class Phrase
   end
 
   def pick_best(candidates, notes)
-    return Evaluator.get_best_from_examples(candidates, notes, @examples)
+    chosen = Evaluator.get_best_from_examples(candidates, notes, @examples)
+    return chosen
   end
 end

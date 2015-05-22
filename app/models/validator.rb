@@ -12,7 +12,6 @@ class Validator
     return false if !first_or_last_tonic?
     return false if !penultimate_is_leading_tone?
     return false if !middle_notes_valid?
-    puts("16")
     return true
   end
 
