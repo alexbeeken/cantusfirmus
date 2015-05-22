@@ -21,6 +21,19 @@ class Evaluator
   private
 
   def self.get_score(array, examples)
+    # get each example statistics
+    examples.push
+    examples.each do
+      totals = get_totals
+    end
+    get_standard_deviation(array, totals)
+    # get array statistics
+    # find standard deviations of array
+    # return all of them added together as the score
     return array[0]
+  end
+
+  def self.get_totals
+    
   end
 end
