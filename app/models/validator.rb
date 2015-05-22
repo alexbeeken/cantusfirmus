@@ -1,6 +1,5 @@
 class Validator
 
-  DIATONIC_NOTES = [-15, -13, -12, -10, -8, -7, -5, -3, -1, 0, 2, 4, 5, 7, 9, 11, 12, 14, 16]
   PENULTIMATE_NOTES = [-1, 2]
   CONSONANT_INTERVALS = [-12, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 12]
   THIRDS = [3, 4]
@@ -75,7 +74,7 @@ class Validator
 
   def self.penultimate_is_leading_tone?
     if @notes.length == @length - 1
-      return (PENULTIMATES_NOTES.include?(@notes[-1]))
+      return (PENULTIMATE_NOTES.include?(@notes[-1]))
     end
     return true
   end
