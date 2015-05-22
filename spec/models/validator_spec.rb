@@ -26,5 +26,10 @@ describe Validator do
       expect(Validator.valid?([0, 2, 8, 2], 8)).to eq(false)
     end
 
+    it "Returns valid if the last three notes are within an octave." do
+      # augmented fourth is an interval with value 8
+      expect(Validator.valid?([0, 2, 11, 16], 8)).to eq(false)
+    end
+
   end
 end

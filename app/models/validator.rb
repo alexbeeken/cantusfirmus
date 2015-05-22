@@ -33,6 +33,7 @@ class Validator
     if @notes.length > 1
       return false if dissonance?
     elsif @notes.length > 2
+      return false if range_too_wide?
       return false if outlines_augmented_fourth?
     end
   end
@@ -45,6 +46,11 @@ class Validator
     if @notes.length == @length - 1
       return true if PENULTIMATES_NOTES.include?(@notes[-1])
     end
+  end
+
+  def self.range_too_wide?
+    # checks if the last two intervals add up to more than an octave
+    (get_interval(@notes[-2], @notes[-1]).abs + get_interval(@notes[-3], @notes[-2]).abs > 12)
   end
 
 end
