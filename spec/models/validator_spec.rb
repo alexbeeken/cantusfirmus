@@ -23,7 +23,7 @@ describe Validator do
 
     it "Returns valid if there are no augmented fourths, major 7ths or minor 7ths outlined by three notes." do
       # augmented fourth is an interval with value 8
-      expect(Validator.valid?([0, 2, 8, 2], 8)).to eq(false)
+      expect(Validator.valid?([0, 2, 8], 8)).to eq(false)
       expect(Validator.valid?([0, 2, 0, 11], 8)).to eq(false)
       expect(Validator.valid?([0, 2, 12, 2], 8)).to eq(false)
     end

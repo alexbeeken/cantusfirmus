@@ -13,6 +13,7 @@ class Validator
     return false if !first_or_last_tonic?
     return false if !penultimate_is_leading_tone?
     return false if !middle_notes_valid?
+    puts("16")
     return true
   end
 
@@ -44,9 +45,11 @@ class Validator
   end
 
   def self.first_or_last_tonic?
+    # first and last notes are supposed to be tonic in all cases, should only be checked once for each
     if @notes.length == 1 || @notes.length == @length
-      return true if @notes[-1] != 0
+      return (@notes[-1] == 0)
     end
+    return true
   end
 
   def self.get_interval(left_note, right_note)
@@ -56,23 +59,25 @@ class Validator
   def self.middle_notes_valid?
     if @notes.length > 1
       return false if dissonance?
-    elsif @notes.length > 2
+    end
+    if @notes.length > 2
       return false if range_too_wide?
       return false if outlines_bad_intervals?
       return false if consecutive_thirds?
-      return false if consecutive_seconds?
+      return false if consecutive_M2s?
     end
+    return true
   end
 
   def self.outlines_bad_intervals?
-    BAD_THREE_NOTE_INTERVALS.include?(get_interval(@notes[-3], @notes[-1]))
+    return (BAD_THREE_NOTE_INTERVALS.include?(get_interval(@notes[-3], @notes[-1])))
   end
 
   def self.penultimate_is_leading_tone?
     if @notes.length == @length - 1
-      return true if PENULTIMATES_NOTES.include?(@notes[-1])
+      return (PENULTIMATES_NOTES.include?(@notes[-1]))
     end
-    return false
+    return true
   end
 
   def self.range_too_wide?
