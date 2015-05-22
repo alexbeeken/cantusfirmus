@@ -1,6 +1,6 @@
 class Score
 
-  def initialize(notes)
+  def initialize(notes, examples)
     @steps = get_steps
     @leaps = get_leaps
     @range = get_range
