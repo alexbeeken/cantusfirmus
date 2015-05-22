@@ -1,49 +1,13 @@
-require 'rails_helper.rb'
+require_relative "../rails_helper.rb"
 
-describe 'Phrase class' do
+describe Phrase do
 
-  before :each do
-    @evaluator = Evaluator.new()
-    @test_phrase = Phrase.new({evaluator: @evaluator})
-  end
+  describe "#initialize" do
 
-  describe('#initialize') do
-    it 'will save the tonic as the first note in the phrase' do
-      expect(@test_phrase.notes).to eq([0])
-    end
-  end
-
-  describe('#add_note') do
-    it 'add a note to the phrase array' do
-      @test_phrase.add_note(2)
-      expect(@test_phrase.notes).to eq([0, 2])
-    end
-  end
-
-  describe('#length') do
-    it 'returns the expected length of the phrase when it is done' do
-      expect(@test_phrase.length).to eq(8)
-    end
-  end
-
-  describe('#last') do
-    it 'returns the last note pushed into the phrase array' do
-      expect(@test_phrase.last).to eq(0)
-    end
-  end
-
-  describe('#second_to_last') do
-    it 'return the second to last note pushed into the phrase array' do
-      @test_phrase.add_note(1)
-      expect(@test_phrase.second_to_last).to eq(0)
-    end
-  end
-
-  describe('#third_to_last') do
-    it 'return the third to last note pushed into the phrase array' do
-      @test_phrase.add_note(1)
-      @test_phrase.add_note(2)
-      expect(@test_phrase.third_to_last).to eq(0)
+    it "Creates a valid phrase of 8 notes if given no examples" do
+        phrase = Phrase.new
+        expect(phrase.notes.length).to eq(8)
+        expect(phrase.notes.last.class).to eq(Fixnum)
     end
   end
 end
