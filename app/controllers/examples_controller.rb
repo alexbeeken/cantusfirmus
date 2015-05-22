@@ -28,6 +28,7 @@ class ExamplesController < ApplicationController
     noteconverter = NoteConverter.new({tonic: tmp_key, evaluator: evaluator})
     @key = noteconverter.get_one_letter_name(params.fetch('key', '60').to_i)
     @cantusfirmus = noteconverter.convert(@example.to_array)
+    redirect_to examples_path
   end
 
   def update
