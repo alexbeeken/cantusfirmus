@@ -20,7 +20,6 @@ class Phrase
     end
     notes.push(0)
     return notes
-    # picks one based on statistics
   end
 
   def get_valid_notes(notes)
