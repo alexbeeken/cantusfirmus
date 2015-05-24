@@ -6,6 +6,7 @@ class Phrase
   def initialize(params = {})
     @length = params.fetch(:length, 8)
     @notes = params.fetch(:notes, populate_notes)
+    @examples = params.fetch(:examples, [])
     populate_notes
   end
 
@@ -15,8 +16,7 @@ class Phrase
     notes = [0]
     (@length - 2).times do
       valid_notes = get_valid_notes(notes)
-      pick_best(valid_notes, notes)
-      notes.push(pick_best(valid_notes, notes))
+      notes.push(pick_best(valid_notes, notes, @examples))
     end
     notes.push(0)
     return notes
@@ -34,8 +34,8 @@ class Phrase
     return output
   end
 
-  def pick_best(candidates, notes)
-    chosen = Evaluator.get_best_from_examples(candidates, notes, @examples)
+  def pick_best(candidates, notes, examples)
+    chosen = Evaluator.get_best_from_examples(candidates, notes, examples)
     return chosen
   end
 end
