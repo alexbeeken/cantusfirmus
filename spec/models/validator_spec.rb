@@ -2,7 +2,7 @@ require_relative "../rails_helper.rb"
 
 describe Validator do
 
-  describe "#valid?" do
+  describe ".valid?" do
 
     it "Checks if a given phrase and length would be valid for the rules of Cantus Firmi." do
       expect(Validator.valid?([0, 2, 4, 7], 8)).to eq(true)
@@ -38,6 +38,11 @@ describe Validator do
 
     it "Returns valid if the last three intervals are not 3rds of any kind in the same direction." do
       expect(Validator.valid?([0, 2, 5, 9, 12], 8)).to eq(false)
+    end
+
+    it "Returns valid only if the third to last note is within an octave of penutiltamte notes" do
+      expect(Validator.valid?([0, -9, -12, -14, -12, -14], 8)).to eq(false)
+      expect(Validator.valid?([0, -9, -12, -14, -12, -7], 8)).to eq(true)
     end
 
   end

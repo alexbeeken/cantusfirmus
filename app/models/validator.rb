@@ -11,6 +11,7 @@ class Validator
     @length = length
     return false if !first_or_last_tonic?
     return false if !penultimate_is_leading_tone?
+    return false if !prepenultimate_within_octave_of_penultimate?
     return false if !middle_notes_valid?
     return true
   end
@@ -74,6 +75,17 @@ class Validator
   def self.penultimate_is_leading_tone?
     if @notes.length == @length - 1
       return (PENULTIMATE_NOTES.include?(@notes[-1]))
+    end
+    return true
+  end
+
+  def self.prepenultimate_within_octave_of_penultimate?
+    if @notes.length == @length - 2
+      PENULTIMATE_NOTES.each do |pnote|
+        if get_interval(@notes[-1], pnote).abs > 12
+          return false
+        end
+      end
     end
     return true
   end
