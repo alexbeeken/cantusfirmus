@@ -10,6 +10,10 @@ class Phrase
     populate_notes
   end
 
+  def showable_for_key(key = 60)
+    Converter.convert(@notes, key)
+  end
+
   private
 
   def populate_notes
