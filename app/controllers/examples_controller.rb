@@ -5,35 +5,27 @@ class ExamplesController < ApplicationController
   end
 
   def show
-    evaluator = Evaluator.new
-    tmp_key = params.fetch('key', '60').to_i
-    noteconverter = NoteConverter.new({tonic: tmp_key, evaluator: evaluator})
-    @key = noteconverter.get_one_letter_name(params.fetch('key', '60').to_i)
-    @example = Example.find(params['id'])
-    @cantusfirmus = noteconverter.convert(@example.to_array)
+    id = params.fetch(:id).to_i
+    key = params.fetch(:key).to_i
+    @notes = Example.find(id).showable_for_key(key)
+    @key = Converter.get_letter_name(key)
   end
 
   def new
-    @example_notes = Example.pluck(:notes)
-    # displays a form for creating a new example
+    @examples = Example.all
   end
 
   def create
-    # creates an example for the user to save, if desired
-    evaluator = Evaluator.new
-    cantusfirmus = Builder.build(params)
-    @example = Example.new(notes: cantusfirmus.notes.to_s)
-    @example.save
-    tmp_key = 60
-    noteconverter = NoteConverter.new({tonic: tmp_key, evaluator: evaluator})
-    @key = noteconverter.get_one_letter_name(params.fetch('key', '60').to_i)
-    @cantusfirmus = noteconverter.convert(@example.to_array)
+    length = params.fetch(:length).to_i
+    examples = params.fetch(:examples)
+    phrase = Phrase.new(length: length, examples: examples)
+    Example.new(notes: phrase.notes).save
     redirect_to examples_path
   end
 
   def update
     # saves an existing example
-    Example.new(notes: params.fetch('example')).save
+    Example.new(notes: params.fetch('example').to_i).save
     redirect_to self.index
   end
 

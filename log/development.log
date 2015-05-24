@@ -11371,3 +11371,365 @@ Processing by ExamplesController#show as HTML
   [1m[36mExample Load (0.1ms)[0m  [1mSELECT  "examples".* FROM "examples" WHERE "examples"."id" = $1 LIMIT 1[0m  [["id", 9]]
   Rendered examples/show.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 57ms (Views: 56.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2015-05-23 21:59:53 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (2.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ExamplesController#index as HTML
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `all' for Example:Class):
+  app/controllers/examples_controller.rb:4:in `index'
+
+
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.5ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (81.2ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (59.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (131.8ms)
+
+
+Started GET "/" for ::1 at 2015-05-23 21:59:54 -0700
+Processing by ExamplesController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `all' for Example:Class):
+  app/controllers/examples_controller.rb:4:in `index'
+
+
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.9ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.2ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (71.2ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (49.9ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (115.5ms)
+
+
+Started GET "/" for ::1 at 2015-05-23 22:00:16 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ExamplesController#index as HTML
+  [1m[35mExample Load (1.7ms)[0m  SELECT "examples".* FROM "examples"
+  Rendered examples/index.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 320ms (Views: 300.0ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/examples/14" for ::1 at 2015-05-23 22:00:22 -0700
+Processing by ExamplesController#show as HTML
+  Parameters: {"authenticity_token"=>"STyLDyQJ9KoTHGYbzxvYHjMIgtZABNE/wiSt5W/u2qBQ5kArJVKfDttS2LFXKl2w6w37h8ro1RrVnogWgjlqWg==", "id"=>"14"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+ActionController::ParameterMissing (param is missing or the value is empty: key):
+  app/controllers/examples_controller.rb:9:in `show'
+
+
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.9ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (70.9ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (60.7ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (141.4ms)
+  [1m[36m (122.4ms)[0m  [1mDROP DATABASE IF EXISTS "cantusfirmus_development"[0m
+  [1m[35m (119.7ms)[0m  DROP DATABASE IF EXISTS "cantusfirmus_test"
+  [1m[36m (364.0ms)[0m  [1mCREATE DATABASE "cantusfirmus_development" ENCODING = 'unicode'[0m
+  [1m[35m (254.8ms)[0m  CREATE DATABASE "cantusfirmus_test" ENCODING = 'unicode'
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (7.0ms)[0m  CREATE TABLE "examples" ("id" serial primary key, "notes" character varying) 
+  [1m[36m (2.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.2ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150425181240')
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (4.9ms)[0m  CREATE TABLE "examples" ("id" serial primary key, "notes" character varying) 
+  [1m[36m (2.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.2ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150425181240')
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.1ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'examples'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+
+
+Started GET "/" for ::1 at 2015-05-24 01:03:18 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ExamplesController#index as HTML
+  [1m[35mExample Load (0.5ms)[0m  SELECT "examples".* FROM "examples"
+  Rendered examples/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 311ms (Views: 299.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/examples/new" for ::1 at 2015-05-24 01:03:21 -0700
+Processing by ExamplesController#new as HTML
+  Parameters: {"authenticity_token"=>"DG0Igdxn/czrP/lqLGfFv73Yv6PpG1voJdX0+8eCiPkVt8Ol3TyWaCNxR8C0VkARZd3G8mP3X80yb9EIKlU4Aw=="}
+  Rendered examples/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 64ms (Views: 63.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/examples" for ::1 at 2015-05-24 01:03:29 -0700
+Processing by ExamplesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PgQj9xqu/flxNHOsIzG2Czer7904ETCzCQQLhAlXo38n3ujTG/WWXbl6zQa7ADOl766WjLL9NJYevi535IAThQ==", "key"=>"60", "length"=>"8", "message"=>"0 2 5 4 7 9 7 4 2 0 | 0 2 4 5 7 2 5 4 2 0 | 0 5 4 9 7 4 5 4 2 0 | 0 2 4 0 -3 11 0 7 4 0 2 0 | 0 2 4 9 7 0 2 5 4 2 0 | 0 4 2 9 7 4 5 4 2 0", "commit"=>"Generate"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+ActionController::ParameterMissing (param is missing or the value is empty: examples):
+  app/controllers/examples_controller.rb:20:in `create'
+
+
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (74.1ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (55.0ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (126.0ms)
+
+
+Started GET "/examples/new" for ::1 at 2015-05-24 01:06:49 -0700
+Processing by ExamplesController#new as HTML
+  Rendered examples/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 94ms (Views: 90.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/examples" for ::1 at 2015-05-24 01:06:51 -0700
+Processing by ExamplesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WJAch3/pwamf+LvWY7bZ8kKXFefFjhitHI6JY0ZAPbZBStejfrKqDVe2BXz7h1xcmpJstk9iHIgLNKyQq5eNTA==", "key"=>"60", "length"=>"8", "message"=>"0 2 5 4 7 9 7 4 2 0 | 0 2 4 5 7 2 5 4 2 0 | 0 5 4 9 7 4 5 4 2 0 | 0 2 4 0 -3 11 0 7 4 0 2 0 | 0 2 4 9 7 0 2 5 4 2 0 | 0 4 2 9 7 4 5 4 2 0", "commit"=>"Generate"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `-' for "8":String):
+  app/models/phrase.rb:17:in `populate_notes'
+  app/models/phrase.rb:8:in `initialize'
+  app/controllers/examples_controller.rb:21:in `new'
+  app/controllers/examples_controller.rb:21:in `create'
+
+
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.6ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (63.7ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (51.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (124.9ms)
+
+
+Started POST "/examples" for ::1 at 2015-05-24 01:08:40 -0700
+Processing by ExamplesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WJAch3/pwamf+LvWY7bZ8kKXFefFjhitHI6JY0ZAPbZBStejfrKqDVe2BXz7h1xcmpJstk9iHIgLNKyQq5eNTA==", "key"=>"60", "length"=>"8", "message"=>"0 2 5 4 7 9 7 4 2 0 | 0 2 4 5 7 2 5 4 2 0 | 0 5 4 9 7 4 5 4 2 0 | 0 2 4 0 -3 11 0 7 4 0 2 0 | 0 2 4 9 7 0 2 5 4 2 0 | 0 4 2 9 7 4 5 4 2 0", "commit"=>"Generate"}
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.0ms)
+
+ActionController::ParameterMissing (param is missing or the value is empty: examples):
+  app/controllers/examples_controller.rb:20:in `create'
+
+
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (66.9ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (52.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (114.8ms)
+
+
+Started GET "/" for ::1 at 2015-05-24 01:08:59 -0700
+Processing by ExamplesController#index as HTML
+  [1m[36mExample Load (0.2ms)[0m  [1mSELECT "examples".* FROM "examples"[0m
+  Rendered examples/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 60ms (Views: 57.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/examples/new" for ::1 at 2015-05-24 01:09:00 -0700
+Processing by ExamplesController#new as HTML
+  Parameters: {"authenticity_token"=>"RjoWGCsN3gTkK08OBAetKok7fEhTv9frgHxGDs7T0sxf4N08Kla1oCxl8aScNiiEUT4FGdlT086XxmP9IwRiNg=="}
+  Rendered examples/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 58ms (Views: 57.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/examples" for ::1 at 2015-05-24 01:09:03 -0700
+Processing by ExamplesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VHKpkzXXhBnuqqFAUJ0P63eUF0Lymt8czYeR4MqNUCZNqGK3NIzvvSbkH+rIrIpFr5FuE3h22znaPbQTJ1rg3A==", "key"=>"60", "length"=>"8", "examples"=>"0 2 5 4 7 9 7 4 2 0 | 0 2 4 5 7 2 5 4 2 0 | 0 5 4 9 7 4 5 4 2 0 | 0 2 4 0 -3 11 0 7 4 0 2 0 | 0 2 4 9 7 0 2 5 4 2 0 | 0 4 2 9 7 4 5 4 2 0", "commit"=>"Generate"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `each' for #<String:0x007fa51c7a7830>):
+  app/models/score.rb:77:in `get_scores'
+  app/models/score.rb:63:in `get_score'
+  app/models/evaluator.rb:24:in `get_score'
+  app/models/evaluator.rb:7:in `get_best_from_examples'
+  app/models/phrase.rb:38:in `pick_best'
+  app/models/phrase.rb:19:in `block in populate_notes'
+  app/models/phrase.rb:17:in `times'
+  app/models/phrase.rb:17:in `populate_notes'
+  app/models/phrase.rb:10:in `initialize'
+  app/controllers/examples_controller.rb:21:in `new'
+  app/controllers/examples_controller.rb:21:in `create'
+
+
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.6ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (59.9ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (57.0ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (124.2ms)
+
+
+Started GET "/examples/new" for ::1 at 2015-05-24 01:09:56 -0700
+Processing by ExamplesController#new as HTML
+  Rendered examples/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 61ms (Views: 59.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/examples" for ::1 at 2015-05-24 01:09:59 -0700
+Processing by ExamplesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4zMNzYpsF9/ZveNenvcs8Y0EFd7/5PAE9hgr15QmaEv66cbpizd8exHzXfQGxqlfVQFsj3UI9CHhog4kefHYsQ==", "key"=>"60", "length"=>"8", "examples"=>"0 2 5 4 7 9 7 4 2 0 | 0 2 4 5 7 2 5 4 2 0 | 0 5 4 9 7 4 5 4 2 0 | 0 2 4 0 -3 11 0 7 4 0 2 0 | 0 2 4 9 7 0 2 5 4 2 0 | 0 4 2 9 7 4 5 4 2 0", "commit"=>"Generate"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `each' for 0:Fixnum):
+  app/models/score.rb:77:in `get_scores'
+  app/models/score.rb:63:in `get_score'
+  app/models/evaluator.rb:24:in `get_score'
+  app/models/evaluator.rb:7:in `get_best_from_examples'
+  app/models/phrase.rb:38:in `pick_best'
+  app/models/phrase.rb:19:in `block in populate_notes'
+  app/models/phrase.rb:17:in `times'
+  app/models/phrase.rb:17:in `populate_notes'
+  app/models/phrase.rb:10:in `initialize'
+  app/controllers/examples_controller.rb:21:in `new'
+  app/controllers/examples_controller.rb:21:in `create'
+
+
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.9ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (60.8ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (50.0ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (121.5ms)
+
+
+Started GET "/" for ::1 at 2015-05-24 01:10:13 -0700
+Processing by ExamplesController#index as HTML
+  [1m[35mExample Load (0.2ms)[0m  SELECT "examples".* FROM "examples"
+  Rendered examples/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 63ms (Views: 60.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/examples/new" for ::1 at 2015-05-24 01:10:39 -0700
+Processing by ExamplesController#new as HTML
+  Parameters: {"authenticity_token"=>"VK2cdU+BI8Ncqx+L/0ki1pT2VqB1hlu2+T54PlROH91Nd1dRTtpIZ5TloSFneKd4TPMv8f9qX5PuhF3NuZmvJw=="}
+  Rendered examples/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 64ms (Views: 63.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/examples" for ::1 at 2015-05-24 01:10:41 -0700
+Processing by ExamplesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LvzFiKJkazaksvCYDiZ9hd5gbR87mqFa17BiW5KwcFo3Jg6soz8Akmz8TjKWF/grBmUUTrF2pX/ACkeof2fAoA==", "key"=>"60", "length"=>"8", "examples"=>"0 2 5 4 7 9 7 4 2 0 | 0 2 4 5 7 2 5 4 2 0 | 0 5 4 9 7 4 5 4 2 0 | 0 2 4 0 -3 11 0 7 4 0 2 0 | 0 2 4 9 7 0 2 5 4 2 0 | 0 4 2 9 7 4 5 4 2 0", "commit"=>"Generate"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `to_a' for #<String:0x007fa522886110>):
+  app/controllers/examples_controller.rb:20:in `create'
+
+
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (58.9ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (61.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (130.0ms)
+
+
+Started GET "/examples/new" for ::1 at 2015-05-24 01:11:01 -0700
+Processing by ExamplesController#new as HTML
+  Rendered examples/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 55ms (Views: 53.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/examples" for ::1 at 2015-05-24 01:11:02 -0700
+Processing by ExamplesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"18xsrodd1K7ISrMegNY6Ws09Vk5G/T/Qsn0fltBJ28XOFqeKhga/CgAEDbQY57/0FTgvH8wRO/WlxzplPZ5rPw==", "key"=>"60", "length"=>"8", "examples"=>"0 2 5 4 7 9 7 4 2 0 | 0 2 4 5 7 2 5 4 2 0 | 0 5 4 9 7 4 5 4 2 0 | 0 2 4 0 -3 11 0 7 4 0 2 0 | 0 2 4 9 7 0 2 5 4 2 0 | 0 4 2 9 7 4 5 4 2 0", "commit"=>"Generate"}
+Completed 500 Internal Server Error in 33069ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `each' for #<String:0x007fa51bded470>):
+  app/models/score.rb:77:in `get_scores'
+  app/models/score.rb:63:in `get_score'
+  app/models/evaluator.rb:24:in `get_score'
+  app/models/evaluator.rb:7:in `get_best_from_examples'
+  app/models/phrase.rb:38:in `pick_best'
+  app/models/phrase.rb:19:in `block in populate_notes'
+  app/models/phrase.rb:17:in `times'
+  app/models/phrase.rb:17:in `populate_notes'
+  app/models/phrase.rb:10:in `initialize'
+  app/controllers/examples_controller.rb:22:in `new'
+  app/controllers/examples_controller.rb:22:in `create'
+
+
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.7ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (62.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (57.0ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (128.2ms)

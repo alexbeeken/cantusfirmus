@@ -15,6 +15,19 @@ class Formatter
     return reference[scale_number + (@tonic % 12)]
   end
 
+  def self.format_examples(string)
+    output_all = []
+    examples = string.split("|")
+    examples.each do |example|
+      output_each = []
+      example.split(" ").each do |note|
+        output_each.push(note.to_i)
+      end
+      output_all.push(output_each)
+    end
+    return output_all
+  end
+
   private
 
   def self.to_showable_one_note(note)

@@ -12,4 +12,11 @@ describe Formatter do
       expect(Formatter.format_notes([0,2,4], 60)).to eq("C/4 D/4 E/4")
     end
   end
+
+  describe ".format_examples" do
+
+    it "Return an array from inputted examples formats" do
+      expect(Formatter.format_examples("0 2 4 7 4 2 0 | 0 -1 -3 -1 2 0")).to eq([[0, 2, 4, 7, 4, 2, 0],[0, -1, -3, -1, 2, 0]])
+    end
+  end
 end
