@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150425181240) do
+ActiveRecord::Schema.define(version: 20150524082700) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "examples", force: :cascade do |t|
-    t.string "notes"
+    t.string  "notes"
+    t.integer "key"
   end
 
 end

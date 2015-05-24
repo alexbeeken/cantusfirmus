@@ -5,8 +5,8 @@ class Phrase
 
   def initialize(params = {})
     @length = params.fetch(:length, 8)
-    @notes = params.fetch(:notes, populate_notes)
     @examples = params.fetch(:examples, [])
+    @notes = params.fetch(:notes, populate_notes)
     populate_notes
   end
 

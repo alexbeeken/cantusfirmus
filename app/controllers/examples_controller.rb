@@ -5,10 +5,7 @@ class ExamplesController < ApplicationController
   end
 
   def show
-    id = params.fetch(:id).to_i
-    key = params.fetch(:key).to_i
-    @notes = Example.find(id).showable_for_key(key)
-    @key = Converter.get_letter_name(key)
+    @example = Example.find(params.fetch(:id).to_i)
   end
 
   def new
@@ -17,9 +14,10 @@ class ExamplesController < ApplicationController
 
   def create
     length = params.fetch(:length).to_i
-    examples = params.fetch(:examples)
+    key = params.fetch(:key).to_i
+    examples = Formatter.format_examples(params.fetch(:examples))
     phrase = Phrase.new(length: length, examples: examples)
-    Example.new(notes: phrase.notes).save
+    Example.create(notes: phrase.notes, key: key).save
     redirect_to examples_path
   end
 

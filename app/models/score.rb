@@ -59,6 +59,7 @@ class Score
   end
 
   def self.get_score(notes, examples_array)
+    # it's returning the same score for every single possible note
     if examples_array
       scores_array = get_scores(examples_array)
       totals = get_totals(scores_array)

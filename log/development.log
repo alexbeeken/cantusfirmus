@@ -11733,3 +11733,1537 @@ NoMethodError (undefined method `each' for #<String:0x007fa51bded470>):
   Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
   Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
   Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (128.2ms)
+
+
+Started GET "/examples/new" for ::1 at 2015-05-24 01:23:44 -0700
+Processing by ExamplesController#new as HTML
+  Rendered examples/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 70ms (Views: 67.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/examples" for ::1 at 2015-05-24 01:23:46 -0700
+Processing by ExamplesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mP1AjTptutSriYZI3V4bfDaVOW5bi+nszmYUgcnBtiKBJ4upOzbRcGPHOOJFb57S7pBAP9Fn7cnZ3DFyJBYG2A==", "key"=>"60", "length"=>"8", "examples"=>"0 2 5 4 7 9 7 4 2 0 | 0 2 4 5 7 2 5 4 2 0 | 0 5 4 9 7 4 5 4 2 0 | 0 2 4 0 -3 11 0 7 4 0 2 0 | 0 2 4 9 7 0 2 5 4 2 0 | 0 4 2 9 7 4 5 4 2 0", "commit"=>"Generate"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `each' for #<String:0x007fa51deeb348>):
+  app/models/score.rb:77:in `get_scores'
+  app/models/score.rb:63:in `get_score'
+  app/models/evaluator.rb:24:in `get_score'
+  app/models/evaluator.rb:7:in `get_best_from_examples'
+  app/models/phrase.rb:38:in `pick_best'
+  app/models/phrase.rb:19:in `block in populate_notes'
+  app/models/phrase.rb:17:in `times'
+  app/models/phrase.rb:17:in `populate_notes'
+  app/models/phrase.rb:10:in `initialize'
+  app/controllers/examples_controller.rb:21:in `new'
+  app/controllers/examples_controller.rb:21:in `create'
+
+
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (63.8ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (53.5ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (129.0ms)
+
+
+Started GET "/examples/new" for ::1 at 2015-05-24 01:23:57 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ExamplesController#new as HTML
+  Rendered examples/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 276ms (Views: 262.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/vextab.self-4a0b0f8a601860c763d4d29b8ebed4b268465e9c31177c19c88d50d7da38ee28.css?body=1" for ::1 at 2015-05-24 01:23:57 -0700
+
+
+Started GET "/assets/application.self-cc4861b8d4c8c6fd2104bda2f96b027512ece32689d7943fa4263ddc25bcfd15.css?body=1" for ::1 at 2015-05-24 01:23:57 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-24 01:23:57 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-24 01:23:57 -0700
+
+
+Started GET "/assets/jquery-1.11.2.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-24 01:23:57 -0700
+
+
+Started GET "/assets/raphael-min.self-233ff7de4f0a9fc9f7ebe24380a23327dca682974e9fb97e687aeb3719d34ea2.js?body=1" for ::1 at 2015-05-24 01:23:57 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-24 01:23:57 -0700
+
+
+Started GET "/assets/vextab-div.self-6c6fa09b75303693345e68a4f018b2e11a6f649939b69c43aba7e143ae98e143.js?body=1" for ::1 at 2015-05-24 01:23:57 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-05-24 01:23:57 -0700
+
+
+Started POST "/examples" for ::1 at 2015-05-24 01:23:59 -0700
+Processing by ExamplesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8VCFH5sVyt15jJGx4/Id3RSv1GMejYzhlz2Z7MygNaLoik47mk6hebHCLxt7w5hzzKqtMpRhiMSAh7wfIXeFWA==", "key"=>"60", "length"=>"8", "examples"=>"0 2 5 4 7 9 7 4 2 0 | 0 2 4 5 7 2 5 4 2 0 | 0 5 4 9 7 4 5 4 2 0 | 0 2 4 0 -3 11 0 7 4 0 2 0 | 0 2 4 9 7 0 2 5 4 2 0 | 0 4 2 9 7 4 5 4 2 0", "commit"=>"Generate"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `each' for #<String:0x007fe6c14e4260>):
+  app/models/score.rb:77:in `get_scores'
+  app/models/score.rb:63:in `get_score'
+  app/models/evaluator.rb:24:in `get_score'
+  app/models/evaluator.rb:7:in `get_best_from_examples'
+  app/models/phrase.rb:38:in `pick_best'
+  app/models/phrase.rb:19:in `block in populate_notes'
+  app/models/phrase.rb:17:in `times'
+  app/models/phrase.rb:17:in `populate_notes'
+  app/models/phrase.rb:10:in `initialize'
+  app/controllers/examples_controller.rb:21:in `new'
+  app/controllers/examples_controller.rb:21:in `create'
+
+
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.0ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (67.2ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (54.7ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (132.1ms)
+
+
+Started POST "/examples" for ::1 at 2015-05-24 01:24:37 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ExamplesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8VCFH5sVyt15jJGx4/Id3RSv1GMejYzhlz2Z7MygNaLoik47mk6hebHCLxt7w5hzzKqtMpRhiMSAh7wfIXeFWA==", "key"=>"60", "length"=>"8", "examples"=>"0 2 5 4 7 9 7 4 2 0 | 0 2 4 5 7 2 5 4 2 0 | 0 5 4 9 7 4 5 4 2 0 | 0 2 4 0 -3 11 0 7 4 0 2 0 | 0 2 4 9 7 0 2 5 4 2 0 | 0 4 2 9 7 4 5 4 2 0", "commit"=>"Generate"}
+Completed 500 Internal Server Error in 44571ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `each' for #<String:0x007fdc385e2358>):
+  app/models/score.rb:78:in `get_scores'
+  app/models/score.rb:63:in `get_score'
+  app/models/evaluator.rb:24:in `get_score'
+  app/models/evaluator.rb:7:in `get_best_from_examples'
+  app/models/phrase.rb:38:in `pick_best'
+  app/models/phrase.rb:19:in `block in populate_notes'
+  app/models/phrase.rb:17:in `times'
+  app/models/phrase.rb:17:in `populate_notes'
+  app/models/phrase.rb:10:in `initialize'
+  app/controllers/examples_controller.rb:21:in `new'
+  app/controllers/examples_controller.rb:21:in `create'
+
+
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (68.6ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (52.8ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (126.7ms)
+
+
+Started GET "/examples/new" for ::1 at 2015-05-24 01:25:22 -0700
+Processing by ExamplesController#new as HTML
+  Parameters: {"authenticity_token"=>"VK2cdU+BI8Ncqx+L/0ki1pT2VqB1hlu2+T54PlROH91Nd1dRTtpIZ5TloSFneKd4TPMv8f9qX5PuhF3NuZmvJw=="}
+  Rendered examples/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 283ms (Views: 281.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/examples" for ::1 at 2015-05-24 01:25:30 -0700
+Processing by ExamplesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G9yJiLLttFav2SN7ddrC3bFZhh5M+Ntp00wAO38xtocCBkKss7bf8meXndHt60dzaVz/T8YU30zE9iXIkuYGfQ==", "key"=>"60", "length"=>"8", "examples"=>"0 2 5 4 7 9 7 4 2 0 | 0 2 4 5 7 2 5 4 2 0 | 0 5 4 9 7 4 5 4 2 0 | 0 2 4 0 -3 11 0 7 4 0 2 0 | 0 2 4 9 7 0 2 5 4 2 0 | 0 4 2 9 7 4 5 4 2 0", "commit"=>"Generate"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "examples" ("notes") VALUES ($1) RETURNING "id"[0m  [["notes", "[0, -12, -12, -15, -15, -15, nil, 0]"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/examples
+Completed 302 Found in 29ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/examples" for ::1 at 2015-05-24 01:25:30 -0700
+Processing by ExamplesController#index as HTML
+  [1m[36mExample Load (0.3ms)[0m  [1mSELECT "examples".* FROM "examples"[0m
+  Rendered examples/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 69ms (Views: 68.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/examples/1" for ::1 at 2015-05-24 01:25:33 -0700
+Processing by ExamplesController#show as HTML
+  Parameters: {"authenticity_token"=>"d09igjO8qCyysx2D4qGPZwWkmZgBBi2/W75CPEXKkPJulammMufDiHr9oyl6kArJ3aHgyYvqKZpMBGfPqB0gCA==", "id"=>"1"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+ActionController::ParameterMissing (param is missing or the value is empty: key):
+  app/controllers/examples_controller.rb:9:in `show'
+
+
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.6ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (62.6ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (50.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (116.1ms)
+
+
+Started GET "/examples/1" for ::1 at 2015-05-24 01:26:12 -0700
+Processing by ExamplesController#show as HTML
+  Parameters: {"authenticity_token"=>"d09igjO8qCyysx2D4qGPZwWkmZgBBi2/W75CPEXKkPJulammMufDiHr9oyl6kArJ3aHgyYvqKZpMBGfPqB0gCA==", "id"=>"1"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+ActionController::ParameterMissing (param is missing or the value is empty: key):
+  app/controllers/examples_controller.rb:9:in `show'
+
+
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.2ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (82.8ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (62.5ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (140.9ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddKey (20150524082700)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (1.9ms)[0m  [1mALTER TABLE "examples" ADD "key" integer[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150524082700"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.1ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'examples'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36m (126.0ms)[0m  [1mDROP DATABASE IF EXISTS "cantusfirmus_development"[0m
+  [1m[35m (118.3ms)[0m  DROP DATABASE IF EXISTS "cantusfirmus_test"
+  [1m[36m (301.1ms)[0m  [1mCREATE DATABASE "cantusfirmus_development" ENCODING = 'unicode'[0m
+  [1m[35m (259.5ms)[0m  CREATE DATABASE "cantusfirmus_test" ENCODING = 'unicode'
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (4.8ms)[0m  CREATE TABLE "examples" ("id" serial primary key, "notes" character varying, "key" integer) 
+  [1m[36m (1.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.1ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150524082700')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150425181240')[0m
+  [1m[35mSQL (0.3ms)[0m  CREATE EXTENSION IF NOT EXISTS "plpgsql"
+  [1m[36m (4.8ms)[0m  [1mCREATE TABLE "examples" ("id" serial primary key, "notes" character varying, "key" integer) [0m
+  [1m[35m (1.8ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (1.0ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150524082700')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150425181240')
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.1ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'examples'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+
+
+Started GET "/" for ::1 at 2015-05-24 01:31:55 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ExamplesController#index as HTML
+  [1m[35mExample Load (0.9ms)[0m  SELECT "examples".* FROM "examples"
+  Rendered examples/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 292ms (Views: 279.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/examples/new" for ::1 at 2015-05-24 01:31:57 -0700
+Processing by ExamplesController#new as HTML
+  Parameters: {"authenticity_token"=>"QRyAZerTo0IiD6u/pelaCW+7qC9B3M1wvHMOMqJvIZtYxktB64jI5upBFRU92N+nt77RfsswyVWrySvBT7iRYQ=="}
+  Rendered examples/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 83ms (Views: 82.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/examples" for ::1 at 2015-05-24 01:32:00 -0700
+Processing by ExamplesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4LD+oRl8jBvcf8gQ1Be8YooI+bBEaCfcZc51/jNji2X5ajWFGCfnvxQxdrpMJjnMUg2A4c6EI/lydFAN3rQ7nw==", "key"=>"60", "length"=>"8", "examples"=>"0 2 5 4 7 9 7 4 2 0 | 0 2 4 5 7 2 5 4 2 0 | 0 5 4 9 7 4 5 4 2 0 | 0 2 4 0 -3 11 0 7 4 0 2 0 | 0 2 4 9 7 0 2 5 4 2 0 | 0 4 2 9 7 4 5 4 2 0", "commit"=>"Generate"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "examples" ("notes", "key") VALUES ($1, $2) RETURNING "id"  [["notes", "[0, -12, -12, -15, -15, -15, nil, 0]"], ["key", 60]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/examples
+Completed 302 Found in 27ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/examples" for ::1 at 2015-05-24 01:32:00 -0700
+Processing by ExamplesController#index as HTML
+  [1m[35mExample Load (0.2ms)[0m  SELECT "examples".* FROM "examples"
+  Rendered examples/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 61ms (Views: 60.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/examples/1.60" for ::1 at 2015-05-24 01:32:01 -0700
+Processing by ExamplesController#show as 
+  Parameters: {"authenticity_token"=>"gQleevZICYEA51qdUFeOBdgXNUIcIXTCLtSUG5tslkKY05Ve9xNiJcip5DfIZgurABJME5bNcOc5brHodrsmuA==", "id"=>"1"}
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms)
+
+ActionController::ParameterMissing (param is missing or the value is empty: key):
+  app/controllers/examples_controller.rb:9:in `show'
+
+
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.1ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (75.7ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (67.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (138.6ms)
+
+
+Started GET "/examples/1.60" for ::1 at 2015-05-24 01:32:33 -0700
+Processing by ExamplesController#show as 
+  Parameters: {"authenticity_token"=>"gQleevZICYEA51qdUFeOBdgXNUIcIXTCLtSUG5tslkKY05Ve9xNiJcip5DfIZgurABJME5bNcOc5brHodrsmuA==", "id"=>"1"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+ActionController::ParameterMissing (param is missing or the value is empty: key):
+  app/controllers/examples_controller.rb:9:in `show'
+
+
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.2ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (74.5ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (55.8ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (122.9ms)
+
+
+Started GET "/" for ::1 at 2015-05-24 01:32:38 -0700
+Processing by ExamplesController#index as HTML
+  [1m[36mExample Load (0.3ms)[0m  [1mSELECT "examples".* FROM "examples"[0m
+  Rendered examples/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 71ms (Views: 70.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/examples/1" for ::1 at 2015-05-24 01:32:39 -0700
+Processing by ExamplesController#show as HTML
+  Parameters: {"authenticity_token"=>"+IPxNilTQXLz0lui4dY59H4zXxgW5+V0rzsSF/CNhJ3hWToSKAgq1juc5Qh557xapjYmSZwL4VG4gTfkHVo0Zw==", "id"=>"1"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+ActionController::ParameterMissing (param is missing or the value is empty: key):
+  app/controllers/examples_controller.rb:9:in `show'
+
+
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.7ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (69.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (54.2ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (118.6ms)
+
+
+Started GET "/" for ::1 at 2015-05-24 01:32:49 -0700
+Processing by ExamplesController#index as HTML
+  [1m[35mExample Load (0.2ms)[0m  SELECT "examples".* FROM "examples"
+  Rendered examples/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 63ms (Views: 62.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/examples/1" for ::1 at 2015-05-24 01:32:50 -0700
+Processing by ExamplesController#show as HTML
+  Parameters: {"authenticity_token"=>"k1MxSUJbtI5twnnO72xz2XcszA2xdY6zNaaxwMtLVw2KifptQwDfKqWMx2R3XfZ3rym1XDuZipYiHJQzJpzn9w==", "id"=>"1"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+ActionController::ParameterMissing (param is missing or the value is empty: key):
+  app/controllers/examples_controller.rb:9:in `show'
+
+
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.8ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (71.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (48.7ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (120.7ms)
+
+
+Started GET "/examples/new" for ::1 at 2015-05-24 01:32:54 -0700
+Processing by ExamplesController#new as HTML
+  Parameters: {"authenticity_token"=>"k1MxSUJbtI5twnnO72xz2XcszA2xdY6zNaaxwMtLVw2KifptQwDfKqWMx2R3XfZ3rym1XDuZipYiHJQzJpzn9w=="}
+  Rendered examples/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 66ms (Views: 66.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/examples" for ::1 at 2015-05-24 01:32:55 -0700
+Processing by ExamplesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nOUzsF7WJV05xri9B7uqAk0Q6e+7q40Lsvcv/oNZqB6FP/iUX41O+fGIBhefii+slRWQvjFHiS6lTQoNbo4Y5A==", "key"=>"60", "length"=>"8", "examples"=>"0 2 5 4 7 9 7 4 2 0 | 0 2 4 5 7 2 5 4 2 0 | 0 5 4 9 7 4 5 4 2 0 | 0 2 4 0 -3 11 0 7 4 0 2 0 | 0 2 4 9 7 0 2 5 4 2 0 | 0 4 2 9 7 4 5 4 2 0", "commit"=>"Generate"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "examples" ("notes", "key") VALUES ($1, $2) RETURNING "id"  [["notes", "[0, -12, -12, -15, -15, -15, nil, 0]"], ["key", 60]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/examples
+Completed 302 Found in 11ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/examples" for ::1 at 2015-05-24 01:32:55 -0700
+Processing by ExamplesController#index as HTML
+  [1m[35mExample Load (0.3ms)[0m  SELECT "examples".* FROM "examples"
+  Rendered examples/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 59ms (Views: 58.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/examples/2" for ::1 at 2015-05-24 01:32:57 -0700
+Processing by ExamplesController#show as HTML
+  Parameters: {"authenticity_token"=>"/z8pLYnoDa2f1fa8jSn6DAsGas2nBGnJGnI/M/8YGQrm5eIJiLNmCVebSBYVGH+i0wMTnC3obewNyBrAEs+p8A==", "id"=>"2"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+ActionController::ParameterMissing (param is missing or the value is empty: key):
+  app/controllers/examples_controller.rb:9:in `show'
+
+
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (66.0ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (55.6ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (123.3ms)
+
+
+Started GET "/examples/2" for ::1 at 2015-05-24 01:33:26 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ExamplesController#show as HTML
+  Parameters: {"authenticity_token"=>"/z8pLYnoDa2f1fa8jSn6DAsGas2nBGnJGnI/M/8YGQrm5eIJiLNmCVebSBYVGH+i0wMTnC3obewNyBrAEs+p8A==", "id"=>"2"}
+Completed 400 Bad Request in 335517ms (ActiveRecord: 0.0ms)
+
+ActionController::ParameterMissing (param is missing or the value is empty: key):
+  app/controllers/examples_controller.rb:10:in `show'
+
+
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.1ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (74.1ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (53.8ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (123.5ms)
+
+
+Started GET "/examples/new" for ::1 at 2015-05-24 01:39:02 -0700
+Processing by ExamplesController#new as HTML
+  Parameters: {"authenticity_token"=>"/z8pLYnoDa2f1fa8jSn6DAsGas2nBGnJGnI/M/8YGQrm5eIJiLNmCVebSBYVGH+i0wMTnC3obewNyBrAEs+p8A=="}
+  Rendered examples/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 312ms (Views: 310.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/examples/new" for ::1 at 2015-05-24 01:39:11 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ExamplesController#new as HTML
+  Rendered examples/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 280ms (Views: 270.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/examples" for ::1 at 2015-05-24 01:39:13 -0700
+Processing by ExamplesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"llNPkEXA5TjOHTaF/UxHy8exHMl+yyx0KQjHqSIBMpCPiYS0RJuOnAZTiC9lfcJlH7RlmPQnKFE+suJaz9aCag==", "key"=>"60", "length"=>"8", "examples"=>"0 2 5 4 7 9 7 4 2 0 | 0 2 4 5 7 2 5 4 2 0 | 0 5 4 9 7 4 5 4 2 0 | 0 2 4 0 -3 11 0 7 4 0 2 0 | 0 2 4 9 7 0 2 5 4 2 0 | 0 4 2 9 7 4 5 4 2 0", "commit"=>"Generate"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "examples" ("notes", "key") VALUES ($1, $2) RETURNING "id"[0m  [["notes", "[0, -12, -12, -15, -15, -15, nil, 0]"], ["key", 60]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/examples
+Completed 302 Found in 28ms (ActiveRecord: 5.5ms)
+
+
+Started GET "/examples" for ::1 at 2015-05-24 01:39:13 -0700
+Processing by ExamplesController#index as HTML
+  [1m[36mExample Load (0.3ms)[0m  [1mSELECT "examples".* FROM "examples"[0m
+  Rendered examples/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 78ms (Views: 77.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/examples/3" for ::1 at 2015-05-24 01:39:15 -0700
+Processing by ExamplesController#show as HTML
+  Parameters: {"authenticity_token"=>"PmjZcV9+NcH7r1KeBBUp+pT4xbd5qmQCLQBLZ6eWIl0nshJVXiVeZTPh7DScJKxUTP285vNGYCc6um6USkGSpw==", "id"=>"3"}
+  [1m[35mExample Load (0.2ms)[0m  SELECT  "examples".* FROM "examples" WHERE "examples"."id" = $1 LIMIT 1  [["id", 3]]
+  Rendered examples/show.html.erb within layouts/application (4.5ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `%' for nil:NilClass):
+     5: tabstave
+     6: notation=true
+     7: tablature=false
+     8: key=<%= @example.showable_key %> time=4/4
+     9: 
+    10: notes :w <%= @example.showable_notes %>
+    11: 
+  app/models/formatter.rb:13:in `get_letter_name'
+  app/models/example.rb:15:in `showable_key'
+  app/views/examples/show.html.erb:8:in `_app_views_examples_show_html_erb___579176913851328704_70254214653120'
+
+
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.7ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (80.5ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (61.9ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (142.0ms)
+  [1m[36m (118.5ms)[0m  [1mDROP DATABASE IF EXISTS "cantusfirmus_development"[0m
+  [1m[35m (118.1ms)[0m  DROP DATABASE IF EXISTS "cantusfirmus_test"
+  [1m[36m (244.5ms)[0m  [1mCREATE DATABASE "cantusfirmus_development" ENCODING = 'unicode'[0m
+  [1m[35m (249.0ms)[0m  CREATE DATABASE "cantusfirmus_test" ENCODING = 'unicode'
+  [1m[36mSQL (0.4ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (5.4ms)[0m  CREATE TABLE "examples" ("id" serial primary key, "notes" character varying, "key" integer) 
+  [1m[36m (2.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.0ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150524082700')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150425181240')[0m
+  [1m[35mSQL (0.4ms)[0m  CREATE EXTENSION IF NOT EXISTS "plpgsql"
+  [1m[36m (4.9ms)[0m  [1mCREATE TABLE "examples" ("id" serial primary key, "notes" character varying, "key" integer) [0m
+  [1m[35m (1.9ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (1.0ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (0.4ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150524082700')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150425181240')
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (3.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'examples'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+
+
+Started GET "/examples" for ::1 at 2015-05-24 01:40:22 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ExamplesController#index as HTML
+  [1m[35mExample Load (0.4ms)[0m  SELECT "examples".* FROM "examples"
+  Rendered examples/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 276ms (Views: 265.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/examples/new" for ::1 at 2015-05-24 01:40:24 -0700
+Processing by ExamplesController#new as HTML
+  Parameters: {"authenticity_token"=>"v+uCfs2aQGMM9MBIylit9hMCzA5C1XAQMg4e57AWzKmmMUlazMErx8S6fuJSaShYywe1X8g5dDUltDsUXcF8Uw=="}
+  Rendered examples/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 77ms (Views: 76.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/examples" for ::1 at 2015-05-24 01:40:27 -0700
+Processing by ExamplesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"C9d/h8cAKsw2CwEMY/MRfI+GjzDsLxCptYm2EKXRz1QSDbSjxltBaP5Fv6b7wpTSV4P2YWbDFIyiM5PjSAZ/rg==", "key"=>"60", "length"=>"8", "examples"=>"0 2 5 4 7 9 7 4 2 0 | 0 2 4 5 7 2 5 4 2 0 | 0 5 4 9 7 4 5 4 2 0 | 0 2 4 0 -3 11 0 7 4 0 2 0 | 0 2 4 9 7 0 2 5 4 2 0 | 0 4 2 9 7 4 5 4 2 0", "commit"=>"Generate"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "examples" ("notes", "key") VALUES ($1, $2) RETURNING "id"  [["notes", "[0, -12, -12, -15, -15, -15, nil, 0]"], ["key", 60]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/examples
+Completed 302 Found in 26ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/examples" for ::1 at 2015-05-24 01:40:27 -0700
+Processing by ExamplesController#index as HTML
+  [1m[35mExample Load (0.2ms)[0m  SELECT "examples".* FROM "examples"
+  Rendered examples/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 62ms (Views: 61.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/examples" for ::1 at 2015-05-24 01:40:41 -0700
+Processing by ExamplesController#index as HTML
+  [1m[36mExample Load (0.3ms)[0m  [1mSELECT "examples".* FROM "examples"[0m
+  Rendered examples/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 95ms (Views: 90.5ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/assets/vextab.self-4a0b0f8a601860c763d4d29b8ebed4b268465e9c31177c19c88d50d7da38ee28.css?body=1" for ::1 at 2015-05-24 01:40:41 -0700
+
+
+Started GET "/assets/application.self-cc4861b8d4c8c6fd2104bda2f96b027512ece32689d7943fa4263ddc25bcfd15.css?body=1" for ::1 at 2015-05-24 01:40:41 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-24 01:40:41 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-24 01:40:41 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-24 01:40:41 -0700
+
+
+Started GET "/assets/jquery-1.11.2.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-24 01:40:41 -0700
+
+
+Started GET "/assets/raphael-min.self-233ff7de4f0a9fc9f7ebe24380a23327dca682974e9fb97e687aeb3719d34ea2.js?body=1" for ::1 at 2015-05-24 01:40:41 -0700
+
+
+Started GET "/assets/vextab-div.self-6c6fa09b75303693345e68a4f018b2e11a6f649939b69c43aba7e143ae98e143.js?body=1" for ::1 at 2015-05-24 01:40:41 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-05-24 01:40:41 -0700
+
+
+Started GET "/examples/new" for ::1 at 2015-05-24 01:40:43 -0700
+Processing by ExamplesController#new as HTML
+  Parameters: {"authenticity_token"=>"mg4d4ziautzKXoG6wpTVHcDY0gi/tW6bhoewGhG0mxiD1NbHOcHReAIQPxBapVCzGN2rWTVZar6RPZXp/GMr4g=="}
+  Rendered examples/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 91ms (Views: 90.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/examples" for ::1 at 2015-05-24 01:40:44 -0700
+Processing by ExamplesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZsCtJjwDIy+O2eeLJ6qBP171SaGNN9WRVb1hq+TAnFJ/GmYCPVhIi0aXWSG/mwSRhvAw8Afb0bRCB0RYCRcsqA==", "key"=>"60", "length"=>"8", "examples"=>"0 2 5 4 7 9 7 4 2 0 | 0 2 4 5 7 2 5 4 2 0 | 0 5 4 9 7 4 5 4 2 0 | 0 2 4 0 -3 11 0 7 4 0 2 0 | 0 2 4 9 7 0 2 5 4 2 0 | 0 4 2 9 7 4 5 4 2 0", "commit"=>"Generate"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "examples" ("notes", "key") VALUES ($1, $2) RETURNING "id"[0m  [["notes", "[0, -12, -12, -15, -15, -15, nil, 0]"], ["key", 60]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/examples
+Completed 302 Found in 111129ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/examples" for ::1 at 2015-05-24 01:42:35 -0700
+Processing by ExamplesController#index as HTML
+  [1m[36mExample Load (0.3ms)[0m  [1mSELECT "examples".* FROM "examples"[0m
+  Rendered examples/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 94ms (Views: 89.8ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/examples" for ::1 at 2015-05-24 01:42:38 -0700
+Processing by ExamplesController#index as HTML
+  [1m[35mExample Load (0.2ms)[0m  SELECT "examples".* FROM "examples"
+  Rendered examples/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 84ms (Views: 83.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/vextab.self-4a0b0f8a601860c763d4d29b8ebed4b268465e9c31177c19c88d50d7da38ee28.css?body=1" for ::1 at 2015-05-24 01:42:38 -0700
+
+
+Started GET "/assets/application.self-cc4861b8d4c8c6fd2104bda2f96b027512ece32689d7943fa4263ddc25bcfd15.css?body=1" for ::1 at 2015-05-24 01:42:38 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-24 01:42:38 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-24 01:42:38 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-24 01:42:38 -0700
+
+
+Started GET "/assets/jquery-1.11.2.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-24 01:42:38 -0700
+
+
+Started GET "/assets/raphael-min.self-233ff7de4f0a9fc9f7ebe24380a23327dca682974e9fb97e687aeb3719d34ea2.js?body=1" for ::1 at 2015-05-24 01:42:38 -0700
+
+
+Started GET "/assets/vextab-div.self-6c6fa09b75303693345e68a4f018b2e11a6f649939b69c43aba7e143ae98e143.js?body=1" for ::1 at 2015-05-24 01:42:38 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-05-24 01:42:38 -0700
+
+
+Started GET "/examples/new" for ::1 at 2015-05-24 01:42:41 -0700
+Processing by ExamplesController#new as HTML
+  Parameters: {"authenticity_token"=>"TlHmh2hEU4aEFcvb+ln/3doNQ5YftTOUvwXNggkVkytXiy2jaR84IkxbdXFiaHpzAgg6x5VZN7Gov+hx5MIj0Q=="}
+  Rendered examples/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 58ms (Views: 57.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/examples" for ::1 at 2015-05-24 01:42:43 -0700
+Processing by ExamplesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oMsGawCx1Hqu5+MYL834rhD4v1Q7hatlhtE8X/pYYRa5Ec1PAeq/3mapXbK3/H0AyP3GBbFpr0CRaxmsF4/R7A==", "key"=>"60", "length"=>"8", "examples"=>"0 2 5 4 7 9 7 4 2 0 | 0 2 4 5 7 2 5 4 2 0 | 0 5 4 9 7 4 5 4 2 0 | 0 2 4 0 -3 11 0 7 4 0 2 0 | 0 2 4 9 7 0 2 5 4 2 0 | 0 4 2 9 7 4 5 4 2 0", "commit"=>"Generate"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "examples" ("notes", "key") VALUES ($1, $2) RETURNING "id"  [["notes", "[0, -12, -12, -15, -15, -15, nil, 0]"], ["key", 60]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/examples
+Completed 302 Found in 6269ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/examples" for ::1 at 2015-05-24 01:42:50 -0700
+Processing by ExamplesController#index as HTML
+  [1m[35mExample Load (0.2ms)[0m  SELECT "examples".* FROM "examples"
+  Rendered examples/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 64ms (Views: 63.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/examples" for ::1 at 2015-05-24 01:43:04 -0700
+Processing by ExamplesController#index as HTML
+  [1m[36mExample Load (0.3ms)[0m  [1mSELECT "examples".* FROM "examples"[0m
+  Rendered examples/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 77ms (Views: 73.3ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/assets/vextab.self-4a0b0f8a601860c763d4d29b8ebed4b268465e9c31177c19c88d50d7da38ee28.css?body=1" for ::1 at 2015-05-24 01:43:04 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-24 01:43:04 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-24 01:43:04 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-24 01:43:04 -0700
+
+
+Started GET "/assets/application.self-cc4861b8d4c8c6fd2104bda2f96b027512ece32689d7943fa4263ddc25bcfd15.css?body=1" for ::1 at 2015-05-24 01:43:04 -0700
+
+
+Started GET "/assets/jquery-1.11.2.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-24 01:43:04 -0700
+
+
+Started GET "/assets/raphael-min.self-233ff7de4f0a9fc9f7ebe24380a23327dca682974e9fb97e687aeb3719d34ea2.js?body=1" for ::1 at 2015-05-24 01:43:04 -0700
+
+
+Started GET "/assets/vextab-div.self-6c6fa09b75303693345e68a4f018b2e11a6f649939b69c43aba7e143ae98e143.js?body=1" for ::1 at 2015-05-24 01:43:04 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-05-24 01:43:04 -0700
+
+
+Started GET "/examples/new" for ::1 at 2015-05-24 01:43:06 -0700
+Processing by ExamplesController#new as HTML
+  Parameters: {"authenticity_token"=>"Mxvucc3Oft0st060U1Cf35F+gU2zBTW4FcZD7tSZWFkqwSVVzJUVeeT58B7LYRpxSXv4HDnpMZ0CfGYdOU7oow=="}
+  Rendered examples/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 61ms (Views: 60.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/examples" for ::1 at 2015-05-24 01:43:08 -0700
+Processing by ExamplesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dggBeC3wzKQuU4f2AlF3sRz4pX4OkU6boBY4jjYj0W1v0spcLKunAOYdOVyaYPIfxP3cL4R9Sr63rB192/Rhlw==", "key"=>"60", "length"=>"8", "examples"=>"0 2 5 4 7 9 7 4 2 0 | 0 2 4 5 7 2 5 4 2 0 | 0 5 4 9 7 4 5 4 2 0 | 0 2 4 0 -3 11 0 7 4 0 2 0 | 0 2 4 9 7 0 2 5 4 2 0 | 0 4 2 9 7 4 5 4 2 0", "commit"=>"Generate"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "examples" ("notes", "key") VALUES ($1, $2) RETURNING "id"[0m  [["notes", "[0, -12, -12, -15, -15, -15, nil, 0]"], ["key", 60]]
+  [1m[35m (9.8ms)[0m  COMMIT
+Redirected to http://localhost:3000/examples
+Completed 302 Found in 17743ms (ActiveRecord: 10.3ms)
+
+
+Started GET "/examples" for ::1 at 2015-05-24 01:43:26 -0700
+Processing by ExamplesController#index as HTML
+  [1m[36mExample Load (0.2ms)[0m  [1mSELECT "examples".* FROM "examples"[0m
+  Rendered examples/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 62ms (Views: 61.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/examples/new" for ::1 at 2015-05-24 01:43:47 -0700
+Processing by ExamplesController#new as HTML
+  Parameters: {"authenticity_token"=>"aTBhj5en5sA50A4IXhWaMHSKiu4MGgZ7IrJDLOKCDQNw6qqrlvyNZPGesKLGJB+erI/zv4b2Al41CGbfD1W9+Q=="}
+  Rendered examples/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 71ms (Views: 68.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/examples" for ::1 at 2015-05-24 01:43:49 -0700
+Processing by ExamplesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kKirgOmMqwdpXU729VWA6aai8QltFzK4qEAIwDA+ZPGJcmCk6NfAo6ET8FxtZAVHfqeIWOf7Np2/+i0z3enUCw==", "key"=>"60", "length"=>"8", "examples"=>"0 2 5 4 7 9 7 4 2 0 | 0 2 4 5 7 2 5 4 2 0 | 0 5 4 9 7 4 5 4 2 0 | 0 2 4 0 -3 11 0 7 4 0 2 0 | 0 2 4 9 7 0 2 5 4 2 0 | 0 4 2 9 7 4 5 4 2 0", "commit"=>"Generate"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "examples" ("notes", "key") VALUES ($1, $2) RETURNING "id"[0m  [["notes", "[0, -12, -12, -15, -15, -15, nil, 0]"], ["key", 60]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/examples
+Completed 302 Found in 22304ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/examples" for ::1 at 2015-05-24 01:44:11 -0700
+Processing by ExamplesController#index as HTML
+  [1m[36mExample Load (0.2ms)[0m  [1mSELECT "examples".* FROM "examples"[0m
+  Rendered examples/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 59ms (Views: 58.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/examples/new" for ::1 at 2015-05-24 01:45:09 -0700
+Processing by ExamplesController#new as HTML
+  Parameters: {"authenticity_token"=>"9sE+Pr5l4UVeH6KEB0KheRSgt6IS/qSuVTxRZpVACePvG/Uavz6K4ZZRHC6fcyTXzKXO85gSoItChnSVeJe5GQ=="}
+  Rendered examples/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 69ms (Views: 67.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/examples" for ::1 at 2015-05-24 01:45:11 -0700
+Processing by ExamplesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"347wPnfwp2onCXmy4n8W7SdukorlnoVmNDfyW4MwxoLGVDsadqvMzu9Hxxh6TpND/2vr229ygUMjjdeobud2eA==", "key"=>"60", "length"=>"8", "examples"=>"0 2 5 4 7 9 7 4 2 0 | 0 2 4 5 7 2 5 4 2 0 | 0 5 4 9 7 4 5 4 2 0 | 0 2 4 0 -3 11 0 7 4 0 2 0 | 0 2 4 9 7 0 2 5 4 2 0 | 0 4 2 9 7 4 5 4 2 0", "commit"=>"Generate"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "examples" ("notes", "key") VALUES ($1, $2) RETURNING "id"[0m  [["notes", "[0, -12, -12, -15, -15, -15, nil, 0]"], ["key", 60]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/examples
+Completed 302 Found in 20ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/examples" for ::1 at 2015-05-24 01:45:11 -0700
+Processing by ExamplesController#index as HTML
+  [1m[36mExample Load (0.3ms)[0m  [1mSELECT "examples".* FROM "examples"[0m
+  Rendered examples/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 57ms (Views: 56.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/examples" for ::1 at 2015-05-24 01:45:20 -0700
+Processing by ExamplesController#index as HTML
+  [1m[35mExample Load (0.6ms)[0m  SELECT "examples".* FROM "examples"
+  Rendered examples/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 81ms (Views: 77.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/vextab.self-4a0b0f8a601860c763d4d29b8ebed4b268465e9c31177c19c88d50d7da38ee28.css?body=1" for ::1 at 2015-05-24 01:45:20 -0700
+
+
+Started GET "/assets/application.self-cc4861b8d4c8c6fd2104bda2f96b027512ece32689d7943fa4263ddc25bcfd15.css?body=1" for ::1 at 2015-05-24 01:45:20 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-24 01:45:20 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-24 01:45:20 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-24 01:45:20 -0700
+
+
+Started GET "/assets/jquery-1.11.2.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-24 01:45:20 -0700
+
+
+Started GET "/assets/raphael-min.self-233ff7de4f0a9fc9f7ebe24380a23327dca682974e9fb97e687aeb3719d34ea2.js?body=1" for ::1 at 2015-05-24 01:45:20 -0700
+
+
+Started GET "/assets/vextab-div.self-6c6fa09b75303693345e68a4f018b2e11a6f649939b69c43aba7e143ae98e143.js?body=1" for ::1 at 2015-05-24 01:45:20 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-05-24 01:45:20 -0700
+
+
+Started GET "/examples/new" for ::1 at 2015-05-24 01:45:22 -0700
+Processing by ExamplesController#new as HTML
+  Parameters: {"authenticity_token"=>"s4hBJhzv67rExi4jTurtObFJZpTgmKvx/dSoGeEhljmqUooCHbSAHgyIkInW22iXaUwfxWp0r9Tqbo3qDPYmww=="}
+  Rendered examples/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 59ms (Views: 58.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/examples" for ::1 at 2015-05-24 01:45:24 -0700
+Processing by ExamplesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"v3IrfHtxAK917CBhDFBWmYj9jRFoYekVGGq3dxM7XEimqOBYeiprC72insuUYdM3UPj0QOKN7TAP0JKE/uzssg==", "key"=>"60", "length"=>"8", "examples"=>"0 2 5 4 7 9 7 4 2 0 | 0 2 4 5 7 2 5 4 2 0 | 0 5 4 9 7 4 5 4 2 0 | 0 2 4 0 -3 11 0 7 4 0 2 0 | 0 2 4 9 7 0 2 5 4 2 0 | 0 4 2 9 7 4 5 4 2 0", "commit"=>"Generate"}
+Completed   in 65717ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-05-24 01:48:08 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ExamplesController#index as HTML
+  [1m[35mExample Load (0.4ms)[0m  SELECT "examples".* FROM "examples"
+  Rendered examples/index.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 277ms (Views: 261.8ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/examples/new" for ::1 at 2015-05-24 01:48:11 -0700
+Processing by ExamplesController#new as HTML
+  Parameters: {"authenticity_token"=>"4mYAI+oAJ7cfpHrOWAEHI9kG9n/jszkxoPAf7uYOlv77vMsH61tME9fqxGTAMIKNAQOPLmlfPRS3SjodC9kmBA=="}
+  Rendered examples/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 61ms (Views: 60.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/examples" for ::1 at 2015-05-24 01:48:12 -0700
+Processing by ExamplesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7XWCBrhR1uhfvfkaGnN2Au9fsnongtbNG0BbXlTuAeX0r0kiuQq9TJfzR7CCQvOsN1rLK61u0ugM+n6tuTmxHw==", "key"=>"60", "length"=>"8", "examples"=>"0 2 5 4 7 9 7 4 2 0 | 0 2 4 5 7 2 5 4 2 0 | 0 5 4 9 7 4 5 4 2 0 | 0 2 4 0 -3 11 0 7 4 0 2 0 | 0 2 4 9 7 0 2 5 4 2 0 | 0 4 2 9 7 4 5 4 2 0", "commit"=>"Generate"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "examples" ("notes", "key") VALUES ($1, $2) RETURNING "id"  [["notes", "[0, -12, -12, -15, -15, -15, nil, 0]"], ["key", 60]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/examples
+Completed 302 Found in 26582ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/examples" for ::1 at 2015-05-24 01:48:39 -0700
+Processing by ExamplesController#index as HTML
+  [1m[35mExample Load (0.4ms)[0m  SELECT "examples".* FROM "examples"
+  Rendered examples/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 101ms (Views: 96.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/examples" for ::1 at 2015-05-24 01:48:41 -0700
+Processing by ExamplesController#index as HTML
+  [1m[36mExample Load (0.3ms)[0m  [1mSELECT "examples".* FROM "examples"[0m
+  Rendered examples/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 72ms (Views: 70.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/vextab.self-4a0b0f8a601860c763d4d29b8ebed4b268465e9c31177c19c88d50d7da38ee28.css?body=1" for ::1 at 2015-05-24 01:48:41 -0700
+
+
+Started GET "/assets/application.self-cc4861b8d4c8c6fd2104bda2f96b027512ece32689d7943fa4263ddc25bcfd15.css?body=1" for ::1 at 2015-05-24 01:48:41 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-24 01:48:41 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-24 01:48:41 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-24 01:48:41 -0700
+
+
+Started GET "/assets/jquery-1.11.2.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-24 01:48:41 -0700
+
+
+Started GET "/assets/raphael-min.self-233ff7de4f0a9fc9f7ebe24380a23327dca682974e9fb97e687aeb3719d34ea2.js?body=1" for ::1 at 2015-05-24 01:48:41 -0700
+
+
+Started GET "/assets/vextab-div.self-6c6fa09b75303693345e68a4f018b2e11a6f649939b69c43aba7e143ae98e143.js?body=1" for ::1 at 2015-05-24 01:48:41 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-05-24 01:48:41 -0700
+
+
+Started GET "/examples/new" for ::1 at 2015-05-24 01:48:43 -0700
+Processing by ExamplesController#new as HTML
+  Parameters: {"authenticity_token"=>"NLvZeDEz1OCT0w2cqdmFjNwv6mPGHGWDPmQLfiVhdPUtYRJcMGi/RFudszYx6AAiBCqTMkzwYaYp3i6NyLbEDw=="}
+  Rendered examples/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 71ms (Views: 70.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/examples/new" for ::1 at 2015-05-24 01:49:04 -0700
+Processing by ExamplesController#new as HTML
+  Rendered examples/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 68ms (Views: 66.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/vextab.self-4a0b0f8a601860c763d4d29b8ebed4b268465e9c31177c19c88d50d7da38ee28.css?body=1" for ::1 at 2015-05-24 01:49:04 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-24 01:49:04 -0700
+
+
+Started GET "/assets/application.self-cc4861b8d4c8c6fd2104bda2f96b027512ece32689d7943fa4263ddc25bcfd15.css?body=1" for ::1 at 2015-05-24 01:49:04 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-24 01:49:04 -0700
+
+
+Started GET "/assets/jquery-1.11.2.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-24 01:49:04 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-24 01:49:04 -0700
+
+
+Started GET "/assets/raphael-min.self-233ff7de4f0a9fc9f7ebe24380a23327dca682974e9fb97e687aeb3719d34ea2.js?body=1" for ::1 at 2015-05-24 01:49:04 -0700
+
+
+Started GET "/assets/vextab-div.self-6c6fa09b75303693345e68a4f018b2e11a6f649939b69c43aba7e143ae98e143.js?body=1" for ::1 at 2015-05-24 01:49:04 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-05-24 01:49:04 -0700
+
+
+Started GET "/examples/new" for ::1 at 2015-05-24 01:49:07 -0700
+Processing by ExamplesController#new as HTML
+  Parameters: {"authenticity_token"=>"NLvZeDEz1OCT0w2cqdmFjNwv6mPGHGWDPmQLfiVhdPUtYRJcMGi/RFudszYx6AAiBCqTMkzwYaYp3i6NyLbEDw=="}
+  Rendered examples/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 75ms (Views: 74.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/examples" for ::1 at 2015-05-24 01:49:09 -0700
+Processing by ExamplesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sE54PX7jUQ/roSLe7SS8rNGndOx/9uPNMilo/vu7sNqplLMZf7g6qyPvnHR1FTkCCaINvfUa5+glk00NFmwAIA==", "key"=>"60", "length"=>"8", "examples"=>"0 2 5 4 7 9 7 4 2 0 | 0 2 4 5 7 2 5 4 2 0 | 0 5 4 9 7 4 5 4 2 0 | 0 2 4 0 -3 11 0 7 4 0 2 0 | 0 2 4 9 7 0 2 5 4 2 0 | 0 4 2 9 7 4 5 4 2 0", "commit"=>"Generate"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "examples" ("notes", "key") VALUES ($1, $2) RETURNING "id"[0m  [["notes", "[0, -12, -12, -15, -15, -15, nil, 0]"], ["key", 60]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/examples
+Completed 302 Found in 34980ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/examples" for ::1 at 2015-05-24 01:49:44 -0700
+Processing by ExamplesController#index as HTML
+  [1m[36mExample Load (0.3ms)[0m  [1mSELECT "examples".* FROM "examples"[0m
+  Rendered examples/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 69ms (Views: 65.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/examples" for ::1 at 2015-05-24 01:49:47 -0700
+Processing by ExamplesController#index as HTML
+  [1m[35mExample Load (0.3ms)[0m  SELECT "examples".* FROM "examples"
+  Rendered examples/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 60ms (Views: 58.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/vextab.self-4a0b0f8a601860c763d4d29b8ebed4b268465e9c31177c19c88d50d7da38ee28.css?body=1" for ::1 at 2015-05-24 01:49:47 -0700
+
+
+Started GET "/assets/application.self-cc4861b8d4c8c6fd2104bda2f96b027512ece32689d7943fa4263ddc25bcfd15.css?body=1" for ::1 at 2015-05-24 01:49:47 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-24 01:49:47 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-24 01:49:47 -0700
+
+
+Started GET "/assets/raphael-min.self-233ff7de4f0a9fc9f7ebe24380a23327dca682974e9fb97e687aeb3719d34ea2.js?body=1" for ::1 at 2015-05-24 01:49:47 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-24 01:49:47 -0700
+
+
+Started GET "/assets/jquery-1.11.2.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-24 01:49:47 -0700
+
+
+Started GET "/assets/vextab-div.self-6c6fa09b75303693345e68a4f018b2e11a6f649939b69c43aba7e143ae98e143.js?body=1" for ::1 at 2015-05-24 01:49:47 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-05-24 01:49:47 -0700
+
+
+Started GET "/examples/new" for ::1 at 2015-05-24 01:49:48 -0700
+Processing by ExamplesController#new as HTML
+  Parameters: {"authenticity_token"=>"cLRZANUM7Cl//jVbVgqhyP03eqFjvmNlLqJtAIMLWHhpbpIk1FeHjbewi/HOOyRmJTID8OlSZ0A5GEjzbtzogg=="}
+  Rendered examples/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 67ms (Views: 66.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/examples" for ::1 at 2015-05-24 01:49:51 -0700
+Processing by ExamplesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2ywzTu2D3QiOhOjsR0nglN/5DNZhnVXF6GuS4QWnQPfC9vhq7Ni2rEbKVkbfeGU6B/x1h+txUeD/0bcS6HDwDQ==", "key"=>"60", "length"=>"8", "examples"=>"0 2 5 4 7 9 7 4 2 0 | 0 2 4 5 7 2 5 4 2 0 | 0 5 4 9 7 4 5 4 2 0 | 0 2 4 0 -3 11 0 7 4 0 2 0 | 0 2 4 9 7 0 2 5 4 2 0 | 0 4 2 9 7 4 5 4 2 0", "commit"=>"Generate"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "examples" ("notes", "key") VALUES ($1, $2) RETURNING "id"  [["notes", "[0, -12, -12, -15, -15, -15, nil, 0]"], ["key", 60]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/examples
+Completed 302 Found in 62197ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/examples" for ::1 at 2015-05-24 01:50:53 -0700
+Processing by ExamplesController#index as HTML
+  [1m[35mExample Load (0.3ms)[0m  SELECT "examples".* FROM "examples"
+  Rendered examples/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 70ms (Views: 65.5ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/examples/new" for ::1 at 2015-05-24 01:50:56 -0700
+Processing by ExamplesController#new as HTML
+  Parameters: {"authenticity_token"=>"Ypi+aEUBTjnZAsrJJSp0auUBgZp5GixJb3tG0VeRrYV7QnVMRFolnRFMdGO9G/HEPQT4y/P2KGx4wWMiukYdfw=="}
+  Rendered examples/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 63ms (Views: 62.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/examples" for ::1 at 2015-05-24 01:50:58 -0700
+Processing by ExamplesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+T/fA3X3YsYzLW2GrBpk1etntYA6JfZO91z12/IDOK/g5RQndKwJYvtj0yw0K+F7M2LM0bDJ8mvg5tAoH9SIVQ==", "key"=>"60", "length"=>"8", "examples"=>"0 2 5 4 7 9 7 4 2 0 | 0 2 4 5 7 2 5 4 2 0 | 0 5 4 9 7 4 5 4 2 0 | 0 2 4 0 -3 11 0 7 4 0 2 0 | 0 2 4 9 7 0 2 5 4 2 0 | 0 4 2 9 7 4 5 4 2 0", "commit"=>"Generate"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "examples" ("notes", "key") VALUES ($1, $2) RETURNING "id"  [["notes", "[0, -12, -12, -15, -15, -15, nil, 0]"], ["key", 60]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/examples
+Completed 302 Found in 53278ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/examples" for ::1 at 2015-05-24 01:51:51 -0700
+Processing by ExamplesController#index as HTML
+  [1m[35mExample Load (0.3ms)[0m  SELECT "examples".* FROM "examples"
+  Rendered examples/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 69ms (Views: 64.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/examples" for ::1 at 2015-05-24 01:51:54 -0700
+Processing by ExamplesController#index as HTML
+  [1m[36mExample Load (0.2ms)[0m  [1mSELECT "examples".* FROM "examples"[0m
+  Rendered examples/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 65ms (Views: 64.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/vextab.self-4a0b0f8a601860c763d4d29b8ebed4b268465e9c31177c19c88d50d7da38ee28.css?body=1" for ::1 at 2015-05-24 01:51:54 -0700
+
+
+Started GET "/assets/application.self-cc4861b8d4c8c6fd2104bda2f96b027512ece32689d7943fa4263ddc25bcfd15.css?body=1" for ::1 at 2015-05-24 01:51:54 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-24 01:51:54 -0700
+
+
+Started GET "/assets/raphael-min.self-233ff7de4f0a9fc9f7ebe24380a23327dca682974e9fb97e687aeb3719d34ea2.js?body=1" for ::1 at 2015-05-24 01:51:54 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-24 01:51:54 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-24 01:51:54 -0700
+
+
+Started GET "/assets/jquery-1.11.2.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-24 01:51:54 -0700
+
+
+Started GET "/assets/vextab-div.self-6c6fa09b75303693345e68a4f018b2e11a6f649939b69c43aba7e143ae98e143.js?body=1" for ::1 at 2015-05-24 01:51:54 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-05-24 01:51:54 -0700
+
+
+Started GET "/examples/new" for ::1 at 2015-05-24 01:52:00 -0700
+Processing by ExamplesController#new as HTML
+  Parameters: {"authenticity_token"=>"fNtu+d5gJUhRUze0LSPJNSj4u1fKKHI2/ehMgoTwSrdlAaXd3ztO7JkdiR61Ekyb8P3CBkDEdhPqUmlxaSf6TQ=="}
+  Rendered examples/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 64ms (Views: 63.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/examples" for ::1 at 2015-05-24 01:52:01 -0700
+Processing by ExamplesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rl+lN67C8r6bgJbPgmoaWmvfZqeETPm5aJ2Mq+7hsXO3hW4Tr5mZGlPOKGUaW5/0s9of9g6g/Zx/J6lYAzYBiQ==", "key"=>"60", "length"=>"8", "examples"=>"0 2 5 4 7 9 7 4 2 0 | 0 2 4 5 7 2 5 4 2 0 | 0 5 4 9 7 4 5 4 2 0 | 0 2 4 0 -3 11 0 7 4 0 2 0 | 0 2 4 9 7 0 2 5 4 2 0 | 0 4 2 9 7 4 5 4 2 0", "commit"=>"Generate"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "examples" ("notes", "key") VALUES ($1, $2) RETURNING "id"[0m  [["notes", "[0, -12, -12, -15, -15, -15, nil, 0]"], ["key", 60]]
+  [1m[35m (9.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/examples
+Completed 302 Found in 31ms (ActiveRecord: 9.9ms)
+
+
+Started GET "/examples" for ::1 at 2015-05-24 01:52:01 -0700
+Processing by ExamplesController#index as HTML
+  [1m[36mExample Load (0.2ms)[0m  [1mSELECT "examples".* FROM "examples"[0m
+  Rendered examples/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 71ms (Views: 69.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/examples/11" for ::1 at 2015-05-24 01:52:04 -0700
+Processing by ExamplesController#show as HTML
+  Parameters: {"authenticity_token"=>"oe3/dBAiT13k2V2YrfeQ8YuJ4iuOznmfGNH2XaIGDey4NzRQEXkk+SyX4zI1xhVfU4ybegQifboPa9OuT9G9Fg==", "id"=>"11"}
+  [1m[35mExample Load (0.2ms)[0m  SELECT  "examples".* FROM "examples" WHERE "examples"."id" = $1 LIMIT 1  [["id", 11]]
+  Rendered examples/show.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `%' for nil:NilClass):
+     5: tabstave
+     6: notation=true
+     7: tablature=false
+     8: key=<%= @example.showable_key %> time=4/4
+     9: 
+    10: notes :w <%= @example.showable_notes %>
+    11: 
+  app/models/formatter.rb:13:in `get_letter_name'
+  app/models/example.rb:15:in `showable_key'
+  app/views/examples/show.html.erb:8:in `_app_views_examples_show_html_erb___3217721449231940481_70153279424060'
+
+
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.2ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (75.5ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (54.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (128.6ms)
+
+
+Started GET "/examples/new" for ::1 at 2015-05-24 02:00:46 -0700
+Processing by ExamplesController#new as HTML
+  Parameters: {"authenticity_token"=>"oe3/dBAiT13k2V2YrfeQ8YuJ4iuOznmfGNH2XaIGDey4NzRQEXkk+SyX4zI1xhVfU4ybegQifboPa9OuT9G9Fg=="}
+  Rendered examples/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 67ms (Views: 64.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/examples" for ::1 at 2015-05-24 02:00:49 -0700
+Processing by ExamplesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5l4g6YvBo9NE5aIvgcOWsr/Mp82DDdlWFKrlLqS05zT/hOvNiprId4yrHIUZ8hMcZ8nenAnh3XMDEMDdSWNXzg==", "key"=>"60", "length"=>"8", "examples"=>"0 2 5 4 7 9 7 4 2 0 | 0 2 4 5 7 2 5 4 2 0 | 0 5 4 9 7 4 5 4 2 0 | 0 2 4 0 -3 11 0 7 4 0 2 0 | 0 2 4 9 7 0 2 5 4 2 0 | 0 4 2 9 7 4 5 4 2 0", "commit"=>"Generate"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "examples" ("notes", "key") VALUES ($1, $2) RETURNING "id"  [["notes", "[0, -12, -12, -15, -15, -15, nil, 0]"], ["key", 60]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/examples
+Completed 302 Found in 28ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/examples" for ::1 at 2015-05-24 02:00:49 -0700
+Processing by ExamplesController#index as HTML
+  [1m[35mExample Load (0.2ms)[0m  SELECT "examples".* FROM "examples"
+  Rendered examples/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 72ms (Views: 70.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/examples" for ::1 at 2015-05-24 02:01:08 -0700
+Processing by ExamplesController#index as HTML
+  [1m[36mExample Load (0.3ms)[0m  [1mSELECT "examples".* FROM "examples"[0m
+  Rendered examples/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 61ms (Views: 57.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/vextab.self-4a0b0f8a601860c763d4d29b8ebed4b268465e9c31177c19c88d50d7da38ee28.css?body=1" for ::1 at 2015-05-24 02:01:08 -0700
+
+
+Started GET "/assets/application.self-cc4861b8d4c8c6fd2104bda2f96b027512ece32689d7943fa4263ddc25bcfd15.css?body=1" for ::1 at 2015-05-24 02:01:08 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-24 02:01:08 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-24 02:01:08 -0700
+
+
+Started GET "/assets/raphael-min.self-233ff7de4f0a9fc9f7ebe24380a23327dca682974e9fb97e687aeb3719d34ea2.js?body=1" for ::1 at 2015-05-24 02:01:08 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-24 02:01:08 -0700
+
+
+Started GET "/assets/jquery-1.11.2.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-24 02:01:08 -0700
+
+
+Started GET "/assets/vextab-div.self-6c6fa09b75303693345e68a4f018b2e11a6f649939b69c43aba7e143ae98e143.js?body=1" for ::1 at 2015-05-24 02:01:08 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-05-24 02:01:08 -0700
+
+
+Started GET "/examples/new" for ::1 at 2015-05-24 02:01:10 -0700
+Processing by ExamplesController#new as HTML
+  Parameters: {"authenticity_token"=>"GisWCjHfDvGdSuaJFhNO5Zt5Y65B8IxuFM9AipAml3wD8d0uMIRlVVUEWCOOIstLQ3wa/8sciEsDdWV5ffEnhg=="}
+  Rendered examples/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 56ms (Views: 56.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/examples" for ::1 at 2015-05-24 02:01:13 -0700
+Processing by ExamplesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QaALNb3LNhB1jxxNigI40Gm5Pb20hxcXkamsr3voEjxYesARvJBdtL3BoucSM71+sbxE7D5rEzKGE4lclj+ixg==", "key"=>"60", "length"=>"8", "examples"=>"0 2 5 4 7 9 7 4 2 0 | 0 2 4 5 7 2 5 4 2 0 | 0 5 4 9 7 4 5 4 2 0 | 0 2 4 0 -3 11 0 7 4 0 2 0 | 0 2 4 9 7 0 2 5 4 2 0 | 0 4 2 9 7 4 5 4 2 0", "commit"=>"Generate"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "examples" ("notes", "key") VALUES ($1, $2) RETURNING "id"[0m  [["notes", "[0, -12, -12, -15, -15, -15, nil, 0]"], ["key", 60]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/examples
+Completed 302 Found in 27633ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/examples" for ::1 at 2015-05-24 02:01:41 -0700
+Processing by ExamplesController#index as HTML
+  [1m[36mExample Load (0.3ms)[0m  [1mSELECT "examples".* FROM "examples"[0m
+  Rendered examples/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 73ms (Views: 68.3ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/examples" for ::1 at 2015-05-24 02:01:43 -0700
+Processing by ExamplesController#index as HTML
+  [1m[35mExample Load (0.2ms)[0m  SELECT "examples".* FROM "examples"
+  Rendered examples/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 59ms (Views: 58.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/vextab.self-4a0b0f8a601860c763d4d29b8ebed4b268465e9c31177c19c88d50d7da38ee28.css?body=1" for ::1 at 2015-05-24 02:01:43 -0700
+
+
+Started GET "/assets/application.self-cc4861b8d4c8c6fd2104bda2f96b027512ece32689d7943fa4263ddc25bcfd15.css?body=1" for ::1 at 2015-05-24 02:01:43 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-24 02:01:43 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-24 02:01:43 -0700
+
+
+Started GET "/assets/raphael-min.self-233ff7de4f0a9fc9f7ebe24380a23327dca682974e9fb97e687aeb3719d34ea2.js?body=1" for ::1 at 2015-05-24 02:01:43 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-24 02:01:43 -0700
+
+
+Started GET "/assets/jquery-1.11.2.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-24 02:01:43 -0700
+
+
+Started GET "/assets/vextab-div.self-6c6fa09b75303693345e68a4f018b2e11a6f649939b69c43aba7e143ae98e143.js?body=1" for ::1 at 2015-05-24 02:01:43 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-05-24 02:01:43 -0700
+
+
+Started GET "/examples/new" for ::1 at 2015-05-24 02:01:45 -0700
+Processing by ExamplesController#new as HTML
+  Parameters: {"authenticity_token"=>"hM19mQvhKGssxbnR+YoqiCxwxo82ldwDCV9uBo2utyGdF7a9CrpDz+SLB3thu68m9HW/3rx52CYe5Uv1YHkH2w=="}
+  Rendered examples/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 65ms (Views: 64.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/examples" for ::1 at 2015-05-24 02:01:47 -0700
+Processing by ExamplesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8ymU0rZuQmMPNuzTA5/ntVFLllPT1ZybbNNCTz0TPqfq81/2tzUpx8d4UnmbrmIbiU7vAlk5mL57aWe80MSOXQ==", "key"=>"60", "length"=>"8", "examples"=>"0 2 5 4 7 9 7 4 2 0 | 0 2 4 5 7 2 5 4 2 0 | 0 5 4 9 7 4 5 4 2 0 | 0 2 4 0 -3 11 0 7 4 0 2 0 | 0 2 4 9 7 0 2 5 4 2 0 | 0 4 2 9 7 4 5 4 2 0", "commit"=>"Generate"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "examples" ("notes", "key") VALUES ($1, $2) RETURNING "id"  [["notes", "[0, -12, -12, -15, -15, -15, nil, 0]"], ["key", 60]]
+  [1m[36m (9.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/examples
+Completed 302 Found in 20790ms (ActiveRecord: 10.2ms)
+
+
+Started GET "/examples" for ::1 at 2015-05-24 02:02:07 -0700
+Processing by ExamplesController#index as HTML
+  [1m[35mExample Load (0.2ms)[0m  SELECT "examples".* FROM "examples"
+  Rendered examples/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 60ms (Views: 59.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/examples" for ::1 at 2015-05-24 02:03:18 -0700
+Processing by ExamplesController#index as HTML
+  [1m[36mExample Load (0.3ms)[0m  [1mSELECT "examples".* FROM "examples"[0m
+  Rendered examples/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 66ms (Views: 63.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/vextab.self-4a0b0f8a601860c763d4d29b8ebed4b268465e9c31177c19c88d50d7da38ee28.css?body=1" for ::1 at 2015-05-24 02:03:18 -0700
+
+
+Started GET "/assets/application.self-cc4861b8d4c8c6fd2104bda2f96b027512ece32689d7943fa4263ddc25bcfd15.css?body=1" for ::1 at 2015-05-24 02:03:18 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-24 02:03:18 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-24 02:03:18 -0700
+
+
+Started GET "/assets/raphael-min.self-233ff7de4f0a9fc9f7ebe24380a23327dca682974e9fb97e687aeb3719d34ea2.js?body=1" for ::1 at 2015-05-24 02:03:18 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-24 02:03:18 -0700
+
+
+Started GET "/assets/jquery-1.11.2.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-24 02:03:18 -0700
+
+
+Started GET "/assets/vextab-div.self-6c6fa09b75303693345e68a4f018b2e11a6f649939b69c43aba7e143ae98e143.js?body=1" for ::1 at 2015-05-24 02:03:18 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-05-24 02:03:18 -0700
+
+
+Started GET "/examples/new" for ::1 at 2015-05-24 02:03:20 -0700
+Processing by ExamplesController#new as HTML
+  Parameters: {"authenticity_token"=>"COK/5lB3VDimxQZygA+BrkF9Ymo7NctVilAzFlv1cyAROHTCUSw/nG6LuNgYPgQAmXgbO7HZz3Cd6hbltiLD2g=="}
+  Rendered examples/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 65ms (Views: 64.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/examples" for ::1 at 2015-05-24 02:03:23 -0700
+Processing by ExamplesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HMs9FguJ5P5gSH+VXraJWH49FWMJqNK6QpefmqlfnRUFEfYyCtKPWqgGwT/Ghwz2pjhsMoNE1p9VLbppRIgt7w==", "key"=>"60", "length"=>"8", "examples"=>"0 2 5 4 7 9 7 4 2 0 | 0 2 4 5 7 2 5 4 2 0 | 0 5 4 9 7 4 5 4 2 0 | 0 2 4 0 -3 11 0 7 4 0 2 0 | 0 2 4 9 7 0 2 5 4 2 0 | 0 4 2 9 7 4 5 4 2 0", "commit"=>"Generate"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "examples" ("notes", "key") VALUES ($1, $2) RETURNING "id"[0m  [["notes", "[0, -12, -12, -15, -15, -15, nil, 0]"], ["key", 60]]
+  [1m[35m (9.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/examples
+Completed 302 Found in 32ms (ActiveRecord: 10.3ms)
+
+
+Started GET "/examples" for ::1 at 2015-05-24 02:03:23 -0700
+Processing by ExamplesController#index as HTML
+  [1m[36mExample Load (0.2ms)[0m  [1mSELECT "examples".* FROM "examples"[0m
+  Rendered examples/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 68ms (Views: 67.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/examples" for ::1 at 2015-05-24 02:03:35 -0700
+Processing by ExamplesController#index as HTML
+  [1m[35mExample Load (0.3ms)[0m  SELECT "examples".* FROM "examples"
+  Rendered examples/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 81ms (Views: 76.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/assets/vextab.self-4a0b0f8a601860c763d4d29b8ebed4b268465e9c31177c19c88d50d7da38ee28.css?body=1" for ::1 at 2015-05-24 02:03:35 -0700
+
+
+Started GET "/assets/application.self-cc4861b8d4c8c6fd2104bda2f96b027512ece32689d7943fa4263ddc25bcfd15.css?body=1" for ::1 at 2015-05-24 02:03:35 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-24 02:03:35 -0700
+
+
+Started GET "/assets/jquery-1.11.2.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-24 02:03:35 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-24 02:03:35 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-24 02:03:36 -0700
+
+
+Started GET "/assets/raphael-min.self-233ff7de4f0a9fc9f7ebe24380a23327dca682974e9fb97e687aeb3719d34ea2.js?body=1" for ::1 at 2015-05-24 02:03:36 -0700
+
+
+Started GET "/assets/vextab-div.self-6c6fa09b75303693345e68a4f018b2e11a6f649939b69c43aba7e143ae98e143.js?body=1" for ::1 at 2015-05-24 02:03:36 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-05-24 02:03:36 -0700
+
+
+Started GET "/examples/new" for ::1 at 2015-05-24 02:03:41 -0700
+Processing by ExamplesController#new as HTML
+  Parameters: {"authenticity_token"=>"r78gvc+LgRObpZHeDe0Bj0MDpkw/BYycPNhTZFlerKK2ZeuZztDqt1PrL3SV3IQhmwbfHbXpiLkrYnaXtIkcWA=="}
+  Rendered examples/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 68ms (Views: 67.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/examples" for ::1 at 2015-05-24 02:03:43 -0700
+Processing by ExamplesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RtW9wqcOw3Pmw0Oa3vpAsckX9dE0tVZe4KbnT0LanLVfD3bmplWo1y6N/TBGy8UfERKMgL5ZUnv3HMK8rw0sTw==", "key"=>"60", "length"=>"8", "examples"=>"0 2 5 4 7 9 7 4 2 0 | 0 2 4 5 7 2 5 4 2 0 | 0 5 4 9 7 4 5 4 2 0 | 0 2 4 0 -3 11 0 7 4 0 2 0 | 0 2 4 9 7 0 2 5 4 2 0 | 0 4 2 9 7 4 5 4 2 0", "commit"=>"Generate"}
+Completed   in 184868ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/examples/new" for ::1 at 2015-05-24 02:06:54 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ExamplesController#new as HTML
+  Rendered examples/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 299ms (Views: 287.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/vextab.self-4a0b0f8a601860c763d4d29b8ebed4b268465e9c31177c19c88d50d7da38ee28.css?body=1" for ::1 at 2015-05-24 02:06:55 -0700
+
+
+Started GET "/assets/application.self-cc4861b8d4c8c6fd2104bda2f96b027512ece32689d7943fa4263ddc25bcfd15.css?body=1" for ::1 at 2015-05-24 02:06:55 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-24 02:06:55 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-24 02:06:55 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-24 02:06:55 -0700
+
+
+Started GET "/assets/jquery-1.11.2.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-24 02:06:55 -0700
+
+
+Started GET "/assets/raphael-min.self-233ff7de4f0a9fc9f7ebe24380a23327dca682974e9fb97e687aeb3719d34ea2.js?body=1" for ::1 at 2015-05-24 02:06:55 -0700
+
+
+Started GET "/assets/vextab-div.self-6c6fa09b75303693345e68a4f018b2e11a6f649939b69c43aba7e143ae98e143.js?body=1" for ::1 at 2015-05-24 02:06:55 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-05-24 02:06:55 -0700
+
+
+Started POST "/examples" for ::1 at 2015-05-24 02:07:00 -0700
+Processing by ExamplesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tcRg4W5s0cL1uSbCWo12jsQqVmmMMkIGKK/sUYAsdVWsHqvFbze6Zj33mGjCvPMgHC8vOAbeRiM/FcmibfvFrw==", "key"=>"60", "length"=>"8", "examples"=>"0 2 5 4 7 9 7 4 2 0 | 0 2 4 5 7 2 5 4 2 0 | 0 5 4 9 7 4 5 4 2 0 | 0 2 4 0 -3 11 0 7 4 0 2 0 | 0 2 4 9 7 0 2 5 4 2 0 | 0 4 2 9 7 4 5 4 2 0", "commit"=>"Generate"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "examples" ("notes", "key") VALUES ($1, $2) RETURNING "id"[0m  [["notes", "[0, -12, -12, -15, -15, -15, nil, 0]"], ["key", 60]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/examples
+Completed 302 Found in 65ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/examples" for ::1 at 2015-05-24 02:07:00 -0700
+Processing by ExamplesController#index as HTML
+  [1m[36mExample Load (0.2ms)[0m  [1mSELECT "examples".* FROM "examples"[0m
+  Rendered examples/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 80ms (Views: 78.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/examples/new" for ::1 at 2015-05-24 09:53:40 -0700
+Processing by ExamplesController#new as HTML
+  Parameters: {"authenticity_token"=>"0jrFSUzHAM9mtEmPWJmj32+fCRDxkfWSPAw+5PuwSVDL4A5tTZxra6769yXAqCZxt5pwQXt98bcrthsXFmf5qg=="}
+  Rendered examples/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 77ms (Views: 74.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/examples" for ::1 at 2015-05-24 09:53:43 -0700
+Processing by ExamplesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oZkiQlQ/JdVJdEV1Lg3buIIW6Irk1lAwx6FOc6U8jIu4Q+lmVWROcYE6+9+2PF4WWhOR2246VBXQG2uASOs8cQ==", "key"=>"60", "length"=>"8", "examples"=>"0 2 5 4 7 9 7 4 2 0 | 0 2 4 5 7 2 5 4 2 0 | 0 5 4 9 7 4 5 4 2 0 | 0 2 4 0 -3 11 0 7 4 0 2 0 | 0 2 4 9 7 0 2 5 4 2 0 | 0 4 2 9 7 4 5 4 2 0", "commit"=>"Generate"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "examples" ("notes", "key") VALUES ($1, $2) RETURNING "id"[0m  [["notes", "[0, -12, -12, -15, -15, -15, nil, 0]"], ["key", 60]]
+  [1m[35m (9.9ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/examples
+Completed 302 Found in 67ms (ActiveRecord: 13.4ms)
+
+
+Started GET "/examples" for ::1 at 2015-05-24 09:53:43 -0700
+Processing by ExamplesController#index as HTML
+  [1m[36mExample Load (0.2ms)[0m  [1mSELECT "examples".* FROM "examples"[0m
+  Rendered examples/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 68ms (Views: 67.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/examples/17" for ::1 at 2015-05-24 09:53:50 -0700
+Processing by ExamplesController#show as HTML
+  Parameters: {"authenticity_token"=>"fkxL9pvC2QsxKUtiDiqSkc+0Zv7/7jTIP3X0H8Ruxi5nloDSmpmyr/ln9ciWGxc/F7Efr3UCMO0oz9HsKbl21A==", "id"=>"17"}
+  [1m[35mExample Load (0.3ms)[0m  SELECT  "examples".* FROM "examples" WHERE "examples"."id" = $1 LIMIT 1  [["id", 17]]
+  Rendered examples/show.html.erb within layouts/application (4.6ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `-' for nil:NilClass):
+     5: tabstave
+     6: notation=true
+     7: tablature=false
+     8: key=<%= @example.showable_key %> time=4/4
+     9: 
+    10: notes :w <%= @example.showable_notes %>
+    11: 
+  app/models/formatter.rb:12:in `get_letter_name'
+  app/models/example.rb:15:in `showable_key'
+  app/views/examples/show.html.erb:8:in `_app_views_examples_show_html_erb___3570439785965235719_70282852004980'
+
+
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.0ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (69.8ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (74.9ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (146.1ms)
