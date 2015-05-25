@@ -28,7 +28,12 @@ class Phrase
       temp_array = notes.dup
       temp_array.push(note)
       if Validator.valid?(temp_array, @length)
+        # puts("#{note} was deemed VALID for #{temp_array}.")
+        # puts("current_state of #{output}")
         output.push(note)
+      else
+        # puts("#{note} was deemed INvalid for #{temp_array}.")
+        # puts("current_state of #{output}")
       end
     end
     return output

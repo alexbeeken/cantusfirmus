@@ -9,10 +9,16 @@ class Validator
   def self.valid?(notes, length)
     @notes = notes
     @length = length
+    # puts(" ")
+    # puts("Starting test for #{notes}")
     return false if !first_or_last_tonic?
+    # puts("first and last notes are tonic")
     return false if !penultimate_is_leading_tone?
+    # puts("penultimate is the leading tone")
     return false if !prepenultimate_within_octave_of_penultimate?
+    # puts("prepenultimate is within an octave of leading tone")
     return false if !middle_notes_valid?
+    # puts("PASSED ALL TESTS")
     return true
   end
 
@@ -56,14 +62,19 @@ class Validator
   end
 
   def self.middle_notes_valid?
-    if @notes.length > 1
+    if (@notes.length > 1) && (@notes.length <= (@length - 2))
       return false if dissonance?
+      # puts("--not a dissonance")
     end
-    if @notes.length > 2
+    if (@notes.length > 2) && (@notes.length <= (@length - 2))
       return false if range_too_wide?
+      # puts("--range is not too wide")
       return false if outlines_bad_intervals?
+      # puts("--doesn't outline bad intervals")
       return false if consecutive_thirds?
+      # puts("--doesn't make consecutive thirds")
       return false if consecutive_M2s?
+      # puts("--doesn't make consecutive M2nds")
     end
     return true
   end

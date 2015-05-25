@@ -33,42 +33,78 @@ class Score
     @steps = @steps/number_of_examples.to_f
     @leaps = @leaps/number_of_examples.to_f
     @range = @range/number_of_examples.to_f
-    @repeated_notes += @repeated_notes/number_of_examples.to_f
-    @consecutive_steps += @consecutive_steps/number_of_examples.to_f
-    @consecutive_steps_up += @consecutive_steps_up/number_of_examples.to_f
-    @consecutive_steps_down += @consecutive_steps_down/number_of_examples.to_f
-    @percentage_of_leaps += @percentage_of_leaps/number_of_examples.to_f
-    @percentage_of_steps += @percentage_of_steps/number_of_examples.to_f
+    @repeated_notes = @repeated_notes/number_of_examples.to_f
+    @consecutive_steps = @consecutive_steps/number_of_examples.to_f
+    @consecutive_steps_up = @consecutive_steps_up/number_of_examples.to_f
+    @consecutive_steps_down = @consecutive_steps_down/number_of_examples.to_f
+    @percentage_of_leaps = @percentage_of_leaps/number_of_examples.to_f
+    @percentage_of_steps = @percentage_of_steps/number_of_examples.to_f
     return self
   end
 
-  def switch_to_standard_deviations(means)
-    @steps = (@steps - means.steps)**2
-    @leaps = (@leaps - means.leaps)**2
-    @range = (@range - means.range)**2
-    @repeated_notes = (@repeated_notes - means.repeated_notes)**2
-    @consecutive_steps = (@consecutive_steps - means.consecutive_steps)**2
-    @consecutive_steps_up = (@consecutive_steps_up - means.consecutive_steps_up)**2
-    @consecutive_steps_down = (@consecutive_steps_down - means.consecutive_steps_down)**2
-    @percentage_of_leaps = (@percentage_of_leaps - means.percentage_of_leaps)**2
-    @percentage_of_steps = (@percentage_of_steps - means.percentage_of_steps)**2
+  def score_for_standard_deviations(means)
+    @steps = @steps/(@steps - means.steps)**2
+    @leaps = @leaps/(@leaps - means.leaps)**2
+    if @range != 0
+      @range = @range/(@range - means.range)**2
+    else
+      @range = 0
+    end
+    if @repeated_notes != 0
+      @repeated_notes = @repeated_notes/(@repeated_notes - means.repeated_notes)**2
+    else
+      @repeated_notes = 0
+    end
+    @consecutive_steps = @consecutive_steps/(@consecutive_steps - means.consecutive_steps)**2
+    @consecutive_steps_up = @consecutive_steps_up/(@consecutive_steps_up - means.consecutive_steps_up)**2
+    @consecutive_steps_down = @consecutive_steps_down/(@consecutive_steps_down - means.consecutive_steps_down)**2
+    @percentage_of_leaps = @percentage_of_leaps/(@percentage_of_leaps - means.percentage_of_leaps)**2
+    @percentage_of_steps = @percentage_of_steps/(@percentage_of_steps - means.percentage_of_steps)**2
   end
 
   def squash_into_score
-    @steps + @leaps + @range + @repeated_notes + @consecutive_steps + @consecutive_steps_up + @consecutive_steps_down + @percentage_of_leaps + @percentage_of_steps
+    result = @steps + @leaps + @range + @repeated_notes + @consecutive_steps + @consecutive_steps_up + @consecutive_steps_down + @percentage_of_leaps + @percentage_of_steps
+    return result
   end
 
   def self.get_score(notes, examples_array)
     # it's returning the same score for every single possible note
+    # puts("STARTING GET SCORE")
     if examples_array
       scores_array = get_scores(examples_array)
       totals = get_totals(scores_array)
+      # puts(" ")
+      # puts("Totals")
+      # totals.debug
       means = totals.switch_to_means(scores_array.length)
-      standard_deviations = get_standard_deviation(scores_array, means)
-      return standard_deviations.squash_into_score
+      # puts(" ")
+      # puts("Means")
+      # means.debug
+      candidate = new(notes)
+      # puts(" ")
+      # puts("Candidate before scoring")
+      # candidate.debug
+      candidate.score_for_standard_deviations(means)
+      # puts(" ")
+      # puts("Candidate after scoring")
+      # candidate.debug
+      return candidate.squash_into_score
     else
       return 0
     end
+  end
+
+  def debug
+    puts("notes = #{@notes}")
+    puts("steps = #{@steps}")
+    puts("leaps = #{@leaps}")
+    puts("range = #{@range}")
+    puts("repeated_notes = #{@repeated_notes}")
+    puts("consecutive_steps = #{@consecutive_steps}")
+    puts("consecutive_steps_up = #{@consecutive_steps_up}")
+    puts("consecutive_steps_down = #{@consecutive_steps_down}")
+    puts("percentage_of_leaps = #{@percentage_of_leaps}")
+    puts("percentage_of_steps = #{@percentage_of_steps}")
   end
 
   private
@@ -79,15 +115,6 @@ class Score
       scores_array.push(new(example))
     end
     return scores_array
-  end
-
-  def self.get_standard_deviation(scores_array, means)
-    deviations = new
-    scores_array.each do |score|
-      score.switch_to_standard_deviations(means)
-      deviations.merge_score(score)
-    end
-    return deviations
   end
 
   def self.get_totals(scores_array)
@@ -154,8 +181,8 @@ class Score
         if note > highest
            highest = note
         end
-        return (lowest - highest).abs
       end
+      return (lowest - highest).abs
     end
     return 0
   end
@@ -164,9 +191,11 @@ class Score
     notes = []
     repeated_notes = 0
     @notes.each do |note|
-      notes.push(note)
+      notes = notes.uniq
       if notes.include?(note)
         repeated_notes += 1
+      else
+        notes.push(note)
       end
     end
     return repeated_notes
