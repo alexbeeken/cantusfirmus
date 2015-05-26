@@ -4,7 +4,7 @@
   <ol>
     <% @list.each do |example| %>
       <li>
-        <%= link_to "Notes: #{example.notes} id: #{example.id}", example_path(example.id), :method =>"Get", :key => "#{example.key}" %>
+        <%= link_to "Notes: #{example.notes} id: #{example.id}", example_path(example.id), :method =>"Get", :tonic => "#{example.tonic}" %>
       </li>
     <% end %>
   </ol>

@@ -1,16 +1,20 @@
 class Formatter
 
   def self.format_notes(notes, tonic)
+    if notes.class == String
+      notes = string_to_array(notes)
+    end
     output = []
     notes.each do |note|
       output.push(to_showable_one_note(note, tonic))
     end
-    return output.join(" ")
+    return output
   end
 
-  def self.get_letter_name(note)
+  def self.get_letter_name(note, tonic)
+    scale_number = ((note % 12) + (12 - (tonic % 12))) % 12
     reference = ["C","C#","D","D#","E","F","F#","G","G#","A","A#","B","C","C#","D","D#","E","F","F#","G","G#","A","A#","B"]
-    return reference[note % 60]
+    return reference[scale_number]
   end
 
   def self.format_examples(string)
@@ -26,10 +30,20 @@ class Formatter
     return output_all
   end
 
+  def self.string_to_array(string)
+    output = []
+    string.split("").each do |char|
+      if /[-\d]*/.match(char).to_s != ""
+        output.push(char.to_i)
+      end
+    end
+    return output
+  end
+
   private
 
   def self.to_showable_one_note(note, tonic)
-    letter_name = get_letter_name(note)
+    letter_name = get_letter_name(note, tonic)
     octave_number = get_octave_number(note, tonic)
     return "#{letter_name}/#{octave_number}"
   end

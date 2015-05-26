@@ -17,14 +17,14 @@ class ExamplesController < ApplicationController
     key = params.fetch(:key).to_i
     examples = Formatter.format_examples(params.fetch(:examples))
     phrase = Phrase.new(length: length, examples: examples)
-    Example.create(notes: phrase.notes, key: key).save
+    Example.create(notes: phrase.notes, tonic: key).save
     redirect_to examples_path
   end
 
   def update
     # saves an existing example
     Example.new(notes: params.fetch('example').to_i).save
-    redirect_to self.index
+    redirect_to examples_path
   end
 
   def destroy

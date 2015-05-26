@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20150524082700) do
 
   create_table "examples", force: :cascade do |t|
     t.string  "notes"
-    t.integer "key"
+    t.integer "tonic"
   end
 
 end
