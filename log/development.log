@@ -17241,3 +17241,285 @@ Processing by ExamplesController#show as HTML
   [1m[36mExample Load (0.2ms)[0m  [1mSELECT  "examples".* FROM "examples" WHERE "examples"."id" = $1 LIMIT 1[0m  [["id", 2]]
   Rendered examples/show.html.erb within layouts/application (0.5ms)
 Completed 200 OK in 56ms (Views: 54.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/examples/2" for ::1 at 2015-05-26 00:21:16 -0700
+Processing by ExamplesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mExample Load (0.2ms)[0m  SELECT  "examples".* FROM "examples" WHERE "examples"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered examples/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 60ms (Views: 59.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/vextab.self-4a0b0f8a601860c763d4d29b8ebed4b268465e9c31177c19c88d50d7da38ee28.css?body=1" for ::1 at 2015-05-26 00:21:16 -0700
+
+
+Started GET "/assets/application.self-cc4861b8d4c8c6fd2104bda2f96b027512ece32689d7943fa4263ddc25bcfd15.css?body=1" for ::1 at 2015-05-26 00:21:16 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-26 00:21:16 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-26 00:21:16 -0700
+
+
+Started GET "/assets/jquery-1.11.2.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-26 00:21:16 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-26 00:21:16 -0700
+
+
+Started GET "/assets/raphael-min.self-233ff7de4f0a9fc9f7ebe24380a23327dca682974e9fb97e687aeb3719d34ea2.js?body=1" for ::1 at 2015-05-26 00:21:16 -0700
+
+
+Started GET "/assets/vextab-div.self-6c6fa09b75303693345e68a4f018b2e11a6f649939b69c43aba7e143ae98e143.js?body=1" for ::1 at 2015-05-26 00:21:16 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-05-26 00:21:16 -0700
+
+
+Started GET "/examples/2" for ::1 at 2015-05-26 00:23:16 -0700
+Processing by ExamplesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mExample Load (0.1ms)[0m  [1mSELECT  "examples".* FROM "examples" WHERE "examples"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered examples/show.html.erb within layouts/application (75475.8ms)
+Completed   in 75486ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/examples" for ::1 at 2015-05-26 00:24:37 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ExamplesController#index as HTML
+  [1m[35mExample Load (0.4ms)[0m  SELECT "examples".* FROM "examples"
+  Rendered examples/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 321ms (Views: 306.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/examples/2" for ::1 at 2015-05-26 00:24:40 -0700
+Processing by ExamplesController#show as HTML
+  Parameters: {"authenticity_token"=>"/9bBHqIbIWOxg9+hI2NdyCvKtYAYy2lB/9tdpNA2pR3mDAo6o0BKx3nNYQu7Uthm88/M0ZInbWToYXhXPeEV5w==", "id"=>"2"}
+  [1m[36mExample Load (0.2ms)[0m  [1mSELECT  "examples".* FROM "examples" WHERE "examples"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered examples/show.html.erb within layouts/application (66569.0ms)
+Completed   in 66583ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/examples" for ::1 at 2015-05-26 00:25:54 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ExamplesController#index as HTML
+  [1m[35mExample Load (0.5ms)[0m  SELECT "examples".* FROM "examples"
+  Rendered examples/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 289ms (Views: 276.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/examples/2" for ::1 at 2015-05-26 00:25:55 -0700
+Processing by ExamplesController#show as HTML
+  Parameters: {"authenticity_token"=>"/nLzmcjJPG5pDlw0NxR/Dwlt2+F1jXuu7pFEPCMcxQfnqDi9yZJXyqFA4p6vJfqh0WiisP9hf4v5K2HPzst1/Q==", "id"=>"2"}
+  [1m[36mExample Load (0.2ms)[0m  [1mSELECT  "examples".* FROM "examples" WHERE "examples"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered examples/show.html.erb within layouts/application (18860.9ms)
+Completed   in 18873ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/examples" for ::1 at 2015-05-26 00:26:20 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ExamplesController#index as HTML
+  [1m[35mExample Load (0.4ms)[0m  SELECT "examples".* FROM "examples"
+  Rendered examples/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 267ms (Views: 254.3ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/examples" for ::1 at 2015-05-26 00:26:26 -0700
+Processing by ExamplesController#index as HTML
+  [1m[36mExample Load (17.0ms)[0m  [1mSELECT "examples".* FROM "examples"[0m
+  Rendered examples/index.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 85ms (Views: 67.7ms | ActiveRecord: 17.0ms)
+
+
+Started GET "/examples/2" for ::1 at 2015-05-26 00:26:28 -0700
+Processing by ExamplesController#show as HTML
+  Parameters: {"authenticity_token"=>"X39dEdBiQqx3VSvCQMhlTla/4mcZFwNa4nZzuQAZtwJGpZY10TkpCL8blWjY+eDgjrqbNpP7B3/1zFZK7c4H+A==", "id"=>"2"}
+  [1m[35mExample Load (0.2ms)[0m  SELECT  "examples".* FROM "examples" WHERE "examples"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered examples/show.html.erb within layouts/application (57926.3ms)
+Completed   in 57939ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/examples" for ::1 at 2015-05-26 00:27:30 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ExamplesController#index as HTML
+  [1m[35mExample Load (0.4ms)[0m  SELECT "examples".* FROM "examples"
+  Rendered examples/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 303ms (Views: 289.4ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/examples" for ::1 at 2015-05-26 00:27:31 -0700
+Processing by ExamplesController#index as HTML
+  [1m[36mExample Load (0.3ms)[0m  [1mSELECT "examples".* FROM "examples"[0m
+  Rendered examples/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 63ms (Views: 62.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/examples/2" for ::1 at 2015-05-26 00:27:33 -0700
+Processing by ExamplesController#show as HTML
+  Parameters: {"authenticity_token"=>"6wpXYCoojD2ogF1/mS0lev3tCM+PKH08l7dAmyHDIeny0JxEK3PnmWDO49UBHKDUJehxngXEeRmADWVozBSREw==", "id"=>"2"}
+  [1m[35mExample Load (0.2ms)[0m  SELECT  "examples".* FROM "examples" WHERE "examples"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered examples/show.html.erb within layouts/application (131977.7ms)
+Completed 200 OK in 132048ms (Views: 132040.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/examples" for ::1 at 2015-05-26 00:30:34 -0700
+Processing by ExamplesController#index as HTML
+  [1m[36mExample Load (0.3ms)[0m  [1mSELECT "examples".* FROM "examples"[0m
+  Rendered examples/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 88ms (Views: 84.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/examples/2" for ::1 at 2015-05-26 00:30:35 -0700
+Processing by ExamplesController#show as HTML
+  Parameters: {"authenticity_token"=>"65/AbrJuJgSlDzrVhYkkIbqqpiUkfqOkDlfXdGRbdQryRQtKszVNoG1BhH8duKGPYq/fdK6Sp4EZ7fKHiYzF8A==", "id"=>"2"}
+  [1m[35mExample Load (0.2ms)[0m  SELECT  "examples".* FROM "examples" WHERE "examples"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered examples/show.html.erb within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.2ms)
+
+SyntaxError (/Users/revelationinterns/Desktop/tmp/cantusfirmus/app/models/formatter.rb:35: syntax error, unexpected $undefined, expecting ']'
+    string.gsub(([\]\[,]), " ")
+                   ^
+/Users/revelationinterns/Desktop/tmp/cantusfirmus/app/models/formatter.rb:36: syntax error, unexpected tIDENTIFIER, expecting ')'
+    string.split(" ").each do |char|
+          ^
+/Users/revelationinterns/Desktop/tmp/cantusfirmus/app/models/formatter.rb:78: syntax error, unexpected keyword_end, expecting end-of-input):
+  app/models/formatter.rb:35: syntax error, unexpected $undefined, expecting ']'
+  app/models/formatter.rb:36: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/models/formatter.rb:78: syntax error, unexpected keyword_end, expecting end-of-input
+  app/models/example.rb:14:in `showable_tonic'
+  app/views/examples/show.html.erb:8:in `_app_views_examples_show_html_erb___3752443066299274098_70104632953020'
+
+
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.6ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (71.6ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (55.5ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (131.8ms)
+
+
+Started GET "/examples" for ::1 at 2015-05-26 00:31:55 -0700
+Processing by ExamplesController#index as HTML
+  [1m[36mExample Load (0.3ms)[0m  [1mSELECT "examples".* FROM "examples"[0m
+  Rendered examples/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 67ms (Views: 63.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/vextab.self-4a0b0f8a601860c763d4d29b8ebed4b268465e9c31177c19c88d50d7da38ee28.css?body=1" for ::1 at 2015-05-26 00:31:55 -0700
+
+
+Started GET "/assets/application.self-cc4861b8d4c8c6fd2104bda2f96b027512ece32689d7943fa4263ddc25bcfd15.css?body=1" for ::1 at 2015-05-26 00:31:55 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-26 00:31:55 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-26 00:31:55 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-26 00:31:55 -0700
+
+
+Started GET "/assets/jquery-1.11.2.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-26 00:31:55 -0700
+
+
+Started GET "/assets/raphael-min.self-233ff7de4f0a9fc9f7ebe24380a23327dca682974e9fb97e687aeb3719d34ea2.js?body=1" for ::1 at 2015-05-26 00:31:55 -0700
+
+
+Started GET "/assets/vextab-div.self-6c6fa09b75303693345e68a4f018b2e11a6f649939b69c43aba7e143ae98e143.js?body=1" for ::1 at 2015-05-26 00:31:55 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-05-26 00:31:55 -0700
+
+
+Started GET "/examples/2" for ::1 at 2015-05-26 00:31:56 -0700
+Processing by ExamplesController#show as HTML
+  Parameters: {"authenticity_token"=>"ZcVdr0c6mEA9PK8iSuy1YAOyL5QXZxS7GF9A3o3oDON8H5aLRmHz5PVyEYjS3TDO27dWxZ2LEJ4P5WUtYD+8GQ==", "id"=>"2"}
+  [1m[35mExample Load (0.2ms)[0m  SELECT  "examples".* FROM "examples" WHERE "examples"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered examples/show.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.2ms)
+
+SyntaxError (/Users/revelationinterns/Desktop/tmp/cantusfirmus/app/models/formatter.rb:78: syntax error, unexpected keyword_end, expecting end-of-input):
+  app/models/formatter.rb:78: syntax error, unexpected keyword_end, expecting end-of-input
+  app/models/example.rb:14:in `showable_tonic'
+  app/views/examples/show.html.erb:8:in `_app_views_examples_show_html_erb___3752443066299274098_70104632953020'
+
+
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.8ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (63.7ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (50.2ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/revelationinterns/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (111.5ms)
+
+
+Started GET "/examples/2" for ::1 at 2015-05-26 00:32:11 -0700
+Processing by ExamplesController#show as HTML
+  Parameters: {"authenticity_token"=>"ZcVdr0c6mEA9PK8iSuy1YAOyL5QXZxS7GF9A3o3oDON8H5aLRmHz5PVyEYjS3TDO27dWxZ2LEJ4P5WUtYD+8GQ==", "id"=>"2"}
+  [1m[36mExample Load (0.3ms)[0m  [1mSELECT  "examples".* FROM "examples" WHERE "examples"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered examples/show.html.erb within layouts/application (8752.3ms)
+Completed 200 OK in 8823ms (Views: 8812.5ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/assets/vextab.self-4a0b0f8a601860c763d4d29b8ebed4b268465e9c31177c19c88d50d7da38ee28.css?body=1" for ::1 at 2015-05-26 00:32:20 -0700
+
+
+Started GET "/assets/application.self-cc4861b8d4c8c6fd2104bda2f96b027512ece32689d7943fa4263ddc25bcfd15.css?body=1" for ::1 at 2015-05-26 00:32:20 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-26 00:32:20 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-26 00:32:20 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-26 00:32:20 -0700
+
+
+Started GET "/assets/jquery-1.11.2.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-26 00:32:20 -0700
+
+
+Started GET "/assets/raphael-min.self-233ff7de4f0a9fc9f7ebe24380a23327dca682974e9fb97e687aeb3719d34ea2.js?body=1" for ::1 at 2015-05-26 00:32:20 -0700
+
+
+Started GET "/assets/vextab-div.self-6c6fa09b75303693345e68a4f018b2e11a6f649939b69c43aba7e143ae98e143.js?body=1" for ::1 at 2015-05-26 00:32:20 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-05-26 00:32:20 -0700
+
+
+Started GET "/examples" for ::1 at 2015-05-26 00:32:28 -0700
+Processing by ExamplesController#index as HTML
+  [1m[35mExample Load (0.3ms)[0m  SELECT "examples".* FROM "examples"
+  Rendered examples/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 63ms (Views: 59.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/examples/2" for ::1 at 2015-05-26 00:32:30 -0700
+Processing by ExamplesController#show as HTML
+  Parameters: {"authenticity_token"=>"yAXEsILsh3eDO3KQ/99pe2wNkdBUvdV61NlnGw9VVvvR3w+Ug7fs00t1zDpn7uzVtAjogd5R0V/DY0Lo4oLmAQ==", "id"=>"2"}
+  [1m[36mExample Load (0.2ms)[0m  [1mSELECT  "examples".* FROM "examples" WHERE "examples"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered examples/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 57ms (Views: 55.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/examples/3" for ::1 at 2015-05-26 00:39:22 -0700
+Processing by ExamplesController#show as HTML
+  Parameters: {"authenticity_token"=>"yAXEsILsh3eDO3KQ/99pe2wNkdBUvdV61NlnGw9VVvvR3w+Ug7fs00t1zDpn7uzVtAjogd5R0V/DY0Lo4oLmAQ==", "id"=>"3"}
+  [1m[35mExample Load (0.3ms)[0m  SELECT  "examples".* FROM "examples" WHERE "examples"."id" = $1 LIMIT 1  [["id", 3]]
+  Rendered examples/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 69ms (Views: 67.9ms | ActiveRecord: 0.3ms)

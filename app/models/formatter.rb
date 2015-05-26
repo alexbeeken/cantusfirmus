@@ -12,7 +12,7 @@ class Formatter
   end
 
   def self.get_letter_name(note, tonic)
-    scale_number = ((note % 12) + (12 - (tonic % 12))) % 12
+    scale_number = get_scale_number(note, tonic)
     reference = ["C","C#","D","D#","E","F","F#","G","G#","A","A#","B","C","C#","D","D#","E","F","F#","G","G#","A","A#","B"]
     return reference[scale_number]
   end
@@ -32,10 +32,9 @@ class Formatter
 
   def self.string_to_array(string)
     output = []
-    string.split("").each do |char|
-      if /[-\d]*/.match(char).to_s != ""
-        output.push(char.to_i)
-      end
+    string.gsub((/[\]\[,]/), " ")
+    string.split(" ").each do |char|
+      output.push(char.to_i)
     end
     return output
   end
@@ -68,6 +67,10 @@ class Formatter
     if (note_number > 83) && (note_number < 85)
      return "6"
     end
+  end
+
+  def self.get_scale_number(note, tonic)
+    ((note % 12) + (12 - (tonic % 12))) % 12
   end
 
 end
