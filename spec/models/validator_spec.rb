@@ -41,8 +41,8 @@ describe Validator do
     end
 
     it "Returns valid only if the third to last note is within an octave of penutiltamte notes" do
-      expect(Validator.valid?([0, -9, -12, -14, -12, -14], 8)).to eq(false)
-      expect(Validator.valid?([0, -9, -12, -14, -12, -7], 8)).to eq(true)
+      expect(Validator.valid?([0, -1, -12, -14, -12, -14], 8)).to eq(false)
+      expect(Validator.valid?([0, -1, -12, -14, -12, -7], 8)).to eq(true)
     end
 
   end

@@ -182,9 +182,10 @@ class Score
            highest = note
         end
       end
-      return (lowest - highest).abs
+      @range = (lowest - highest).abs
+    else
+      @range = 0
     end
-    return 0
   end
 
   def find_number_of_repeated_notes
@@ -198,7 +199,7 @@ class Score
         notes.push(note)
       end
     end
-    return repeated_notes
+    @repeated_notes = repeated_notes
   end
 
   def get_interval(left_note, right_note)

@@ -7,7 +7,6 @@ class Phrase
     @length = params.fetch(:length, 8)
     @examples = params.fetch(:examples, [])
     @notes = params.fetch(:notes, populate_notes)
-    populate_notes
   end
 
   private
@@ -16,6 +15,7 @@ class Phrase
     notes = [0]
     (@length - 2).times do
       valid_notes = get_valid_notes(notes)
+      puts("VALID NOTES = #{valid_notes}")
       notes.push(pick_best(valid_notes, notes, @examples))
     end
     notes.push(0)
@@ -24,18 +24,20 @@ class Phrase
 
   def get_valid_notes(notes)
     output = []
+    puts("STARTING TO VALIDATE for #{notes}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
     DIATONIC_NOTES.each do |note|
       temp_array = notes.dup
       temp_array.push(note)
       if Validator.valid?(temp_array, @length)
-        # puts("#{note} was deemed VALID for #{temp_array}.")
-        # puts("current_state of #{output}")
+        puts("#{note} was deemed VALID for #{temp_array}.")
+        puts("current_state of #{output}")
         output.push(note)
       else
-        # puts("#{note} was deemed INvalid for #{temp_array}.")
-        # puts("current_state of #{output}")
+        puts("#{note} was deemed INvalid for #{temp_array}.")
+        puts("current_state of #{output}")
       end
     end
+    puts("ENDING VALIDATION~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~RETURNING #{output}")
     return output
   end
 

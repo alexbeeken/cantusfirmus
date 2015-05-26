@@ -9,16 +9,18 @@ class Validator
   def self.valid?(notes, length)
     @notes = notes
     @length = length
-    # puts(" ")
-    # puts("Starting test for #{notes}")
+    puts(" ")
+    puts("Starting test for #{notes}")
     return false if !first_or_last_tonic?
-    # puts("first and last notes are tonic")
+    puts("first and last notes are tonic")
+    return false if !second_note_is_a_step?
+    puts("second note is a step")
     return false if !penultimate_is_leading_tone?
-    # puts("penultimate is the leading tone")
+    puts("penultimate is the leading tone")
     return false if !prepenultimate_within_octave_of_penultimate?
-    # puts("prepenultimate is within an octave of leading tone")
+    puts("prepenultimate is within an octave of leading tone")
     return false if !middle_notes_valid?
-    # puts("PASSED ALL TESTS")
+    puts("PASSED ALL TESTS---------------------------------------------adding----#{notes[0]}")
     return true
   end
 
@@ -63,18 +65,20 @@ class Validator
 
   def self.middle_notes_valid?
     if (@notes.length > 1) && (@notes.length <= (@length - 2))
+      return false if same_note?
+      puts("--not the same as previous note")
       return false if dissonance?
-      # puts("--not a dissonance")
+      puts("--not a dissonance")
     end
     if (@notes.length > 2) && (@notes.length <= (@length - 2))
       return false if range_too_wide?
-      # puts("--range is not too wide")
+      puts("--range is not too wide")
       return false if outlines_bad_intervals?
-      # puts("--doesn't outline bad intervals")
+      puts("--doesn't outline bad intervals")
       return false if consecutive_thirds?
-      # puts("--doesn't make consecutive thirds")
+      puts("--doesn't make consecutive thirds")
       return false if consecutive_M2s?
-      # puts("--doesn't make consecutive M2nds")
+      puts("--doesn't make consecutive M2nds")
     end
     return true
   end
@@ -103,7 +107,21 @@ class Validator
 
   def self.range_too_wide?
     # checks if the last two intervals add up to more than an octave
-    (get_interval(@notes[-2], @notes[-1]).abs + get_interval(@notes[-3], @notes[-2]).abs > 12)
+    (get_interval(@notes[-2], @notes[-1]) + get_interval(@notes[-3], @notes[-2])).abs > 12
+  end
+
+  def self.same_note?
+    @notes[-1] == @notes[-2]
+  end
+
+  def self.second_note_is_a_step?
+    if @notes.length > 2
+      return true
+    elsif @notes.length > 1
+      return (get_interval(@notes[0], @notes[1]).abs <= 2)
+    else
+      return true
+    end
   end
 
   def self.up?(note1, note2)
