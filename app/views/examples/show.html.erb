@@ -1,0 +1,17 @@
+<h1> Showing <%= @example.showable_notes %> </h1>
+
+<div class="vex-tabdiv" width=1000 scale=1.0 editor="false">
+options space=20
+tabstave
+notation=true
+tablature=false
+key=<%= @example.showable_tonic %> time=4/4
+
+notes :w <%= @example.showable_notes %>
+
+options space=25
+</div>
+
+<div class="container">
+  <%= link_to "Delete", example_path(example: @cantusfirmus, id: @example.id), :method =>"Delete", :class => "btn btn-warning" %>
+</div>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cantusfirmus</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="navbar navbar-default">
+  <a href=<%= examples_path %>><h1 class="text-center">Cantus Firmus Generator<h1></a>
+</div>
+
+<%= yield %>
+
+<br>
+<br>
+
+<p class="text-muted">by <a href="http://www.alexbeeken.com"> Alex Beeken </a></p>
+<p class="text-muted">Check out the <a href="http://www.github.com/alexbeeken/cantusfirmus"> Github Repo </a></p>
+</body>
+</html>
