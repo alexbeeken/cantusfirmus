@@ -8,6 +8,8 @@ class Evaluator
     candidates.delete_at(0)
     best_score = get_score(temp_array, examples)
     current_best = temp_array.last
+    second_best_score = 10000
+    current_second_best = -100
     # puts("FIRST NOTE IS #{temp_array.last}")
     candidates.each do |candidate|
       temp_array = notes.dup
@@ -17,10 +19,29 @@ class Evaluator
       if score < best_score
         best_score = score
         current_best = temp_array.last
+      elsif score < second_best_score
+        second_best_score = score
+        current_second_best = temp_array.last
+      end
+      if second_best_score < best_score
+        tmp_score = best_score
+        tmp_note = current_best
+        best_score = second_best_score
+        current_best = current_second_best
+        second_best_score = tmp_score
+        current_second_best = tmp_note
       end
     end
     # puts(" ")
     # puts(" ")
+    if current_second_best != -100
+      roll = rand(2)
+      if roll == 1
+        return current_best
+      else
+        return current_second_best
+      end
+    end
     return current_best
   end
 

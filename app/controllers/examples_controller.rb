@@ -9,7 +9,7 @@ class ExamplesController < ApplicationController
   end
 
   def new
-    @examples = Example.all
+    @examples = Example.all_format
   end
 
   def create
@@ -30,6 +30,11 @@ class ExamplesController < ApplicationController
   def destroy
     id = params.fetch(:id).to_i
     Example.find(id).destroy
+    redirect_to examples_path
+  end
+
+  def reset
+    Example.reset
     redirect_to examples_path
   end
 

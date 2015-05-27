@@ -3,4 +3,6 @@ Rails.application.routes.draw do
 
   resources :examples
 
+  get :reset, :to => 'examples#reset'
+
 end
