@@ -1,5 +1,5 @@
-CantusFirmus Rails
--------------------
+CantusFirmus
+-------------
 
 This app lets you generate your own Cantus Firmi from given examples or from other generated ones.
 
