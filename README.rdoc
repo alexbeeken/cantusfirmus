@@ -1,8 +1,0 @@
-== CantusFirmus Rails
-
-This is the Rails Version of an app that generates Cantus Firmus phrases.
-
-Todo:
-
-* Fix Link on Generate Form
-* Style Everything
